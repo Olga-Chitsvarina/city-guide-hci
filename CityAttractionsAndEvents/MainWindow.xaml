@@ -2014,7 +2014,7 @@
             <Button x:Name="CalendarButton" Content="Button" Height="107.2" Canvas.Left="630.15" Style="{DynamicResource ButtonStyleCalendar}" Width="157.15" Canvas.Top="0.5"/>
             <Button x:Name="NotificationsButton" Height="107.2" Canvas.Left="787.3" Style="{DynamicResource ButtonStyleNotifications}" Width="157.15" Canvas.Top="0.466"/>
             <Button x:Name="HomeButton" Content="Button" Height="107" Style="{DynamicResource ButtonStyleHomePage}" Width="157.15" Canvas.Top="1.2" Canvas.Left="1.55"/>
-            <Button x:Name="MyProfileButton" Content="Button" Height="107.2" Canvas.Left="944.45" Style="{DynamicResource ButtonStyleMyProfile1}" Width="157.15" Canvas.Top="0.466"/>
+            <Button x:Name="MyProfileButton" Content="Button" Height="107.2" Canvas.Left="944.45" Style="{DynamicResource ButtonStyleMyProfile1}" Width="157.15" Canvas.Top="0.466" BorderBrush="#FF4F4F4F"/>
             <Button x:Name="NotificationsButtonWithRedEllipse" Height="107.2" Canvas.Left="787.3" Style="{DynamicResource ButtonStyleNotificationsButtonRedCircle}" Width="157.15" Canvas.Top="0.6"/>
 
         </Canvas>
@@ -2206,7 +2206,7 @@
 
         </Canvas>
 
-        <Canvas x:Name="CompassCanvas" Height="570" Width="1100" Canvas.Left="10" Canvas.Top="129" Visibility="Hidden" d:IsHidden="True">
+        <Canvas x:Name="CompassCanvas" Height="570" Width="1100" Canvas.Left="10" Canvas.Top="129" Visibility="Hidden">
 
             <Rectangle x:Name="Map" Height="560" Stroke="Black" Width="1100">
                 <Rectangle.Fill>
@@ -2214,6 +2214,7 @@
                 </Rectangle.Fill>
             </Rectangle>
             <Rectangle x:Name="NightShader" Fill="Black" Height="570" Stroke="Black" Width="1100" Opacity="0"/>
+            <Rectangle Fill="#FF4F4F4F" Height="46" Stroke="Black" Width="1100"/>
 
             <Ellipse x:Name="CompassBack" HorizontalAlignment="Left" Height="88" Stroke="Black" VerticalAlignment="Top" Width="92" Canvas.Left="937" Canvas.Top="456">
                 <Ellipse.Effect>
@@ -2241,17 +2242,15 @@
                 <ComboBoxItem x:Name="SortByObscurity" Content="Obscurity Rating" HorizontalAlignment="Left" Width="140.152" HorizontalContentAlignment="Right"/>
                 <ComboBoxItem x:Name="SortByPrice" Content="Price" HorizontalAlignment="Left" Width="140.152" HorizontalContentAlignment="Right"/>
             </ComboBox>
-            <ComboBox x:Name="TypeCombo" Height="25" Canvas.Left="727" Canvas.Top="10" Width="142" Cursor="Hand" HorizontalContentAlignment="Right" SelectedIndex="0" Foreground="#FF0A2672">
-                <ComboBoxItem x:Name="TypeAttraction" Content="Attraction" Width="140.152" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>
-                <ComboBoxItem x:Name="TypeEvent" Content="Event" Width="140.152" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>
-                <ComboBoxItem x:Name="TypeRestaurant" Content="Restaurant" Width="140.152" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>
-                <ComboBoxItem x:Name="TypeSport" Content="Sports" Width="140.152" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>
-                <ComboBoxItem x:Name="TypeShopping" Content="Shopping" Width="140.152" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>
-            </ComboBox>
             <TextBlock x:Name="TimeText" TextAlignment="Center" Height="22" Canvas.Left="954" TextWrapping="Wrap" Text="TextBlock" Canvas.Top="524" Width="60" Opacity="0" Background="White"/>
+            <CheckBox x:Name="checkAttraction" Content="Attraction" Height="21" Canvas.Left="34.6" Canvas.Top="14" Width="83" Background="White" Foreground="White" IsChecked="True"/>
+            <CheckBox x:Name="checkEvent" Content="Event" Height="21" Canvas.Left="132" Canvas.Top="14" Width="83" Background="White" Foreground="White"/>
+            <CheckBox x:Name="checkRestaurant" Content="Restaurant" Height="21" Canvas.Left="208" Canvas.Top="14" Width="83" Foreground="White"/>
+            <CheckBox x:Name="checkSport" Content="Sport" Height="21" Canvas.Left="314" Canvas.Top="14" Width="83" Foreground="White"/>
+            <CheckBox x:Name="checkShopping" Content="Shopping" Height="21" Canvas.Left="391" Canvas.Top="14" Width="83" Foreground="White"/>
 
         </Canvas>
-        <Canvas x:Name="SearchSortCanvas" Height="697" Width="1120" Visibility="Hidden">
+        <Canvas x:Name="SearchSortCanvas" Height="697" Width="1120" Visibility="Hidden" d:IsHidden="True">
             <MapView:prioSlider Margin="913,167.367,0,187.4"/>
             <ScrollViewer x:Name="glanceScroller" CanContentScroll="True" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Left" Height="531" VerticalAlignment="Top" Width="921" Canvas.Top="167" Canvas.Left="-8">
                 <StackPanel x:Name="glanceStack" Height="528.5" Width="911"/>

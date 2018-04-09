@@ -87,9 +87,30 @@ namespace CityAttractionsAndEvents
             this.TimeSlider.ValueChanged += onTimeSlider;
             List<Place> places = generatePlaces();
             renderPlaces(places);
-            this.TypeCombo.SelectionChanged += onTypeCombo;
+            this.checkAttraction.Checked += MapChecked;
+            this.checkAttraction.Unchecked += MapChecked;
+            this.checkEvent.Checked += MapChecked;
+            this.checkEvent.Unchecked += MapChecked;
+            this.checkShopping.Checked += MapChecked;
+            this.checkShopping.Unchecked += MapChecked;
+            this.checkSport.Checked += MapChecked;
+            this.checkSport.Unchecked += MapChecked;
+            this.checkRestaurant.Checked += MapChecked;
+            this.checkRestaurant.Unchecked += MapChecked;
             this.SortBy.SelectionChanged += onSortBy;
             this.NightShader.MouseDown += clickScreen;
+        }
+
+        private void MapChecked(object sender, RoutedEventArgs e)
+        {
+            List<Place> places = generatePlaces();
+            renderPlaces(places);
+        }
+
+        private void CheckMap(object sender, MouseButtonEventArgs e)
+        {
+            List<Place> places = generatePlaces();
+            renderPlaces(places);
         }
 
         private void HomeButton_Click(object sender, RoutedEventArgs e)
@@ -507,15 +528,10 @@ namespace CityAttractionsAndEvents
             renderPlaces(places);
         }
 
-        private void onTypeCombo(object sender, SelectionChangedEventArgs e)
-        {
-            List<Place> places = generatePlaces();
-            renderPlaces(places);
-        }
-
         private void renderPlaces(List<Place> places)
         {
             CompassCanvas.Children.Remove(currentPopout);
+            List<int> selectedPlaces = getSelectedPlaces();
             foreach (Ellipse e in currentPlacesShown)
             {
                 this.CompassCanvas.Children.Remove(e);
@@ -523,7 +539,7 @@ namespace CityAttractionsAndEvents
             currentPlacesShown.Clear();
             foreach (Place p in places)
             {
-                if (p.placeType == this.TypeCombo.SelectedIndex)
+                if (selectedPlaces.Contains(p.placeType))
                 {
                     Ellipse ellipse = new Ellipse();
                     string ellipseName = p.name.Replace(" ", "");
@@ -539,6 +555,32 @@ namespace CityAttractionsAndEvents
                     currentPlacesShown.Add(ellipse);
                 }
             }
+        }
+
+        private List<int> getSelectedPlaces()
+        {
+            List<int> selectedPlaces = new List<int>();
+            if (checkAttraction.IsChecked == true)
+            {
+                selectedPlaces.Add(0);
+            }
+            if (checkEvent.IsChecked == true)
+            {
+                selectedPlaces.Add(1);
+            }
+            if (checkRestaurant.IsChecked == true)
+            {
+                selectedPlaces.Add(2);
+            }
+            if (checkSport.IsChecked == true)
+            {
+                selectedPlaces.Add(3);
+            }
+            if (checkShopping.IsChecked == true)
+            {
+                selectedPlaces.Add(4);
+            }
+            return selectedPlaces;
         }
 
         private double getPercentage(Place p)
@@ -595,19 +637,22 @@ namespace CityAttractionsAndEvents
             ellipse.Width = size;
             ellipse.Height = size;
 
-            double red;
-            double green;
-            if (percentage < 0.5)
+            if (p.placeType == 0) {
+                ellipse.Fill = new SolidColorBrush(Color.FromRgb(52,167,209));
+            } else if (p.placeType == 1)
             {
-                red = 255;
-                green = Math.Round(255 * (percentage * 2));
-            }
-            else
+                ellipse.Fill = new SolidColorBrush(Color.FromRgb(97, 224, 0));
+            } else if (p.placeType == 2)
             {
-                green = 255;
-                red = Math.Round(255 - (255 * (percentage * 0.5)));
+                ellipse.Fill = new SolidColorBrush(Color.FromRgb(224,142,0));
+            } else if (p.placeType == 3)
+            {
+                ellipse.Fill = new SolidColorBrush(Color.FromRgb(0, 2, 173));
+            } else if (p.placeType == 4)
+            {
+                ellipse.Fill = new SolidColorBrush(Color.FromRgb(49, 94, 37));
             }
-            ellipse.Fill = new SolidColorBrush(Color.FromRgb((byte)red, (byte)green, 0));
+
 
             ellipse.Cursor = Cursors.Hand;
 
