@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Cole\Documents\city-guide-hci\CityAttractionsAndEvents\App.xaml
-16740720152
+17-1115809036
 
-22584284958
+232076781868
 141651101841
-AnswerQuestion.xaml;AskQuestion.xaml;BackButton.xaml;GlanceView.xaml;InfoAnswered.xaml;InfoExpander.xaml;Interest.xaml;InterestSport.xaml;LoadProgress.xaml;MainWindow.xaml;NotificationsPresenter.xaml;PlacePopout.xaml;prioSlider.xaml;ProfileExpanded.xaml;ProfileOther.xaml;ViewAllButton.xaml;
+AnswerQuestion.xaml;AskQuestion.xaml;BackButton.xaml;GlanceView.xaml;InfoAnswered.xaml;InfoExpander.xaml;Interest.xaml;InterestSport.xaml;LoadProgress.xaml;MainWindow.xaml;NotificationsPresenter.xaml;panelButton.xaml;PlacePopout.xaml;prioSlider.xaml;ProfileExpanded.xaml;ProfileOther.xaml;ViewAllButton.xaml;
 
 False
 

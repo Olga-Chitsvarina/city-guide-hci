@@ -95,6 +95,7 @@ namespace CityAttractionsAndEvents
         private void HomeButton_Click(object sender, RoutedEventArgs e)
         {
             UpdateCurrentAndPreviousPages(HomePage);
+
         }
 
         private void MyProfileButton_Click(object sender, RoutedEventArgs e)
@@ -107,45 +108,55 @@ namespace CityAttractionsAndEvents
             {
                 UpdateCurrentAndPreviousPages(LoginPage);
             }
-           
+            MyProfileButton.IsEnabled = false;
         }
 
         private void NotificationsButton_Click(object sender, RoutedEventArgs e)
         {
             UpdateCurrentAndPreviousPages(NotificationsPage);
+            NotificationsButton.IsEnabled = false;
+            NotificationsButtonWithRedEllipse.IsEnabled = false;
         }
 
         private void NotificationsButtonWithRedEllipse_Click(object sender, RoutedEventArgs e)
         {
             UpdateCurrentAndPreviousPages(NotificationsPage);
+            NotificationsButton.IsEnabled = false;
+            NotificationsButtonWithRedEllipse.IsEnabled = false;
         }
 
 
         private void NotificationsEllipseButton_Click(object sender, RoutedEventArgs e)
         {
             NotificationsButton_Click(sender, e);
+            NotificationsButton.IsEnabled = false;
+            NotificationsButtonWithRedEllipse.IsEnabled = false;
         }
 
 
         private void CalendarButton_Click(object sender, RoutedEventArgs e)
         {
             UpdateCurrentAndPreviousPages(CalendarPage);
+            CalendarButton.IsEnabled = false;
         }
 
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
             UpdateCurrentAndPreviousPages(SearchSortCanvas);
+            SearchButton.IsEnabled = false;
         }
 
         private void MapButton_Click(object sender, RoutedEventArgs e)
         {
             UpdateCurrentAndPreviousPages(CompassCanvas);
+            MapButton.IsEnabled = false;
         }
 
       
         private void InformationButton_Click(object sender, RoutedEventArgs e)
         {
             UpdateCurrentAndPreviousPages(InformationPage);
+            InformationButton.IsEnabled = false;
         }
 
 
@@ -208,6 +219,7 @@ namespace CityAttractionsAndEvents
             this.sportCheck.IsChecked = true;
             this.shopCheck.IsChecked = false;
             UpdateCurrentAndPreviousPages(SearchSortCanvas);
+            SearchButton.IsEnabled = false;
         }
 
         private void ShoppingButton_Click(object sender, RoutedEventArgs e)
@@ -218,6 +230,7 @@ namespace CityAttractionsAndEvents
             this.sportCheck.IsChecked = false;
             this.shopCheck.IsChecked = true;
             UpdateCurrentAndPreviousPages(SearchSortCanvas);
+            SearchButton.IsEnabled = false;
         }
 
         private void RestaurantsButton_Click(object sender, RoutedEventArgs e)
@@ -228,6 +241,7 @@ namespace CityAttractionsAndEvents
             this.sportCheck.IsChecked = false;
             this.shopCheck.IsChecked = false;
             UpdateCurrentAndPreviousPages(SearchSortCanvas);
+            SearchButton.IsEnabled = false;
         }
 
         private void EventsButton_Click(object sender, RoutedEventArgs e)
@@ -238,6 +252,7 @@ namespace CityAttractionsAndEvents
             this.sportCheck.IsChecked = false;
             this.shopCheck.IsChecked = false;
             UpdateCurrentAndPreviousPages(SearchSortCanvas);
+            SearchButton.IsEnabled = false;
         }
 
         private void AttractionsButton_Click(object sender, RoutedEventArgs e)
@@ -248,6 +263,7 @@ namespace CityAttractionsAndEvents
             this.sportCheck.IsChecked = false;
             this.shopCheck.IsChecked = false;
             UpdateCurrentAndPreviousPages(SearchSortCanvas);
+            SearchButton.IsEnabled = false;
         }
        
         //==========================================================================================
@@ -444,6 +460,15 @@ namespace CityAttractionsAndEvents
 
         public void UpdateCurrentAndPreviousPages(Canvas newCurrent)
         {
+            InformationButton.IsEnabled = true;
+            MapButton.IsEnabled = true;
+            SearchButton.IsEnabled = true;
+            CalendarButton.IsEnabled = true;
+            NotificationsButton.IsEnabled = true;
+            HomeButton.IsEnabled = true;
+            MyProfileButton.IsEnabled = true;
+            NotificationsButtonWithRedEllipse.IsEnabled = true;
+
             previousWindow = currentWindow;
             currentWindow = newCurrent;
 
