@@ -5,6 +5,7 @@ Implement drag and drop from wishlist
 Implement blacklist
 Implement personal profile
 On Map page create background for combobox
+Map "border" on top, the black line intersection, was troublesome.
 Change colour to represent location
 Make combobox for place type a checkbox
 If events on same place, implement arrows to view next
@@ -23,7 +24,7 @@ Help button
 (ICONS)
 Persona profiles
 Place a print button, so that a user can print a map (edited)
-Map "border" on top, the black line intersection, was troublesome.
+
 
 
 == David's Critiques Not Covered Above == 
