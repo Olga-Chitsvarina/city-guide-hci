@@ -2181,8 +2181,8 @@
             <TextBlock x:Name="TimeText" TextAlignment="Center" Height="22" Canvas.Left="954" TextWrapping="Wrap" Text="TextBlock" Canvas.Top="524" Width="60" Opacity="0" Background="White"/>
 
         </Canvas>
-        <Canvas x:Name="SearchSortCanvas" Height="697" Width="1120" Visibility="Visible" d:IsHidden="True">
-            <MapView:prioSlider Margin="913,167.367,0,187.4" Visibility="Hidden"/>
+        <Canvas x:Name="SearchSortCanvas" Height="697" Width="1120" Visibility="Hidden">
+            <MapView:prioSlider Margin="913,167.367,0,187.4"/>
             <ScrollViewer x:Name="glanceScroller" CanContentScroll="True" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Left" Height="531" VerticalAlignment="Top" Width="921" Canvas.Top="167" Canvas.Left="-8">
                 <StackPanel x:Name="glanceStack" Height="528.5" Width="911"/>
             </ScrollViewer>
