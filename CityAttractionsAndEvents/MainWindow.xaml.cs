@@ -444,7 +444,6 @@ namespace CityAttractionsAndEvents
 
         public void UpdateCurrentAndPreviousPages(Canvas newCurrent)
         {
-            
             previousWindow = currentWindow;
             currentWindow = newCurrent;
 

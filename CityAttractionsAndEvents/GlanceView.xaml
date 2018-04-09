@@ -121,6 +121,14 @@
                 <EasingDoubleKeyFrame KeyTime="0" Value="35"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="40"/>
             </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0.8"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="calHover">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0.8"/>
+            </DoubleAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="calMouseOut">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="calendarImage">
@@ -131,11 +139,27 @@
                 <EasingDoubleKeyFrame KeyTime="0" Value="40"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="35"/>
             </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="calHover">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.8"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.8"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="blackMouseOver">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="blacklistImage">
                 <EasingDoubleKeyFrame KeyTime="0" Value="26"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="31"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="blackHover">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0.8"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock1">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0.8"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="blackMouseOut">
@@ -143,17 +167,41 @@
                 <EasingDoubleKeyFrame KeyTime="0" Value="31"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="26"/>
             </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="blackHover">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.8"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock1">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.8"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="wishButtOver">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="wishlistImage">
                 <EasingDoubleKeyFrame KeyTime="0" Value="30"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="35"/>
             </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="wishHover">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0.8"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock2">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0.8"/>
+            </DoubleAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="wishButtOut">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="wishlistImage">
                 <EasingDoubleKeyFrame KeyTime="0" Value="35"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="34"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="wishHover">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.8"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock2">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.8"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
     </UserControl.Resources>
@@ -199,7 +247,7 @@
         <Image x:Name="carImage" Height="49" Canvas.Left="327" Canvas.Top="137" Width="53" Source="Images/redcar.png" OpacityMask="Lime"/>
         <Image x:Name="walkImage" Height="49" Canvas.Left="560" Canvas.Top="137" Width="53" Source="Images/redperson.png"/>
         <Rectangle x:Name="transIconRect" Fill="#FFF4F4F5" Height="35" Canvas.Left="777.5" Stroke="White" Canvas.Top="10" Width="109.5" Opacity="0.6"/>
-        <ProgressBar x:Name="priceBar" Style="{DynamicResource ProgressBarTourism}" Height="18" Canvas.Left="121" Canvas.Top="208" Width="683" Foreground="#FF120085" Value="63"/>
+        <ProgressBar x:Name="priceBar" Style="{DynamicResource ProgressBarTourism}" Height="18" Canvas.Left="121" Canvas.Top="208" Width="683" Foreground="#FF1B96B2" Value="63"/>
         <ProgressBar x:Name="obscurityBar" Height="18" Style="{DynamicResource ProgressBarTourism}" Canvas.Left="121" Canvas.Top="243" Width="683" Value="35" Foreground="#FF1B96B2"/>
         <TextBlock x:Name="priceText" Height="18" Canvas.Left="10" TextWrapping="Wrap" Text="Price:" Canvas.Top="208" Width="106"/>
         <TextBlock x:Name="obscurityText" Height="18" Canvas.Left="10" TextWrapping="Wrap" Text="Obscurity Rating:" Canvas.Top="243" Width="106"/>
@@ -213,6 +261,12 @@
                 <ImageBrush ImageSource="Images/heart.png"/>
             </Image.OpacityMask>
         </Image>
+        <Rectangle x:Name="calHover" Fill="#FFF4F4F5" Height="21.617" Canvas.Left="750.043" Stroke="Black" Width="82.53" Canvas.Top="-1.441" Opacity="0"/>
+        <TextBlock x:Name="textBlock" Height="19" Canvas.Left="755.447" TextWrapping="Wrap" Text="Add to Calendar" Canvas.Top="1.176" Width="75.582" FontSize="10" Opacity="0"/>
+        <Rectangle x:Name="blackHover" Fill="#FFF4F4F5" Height="21.617" Canvas.Left="794.048" Stroke="Black" Width="82.53" Canvas.Top="-0.669" Opacity="0"/>
+        <TextBlock x:Name="textBlock1" Height="19" Canvas.Left="800.224" TextWrapping="Wrap" Text="Add to Blacklist" Canvas.Top="1.948" Width="75.582" FontSize="10" Opacity="0"/>
+        <Rectangle x:Name="wishHover" Fill="#FFF4F4F5" Height="21.617" Canvas.Left="819.045" Stroke="Black" Width="82.53" Canvas.Top="-0.198" Opacity="0"/>
+        <TextBlock x:Name="textBlock2" Height="19" Canvas.Left="826.765" TextWrapping="Wrap" Text="Add to Wishlist" Canvas.Top="2.419" Width="75.582" FontSize="10" Opacity="0"/>
 
     </Canvas>
 </UserControl>
