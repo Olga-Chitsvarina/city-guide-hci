@@ -383,5 +383,10 @@
   <ItemGroup>
     <Resource Include="goToHomePage.png" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="output_pzoxmU.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
