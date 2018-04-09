@@ -1,0 +1,65 @@
+
+== To Do ==
+Implement Wishlist
+Implement drag and drop from wishlist
+Implement blacklist
+Implement personal profile
+On Map page create background for combobox
+Change colour to represent location
+Make combobox for place type a checkbox
+If events on same place, implement arrows to view next
+Implement "view all reflections"
+Use Olga's fix on Place Profile Page
+Implement sliders for search
+Change plus button from expand to info
+Highlight current view
+Implement visited for completion bar
+Implement completion bar
+Implement register page
+"Create reflections" view
+User search
+Fake social media sharing
+Help button
+(ICONS)
+Persona profiles
+Place a print button, so that a user can print a map (edited)
+Map "border" on top, the black line intersection, was troublesome.
+
+
+== David's Critiques Not Covered Above == 
+I feel there's a lot of competing content, right panel on the home looks just as important as the top panel. Maybe make those white so they blend with the interface more.
+
+Calendar - is red selected? Maybe have a speech bubble point to the selected date.
+Red makes it look like the one that is currently selected. Maybe there's a better way to show that?
+
+Maybe get rid of strokes (borders)?
+
+Place profile page - photo on left
+Good use of visual variables, but maybe use a consistent colour scheme? Try Adobe Kuler.
+
+Error messages.
+
+What is obscurity rating again?
+
+Blacklist?
+
+Friends - does it mean you can search for people and add them? I feel like that has a lot of functionality that would need to be unpacked.
+
+Highlight current page on the top panel
+
+
+== Partially Resolved / WIP ==
+(None yet)
+Get rid of arrows on sliders
+Shift up day information (Calendar)
+
+
+== Resolved ==
+~Move menu bar on homepage to left side~
+~Make buttons smaller on the home page (David asked during the presentation)~
+~Change about to info (I think Luke suggested to do it during the evaluation)~
+~Remove arrow from go to home button. One girl asked us to do so during the presentation.~
+make background color of buttons less extreme, did David say that? I just remember he wanted us to change the color of logo
+~Change text on homepage bar to logo or change colour of text~
+~Text over hover icons for GlanceView~
+~Change colour of progress bar GlanceView~
