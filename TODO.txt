@@ -13,7 +13,6 @@ Implement "view all reflections"
 Use Olga's fix on Place Profile Page
 Implement sliders for search
 Change plus button from expand to info
-Highlight current view
 Implement visited for completion bar
 Implement completion bar
 Implement register page
@@ -64,3 +63,4 @@ make background color of buttons less extreme, did David say that? I just rememb
 ~Change text on homepage bar to logo or change colour of text~
 ~Text over hover icons for GlanceView~
 ~Change colour of progress bar GlanceView~
+~Highlight current view~
