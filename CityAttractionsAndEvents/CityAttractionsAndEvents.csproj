@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="panelButton.xaml.cs">
+      <DependentUpon>panelButton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewAllButton.xaml.cs">
       <DependentUpon>ViewAllButton.xaml</DependentUpon>
     </Compile>
@@ -131,6 +134,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="NotificationsPresenter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="panelButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

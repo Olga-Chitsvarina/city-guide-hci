@@ -1171,3 +1171,5 @@ C:\Users\Cole\Documents\city-guide-hci\CityAttractionsAndEvents\obj\Debug\CityAt
 C:\Users\Cole\Documents\city-guide-hci\CityAttractionsAndEvents\obj\Debug\CityAttractionsAndEvents.csproj.CopyComplete
 C:\Users\Cole\Documents\city-guide-hci\CityAttractionsAndEvents\obj\Debug\CityAttractionsAndEvents.exe
 C:\Users\Cole\Documents\city-guide-hci\CityAttractionsAndEvents\obj\Debug\CityAttractionsAndEvents.pdb
+C:\Users\Cole\Documents\city-guide-hci\CityAttractionsAndEvents\obj\Debug\panelButton.g.cs
+C:\Users\Cole\Documents\city-guide-hci\CityAttractionsAndEvents\obj\Debug\panelButton.baml
