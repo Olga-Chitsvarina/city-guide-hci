@@ -211,6 +211,14 @@ namespace CityAttractionsAndEvents
 
         //==========================================================================================
         // RELATED TO HOME PAGE
+
+        //Based on: https://stackoverflow.com/questions/19694640/animating-gif-in-wpf
+        private void myGif_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            myGif.Position = new TimeSpan(0, 0, 1);
+            myGif.Play();
+        }
+
         public void SetHomePage()
         {
             currentWindow = HomePage;
