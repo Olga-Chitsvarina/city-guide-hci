@@ -1,0 +1,13 @@
+//Pictures for Tubby Dog, Calgary Tower, Studio Bell, Video Games live and Farmer's Market taken from Trip Advisor
+//Pictures for 4th Spot and Pizza Hut taken from Yelp
+//Picture for Stronghold taken from Stronghold's instagram
+//Picture for Glenbow Museum taken from the Glenbow Museum's website
+//Picture for Sled Island taken from Sled Island's website
+//Heart icon created by Jeffrey Drilling at clickr.com
+//Blacklist icon created by Giovanni Battistini at onlinewebfonts.com
+//Calendar icon created by Mado Sahkotupakka
+//Bus, Car, User and Person Icon created by Edward Boatman for the AIGA collection on thenounproject.com
+//Music Notes image created by Wikpedia user Tokyoship, found at the page "File:Simple Music.svg". URL as of March 22, 2018: https://en.wikipedia.org/wiki/File:Simple_Music.svg
+//Calgary skyline image found from https://www.reminetwork.com/articles/vacancies-rise-rents-fall-in-downtown-calgary/
+
+//All remaining images came from the public domain or were created by us.

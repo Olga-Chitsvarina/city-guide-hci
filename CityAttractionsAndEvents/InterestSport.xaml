@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="ProfileV2.InterestSport"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ProfileV2"
+             mc:Ignorable="d" 
+             d:DesignHeight="88.28" d:DesignWidth="68">
+    <Grid>
+        <Canvas Width="68" Margin="0,0,0,0" HorizontalAlignment="Right" Height="0" VerticalAlignment="Bottom"/>
+
+        <Rectangle Fill="Black" RadiusX="4" RadiusY="4"  Stroke="#FF00B409" StrokeThickness="5"/>
+        <StackPanel  d:LayoutOverrides="Height">
+            <Image x:Name="interestImg" Height="45.6" Width="44" Source="Sport.png" Margin="12,10,12,0"/>
+            <TextBlock x:Name="interestTextbox" Foreground="White" TextAlignment="Center" TextWrapping="Wrap" Text="Sports"/>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

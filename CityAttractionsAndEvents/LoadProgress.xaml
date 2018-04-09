@@ -1,0 +1,96 @@
+﻿<UserControl x:Class="MapView.LoadProgress"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MapView"
+             mc:Ignorable="d" 
+             d:DesignHeight="160" d:DesignWidth="161">
+    <UserControl.Resources>
+        <Storyboard x:Key="LoadingWheel" RepeatBehavior="Forever">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="rectangle">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="9"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="28"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="54"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="90"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="118"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="134"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="158"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="180"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="212.896"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="235.06"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="259.167"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="271.366"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="287.677"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="312.357"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="333.644"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="348.174"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="rectangle">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-9"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-27"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-48"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-64"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-59"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-47"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-32"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="-12"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="17"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="35"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="45"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="49"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="47"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="38"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="24"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="13"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="rectangle">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.886"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="2"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-2"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-16"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-46"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-72"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-90"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-103"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="-106"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="-103"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-88"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="-70"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="-56"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="-41"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="-20"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="-6"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="-1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="ellipse">
+                <EasingColorKeyFrame KeyTime="0" Value="#FF211874"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.1" Value="#FF211874"/>
+                <EasingColorKeyFrame KeyTime="0:0:1.6" Value="#FF211874"/>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource LoadingWheel}"/>
+        </EventTrigger>
+    </UserControl.Triggers>
+    <Grid>
+        <Rectangle Fill="White" HorizontalAlignment="Left" Height="160" Margin="0,0,-161,-160" Stroke="Black" VerticalAlignment="Top" Width="161"/>
+        <Ellipse x:Name="ellipse" Fill="White" HorizontalAlignment="Left" Height="140" Margin="10,10,0,0" Stroke="#FF46FF00" VerticalAlignment="Top" Width="141" StrokeThickness="29"/>
+        <Rectangle x:Name="rectangle" Fill="White" HorizontalAlignment="Left" Height="34" Margin="73,116,0,0" Stroke="White" StrokeThickness="29" VerticalAlignment="Top" Width="18" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextAlignment="Center" Height="19" Margin="48,69,0,0" TextWrapping="Wrap" Text="Loading..." VerticalAlignment="Top" Width="67"/>
+
+    </Grid>
+</UserControl>
