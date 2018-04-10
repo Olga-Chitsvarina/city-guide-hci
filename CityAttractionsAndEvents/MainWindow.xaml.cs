@@ -898,7 +898,6 @@ namespace CityAttractionsAndEvents
                     percentage = 1 - percentage;
                     glanceview.priceBar.Value = percentage * 100;
                     glanceview.expandButton.Visibility = Visibility.Hidden;
-                    glanceview.wishlistImage.MouseDown += WishlistAdd;
                     profileStack.Children.Add(glanceview);
                     break;
                 }
@@ -914,11 +913,6 @@ namespace CityAttractionsAndEvents
             wtgInfo.Width = (902.5);
             profileStack.Children.Add(wtgInfo);
 
-        }
-
-        private void WishlistAdd(object sender, MouseButtonEventArgs e)
-        {
-            throw new NotImplementedException();
         }
 
         private void ViewButton_Click(object sender, RoutedEventArgs e)
