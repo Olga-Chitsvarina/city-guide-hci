@@ -31,13 +31,13 @@ namespace CityAttractionsAndEvents
         private List<string> usernames;
         private List<string> passwords;
         private List<string> emails;
-        public static List<WishEntry> wishlist = new List<WishEntry>();
+        static List<WishEntry> wishlist = new List<WishEntry>();
+        static List<string> blacklist = new List<string>();
 
         Boolean searchClicked = false;
         public MainWindow()
         {  
             InitializeComponent();
-
             InitializeUserLists();
 
             SetHomePage();
@@ -143,6 +143,14 @@ namespace CityAttractionsAndEvents
         {
             UpdateCurrentAndPreviousPages(HomePage);
 
+        }
+
+        public void addToBlacklist(string name)
+        {
+            blacklist.Add(name);
+            List<Place> places = generatePlaces();
+            renderGlanceViews(places);
+            renderPlaces(places);
         }
 
         private void MyProfileButton_Click(object sender, RoutedEventArgs e)
@@ -672,7 +680,18 @@ namespace CityAttractionsAndEvents
             Place stronghold = new Place("Stronghold", 3, 4.6, 84, 23.1, 16.99, 246, 196, "stronghold.jpg", details);
             Place farmersMarket = new Place("Farmer's Market", 4, 4.7, 184, 19.1, 31.99, 308, 285, "farmersmarket.jpg", details);
             List<Place> places = new List<Place> { cgyTower, glenbowMuseum, studioBell, sledIsland, vgSymphony, pizzaHut, tubbyDog, fourSpot, stronghold, farmersMarket };
-            return places;
+            List<Place> tempPlaces = new List<Place>();
+            foreach (Place p in places)
+            {
+                if (blacklist.Contains(p.name))
+                {
+
+                } else
+                {
+                    tempPlaces.Add(p);
+                }
+            }
+            return tempPlaces;
         }
 
         private void onSortBy(object sender, SelectionChangedEventArgs e)
