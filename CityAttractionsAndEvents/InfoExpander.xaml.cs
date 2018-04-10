@@ -20,9 +20,9 @@ namespace CityAttractionsAndEvents
     /// </summary>
     public partial class InfoExpander : UserControl
     {
-        static List<InfoAnswered> answeredQuestions;
-        static List<AnswerQuestion> questionsAsked;
-        static Boolean expanded = false;
+        List<InfoAnswered> answeredQuestions;
+        List<AnswerQuestion> questionsAsked;
+        Boolean expanded = false;
         public InfoExpander(string type)
         {
             InitializeComponent();
@@ -46,16 +46,19 @@ namespace CityAttractionsAndEvents
             if (expanded)
             {
                 backdropRect.Height = 56;
+                this.Height = 56;
                 expandInfoButton.Content = "+";
                 expandedCanvas.Visibility = Visibility.Hidden;
                 expanded = false;
             } else
             {
-                backdropRect.Height = 56 + (50*expandedCanvas.Children.Count);
+                backdropRect.Height = 56 + (70*expandedCanvas.Children.Count);
+                this.Height = 56 + (50 * expandedCanvas.Children.Count);
                 expandedCanvas.Visibility = Visibility.Visible;
                 expandInfoButton.Content = "-";
                 expanded = true;
             }
+            ((MainWindow)((Canvas)((Canvas)((ScrollViewer)((StackPanel)this.Parent).Parent).Parent).Parent).Parent).renderPlaceProfile();
         }
 
         public void askQuestion(String question)

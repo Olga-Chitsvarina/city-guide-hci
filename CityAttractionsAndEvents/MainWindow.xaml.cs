@@ -34,6 +34,11 @@ namespace CityAttractionsAndEvents
         static List<WishEntry> wishlist = new List<WishEntry>();
         static List<string> blacklist = new List<string>();
 
+        static GlanceView curGlanceView;
+        static ProfileExpanded curProfileExpanded;
+        static InfoExpander curWTG;
+        static InfoExpander curNTK;
+
         Boolean searchClicked = false;
         public MainWindow()
         {  
@@ -917,6 +922,7 @@ namespace CityAttractionsAndEvents
                     percentage = 1 - percentage;
                     glanceview.priceBar.Value = percentage * 100;
                     glanceview.expandButton.Visibility = Visibility.Hidden;
+                    curGlanceView = glanceview;
                     profileStack.Children.Add(glanceview);
                     break;
                 }
@@ -924,14 +930,26 @@ namespace CityAttractionsAndEvents
             ProfileExpanded reflections = new ProfileExpanded();
             reflections.Height = 285;
             reflections.Width = 902.5;
+            curProfileExpanded = reflections;
             profileStack.Children.Add(reflections);
             InfoExpander ntkInfo = new InfoExpander("Why Should I Visit?");
             ntkInfo.Width = (902.5);
+            curNTK = ntkInfo;
             profileStack.Children.Add(ntkInfo);
             InfoExpander wtgInfo = new InfoExpander("Planning My Visit");
             wtgInfo.Width = (902.5);
+            curWTG = wtgInfo;
             profileStack.Children.Add(wtgInfo);
 
+        }
+
+        public void renderPlaceProfile()
+        {
+            profileStack.Children.Clear();
+            profileStack.Children.Add(curGlanceView);
+            profileStack.Children.Add(curProfileExpanded);
+            profileStack.Children.Add(curNTK);
+            profileStack.Children.Add(curWTG);
         }
 
         private void ViewButton_Click(object sender, RoutedEventArgs e)
