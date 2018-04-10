@@ -23,13 +23,21 @@ namespace CityAttractionsAndEvents
     {   private Canvas previousWindow;
         private Canvas currentWindow;
         private bool userAuthorized = false;
+        private bool userRegistering = false;
         private bool notificationsOn = false;
+        private int curUserID;
         static List<Ellipse> currentPlacesShown = new List<Ellipse>();
         static PlacePopout currentPopout = new PlacePopout();
+        private List<string> usernames;
+        private List<string> passwords;
+        private List<string> emails;
+
         Boolean searchClicked = false;
         public MainWindow()
         {  
             InitializeComponent();
+
+            InitializeUserLists();
 
             SetHomePage();
             SetLoginPage();
@@ -41,6 +49,23 @@ namespace CityAttractionsAndEvents
             SetNotificationsPage();
             setCompassCanvas();
             setSearchSortPage();
+
+        }
+
+        private void InitializeUserLists()
+        {
+            this.usernames = new List<string>();
+            this.passwords = new List<string>();
+            this.emails = new List<string>();
+
+            this.usernames.Add("Travor Trapp");
+            this.usernames.Add("Loren Lane");
+
+            this.passwords.Add("123");
+            this.passwords.Add("123");
+
+            this.emails.Add("travor@email.com");
+            this.emails.Add("loren@email.com");
         }
 
         //=============================================================================================
@@ -211,14 +236,6 @@ namespace CityAttractionsAndEvents
 
         //==========================================================================================
         // RELATED TO HOME PAGE
-
-        //Based on: https://stackoverflow.com/questions/19694640/animating-gif-in-wpf
-        private void myGif_MediaEnded(object sender, RoutedEventArgs e)
-        {
-            myGif.Position = new TimeSpan(0, 0, 1);
-            myGif.Play();
-        }
-
         public void SetHomePage()
         {
             currentWindow = HomePage;
@@ -300,11 +317,110 @@ namespace CityAttractionsAndEvents
         public void SetLoginPage()
         {
             PageIsNotVisible(LoginPage);
+            PageIsNotVisible(this.CreateAccountCanvas);
             InvalidLoginMessage.Visibility = Visibility.Hidden;
 
             LoginButton.Click += LoginButton_Click;
             FacebookButton.Click += FacebookButton_Click;
             LinkedInButton.Click += LinkedInButton_Click;
+            this.RegisterButton.Click += StartCreatingAccount;
+            this.CreateAccountButton.Click += CreatingAccountAttempt;
+
+            this.PasswordInput.KeyDown += LoginButton_Enter;
+            this.UserNameInput.KeyDown += LoginButton_Enter;
+            
+        }
+
+        private void LoginButton_Enter(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                attemptLogin();
+
+            //if (e.Key == Key.Tab)
+            //    FocusManager.SetFocusedElement(FocusManager.GetFocusScope(PasswordInput), PasswordInput);
+        }
+
+        private void CreatingAccountAttempt(object sender, RoutedEventArgs e)
+        {
+            bool creationValid = true;
+
+            if (this.CreateUsernameField.Text == "")
+            {
+                creationValid = false;
+                this.UsernameWarning.Visibility = Visibility.Visible;
+                this.UsernameWarning.Text = "Username cannot be empty";
+            }
+            else if (this.usernames.IndexOf(this.CreateUsernameField.Text) >= 0)
+            {
+                creationValid = false;
+                this.UsernameWarning.Visibility = Visibility.Visible;
+                this.UsernameWarning.Text = "Username already exists";
+            }
+            else
+            {
+                this.UsernameWarning.Visibility = Visibility.Hidden;
+            }
+
+
+
+
+
+            if (this.CreateEmailField.Text == "")
+            {
+                creationValid = false;
+                this.EmailWarning.Visibility = Visibility.Visible;
+                this.EmailWarning.Text = "Email cannot be empty";
+            }
+            else if (this.emails.IndexOf(this.CreateEmailField.Text) >= 0)
+            {
+                creationValid = false;
+                this.EmailWarning.Visibility = Visibility.Visible;
+                this.EmailWarning.Text = "Email already exists";
+
+            }
+            else
+            {
+                this.EmailWarning.Visibility = Visibility.Hidden;
+            }
+
+
+            if (this.CreatePasswordField1.Password == "")
+            {
+                creationValid = false;
+                this.PasswordEmptyWarning.Visibility = Visibility.Visible;
+            }
+            else {
+                this.PasswordEmptyWarning.Visibility = Visibility.Hidden;
+            }
+
+            if (this.CreatePasswordField1.Password != this.CreatePasswordField2.Password)
+            {
+                creationValid = false;
+                this.PasswordMismatchWarning.Visibility = Visibility.Visible;
+            }
+            else {
+                this.PasswordMismatchWarning.Visibility = Visibility.Hidden;
+            }
+
+            if (creationValid)
+            {
+                this.usernames.Add(this.CreateUsernameField.Text);
+                this.emails.Add(this.CreateEmailField.Text);
+                this.passwords.Add(this.CreatePasswordField1.Password);
+                UpdateCurrentAndPreviousPages(LoginPage);
+            }
+            else {
+                this.CreatePasswordField1.Password = "";
+                this.CreatePasswordField2.Password = "";
+            }
+
+
+
+        }
+
+        private void StartCreatingAccount(object sender, RoutedEventArgs e)
+        {
+            UpdateCurrentAndPreviousPages(this.CreateAccountCanvas);
         }
 
         public void placeProfileExpand(String name)
@@ -326,21 +442,14 @@ namespace CityAttractionsAndEvents
         public bool UserNameIsValid()
         {
             string userName = UserNameInput.Text;
-            if (userName == "BadUserName" || userName.Length < 1 )
-            {
-                return false;
-            }
-            return true;
+            return this.usernames.Contains(userName);
         }
 
         public bool UserPasswordIsValid()
         {
-
-            if (PasswordInput.Password.ToString() == "")
-            {
-                return false;
-            }
-            return true;
+            int index = getUserID();
+            if (index < 0) return false;
+            return PasswordInput.Password == passwords[index];
 
         }
 
@@ -349,22 +458,33 @@ namespace CityAttractionsAndEvents
             return UserNameIsValid() && UserPasswordIsValid();
         }
 
-
-        private void LoginButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (! UserNameAndPasswordAreValid())
+        private void attemptLogin() {
+            if (!UserNameAndPasswordAreValid())
             {
                 InvalidLoginMessage.Visibility = Visibility.Visible;
-                UserNameInput.Text = "";
+                //UserNameInput.Text = "";
                 PasswordInput.Password = "";
 
             }
             else
             {
+                curUserID = getUserID();
                 UpdateCurrentAndPreviousPages(NickProfileCanvas);
                 userAuthorized = true;
                 InvalidLoginMessage.Visibility = Visibility.Hidden;
             }
+        }
+
+        private int getUserID()
+        {
+            string name = UserNameInput.Text;
+            return this.usernames.IndexOf(name);
+        }
+
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            attemptLogin();
+            
                 
         }
         

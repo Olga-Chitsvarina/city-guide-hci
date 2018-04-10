@@ -1994,6 +1994,56 @@
             </Setter>
         </Style>
         <Storyboard x:Key="InfoClick"/>
+        <Style x:Key="RegisterButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid Cursor="Hand">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill)" Storyboard.TargetName="rectangle">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <SolidColorBrush Color="#FF238CB4"/>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill)" Storyboard.TargetName="rectangle">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                            <GradientStop Color="Black" Offset="0"/>
+                                                            <GradientStop Color="#FF238CB4" Offset="1"/>
+                                                        </LinearGradientBrush>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled"/>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Rectangle x:Name="rectangle" Fill="#FF4F4F4F" Stroke="#FF200C0C" HorizontalAlignment="Left" Width="121.6"/>
+                            <TextBlock HorizontalAlignment="Left" TextAlignment="Center" Height="25.2" Margin="0,4.267,-4,0" TextWrapping="Wrap" Text="Register..." VerticalAlignment="Top" Width="121.6" FontSize="18" FontWeight="Bold" Foreground="#FFFDFEFE"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
     <Window.Triggers>
         <EventTrigger RoutedEvent="RangeBase.ValueChanged" SourceName="TimeSlider">
@@ -2019,31 +2069,34 @@
 
         </Canvas>
 
-        <Canvas x:Name="HomePage" Height="698.8" Width="1121.6">
+        <Canvas x:Name="HomePage" Height="698.8" Width="1121.6" d:IsHidden="True">
             <Button x:Name="AttractionsButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyle1}" Canvas.Top="123.8" Width="255"/>
             <Button x:Name="EventsButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyleEvents}" Canvas.Top="237.6" Width="255"/>
             <Button x:Name="RestaurantsButton" Content="Button" Height="108.8" Canvas.Left="10" Style="{DynamicResource ButtonStyleRestaurants}" Canvas.Top="350" Width="255
                     "/>
             <Button x:Name="ShoppingButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyleShopping}" Canvas.Top="465.2" Width="255"/>
             <Button x:Name="SportButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyleSport}" Canvas.Top="579" Width="255"/>
-            <Image Height="296.2" Width="593.443" Source="Calgary1.jpg" Canvas.Left="303.459" Canvas.Top="130"/>
-            <Image Height="253.8" Canvas.Left="270.2" Canvas.Top="431.2" Width="626.702" Source="Weather1.png"/>
+            <Image Height="277.2" Width="650.2" Source="Calgary1.jpg" Canvas.Left="264.8" Canvas.Top="130"/>
+            <Image Height="255" Canvas.Left="279.25" Canvas.Top="430" Width="585.75" Source="Weather1.png"/>
+            <Image Height="149.6" Canvas.Left="935" Canvas.Top="525" Width="145.6" Source="WeatherToday1.png" RenderTransformOrigin="0.56,-0.14"/>
             <TextBlock Height="73.8" TextBlock.TextAlignment="Center" Canvas.Left="939.4" TextWrapping="Wrap" Canvas.Top="431.2" Width="145.6" FontSize="18" VerticalAlignment="Center" FontWeight="Bold" Foreground="#FF238CB4"><Run Text="Current "/><LineBreak/><Run Text="Weather "/><LineBreak/><Run Text="Conditions"/></TextBlock>
-            <Button x:Name="ContactUsButton" Content="TextBlock" Height="29.8" Canvas.Left="935.95" Style="{DynamicResource ButtonStyleContactUs2}" Canvas.Top="237.6" Width="149.05"/>
-            <MediaElement x:Name="myGif" MediaEnded="myGif_MediaEnded" UnloadedBehavior="Manual" Height="175" Canvas.Left="901.902" Canvas.Top="510" Width="183.098" Source="output_pzoxmU.gif"/>
+            <Button x:Name="ContactUsButton" Content="TextBlock" Height="29.8" Canvas.Left="935.95" Style="{DynamicResource ButtonStyleContactUs2}" Canvas.Top="270.2" Width="149.05"/>
         </Canvas>
-        <Canvas x:Name="LoginPage" Height="678.8" Canvas.Left="10" Canvas.Top="10" Width="1101.6" d:IsHidden="True">
-            <TextBlock Height="32" TextWrapping="Wrap" Width="116.8" FontSize="18" Canvas.Left="40.8" Canvas.Top="503.777" FontWeight="Bold" Foreground="#FF238CB4"><Run Text="User Name"/><Run Text=":"/></TextBlock>
-            <TextBlock Canvas.Left="40.8" TextWrapping="Wrap" Canvas.Top="563.04" Height="28.76" Width="116.8" FontSize="18" Foreground="#FF238CB4"><Run FontWeight="Bold" Text="Password"/><Run Text=":"/></TextBlock>
-            <TextBox x:Name="UserNameInput" Height="32" Canvas.Left="197.2" TextWrapping="Wrap" Canvas.Top="503.777" Width="321.6" FontSize="18"/>
-            <Button x:Name="LoginButton" Content="Button" Height="35.2" Canvas.Left="197.2" Style="{DynamicResource ButtonStyleLogin}" Canvas.Top="620.6" Width="321.6"/>
+        <Canvas x:Name="LoginPage" Height="678.8" Canvas.Left="10" Canvas.Top="10" Width="1101.6">
+            <TextBlock Height="32" TextWrapping="Wrap" Width="116.8" FontSize="18" Canvas.Left="40.8" Canvas.Top="475.722" FontWeight="Bold" Foreground="#FF238CB4"><Run Text="User Name"/><Run Text=":"/></TextBlock>
+            <TextBlock Canvas.Left="40.8" TextWrapping="Wrap" Canvas.Top="534.985" Height="28.76" Width="116.8" FontSize="18" Foreground="#FF238CB4"><Run FontWeight="Bold" Text="Password"/><Run Text=":"/></TextBlock>
+            <TextBox x:Name="UserNameInput" Height="32" Canvas.Left="197.2" TextWrapping="Wrap" Canvas.Top="475.722" Width="321.6" FontSize="18"/>
+            <PasswordBox x:Name="PasswordInput" Height="32                          " Canvas.Left="197.2" Canvas.Top="531.745" Width="319.6" FontSize="18"/>
+            <Button x:Name="LoginButton" Content="Button" Height="35.2" Canvas.Left="197.2" Style="{DynamicResource ButtonStyleLogin}" Canvas.Top="592.545" Width="321.6"/>
             <Image Height="244.2" Width="542.6" Source="Calgary.jpg" Canvas.Top="128.8" Canvas.Left="40.8"/>
-            <TextBlock Height="37.577" Canvas.Left="40.8" TextWrapping="Wrap" Canvas.Top="400" Width="1008.6" FontWeight="Bold" FontSize="18" Foreground="#FF238CB4"><Run Text="Enter you"/><Run Text="r User Name and Password"/><Run Text=":"/><Run Text="&#x9;&#x9;"/><Run Text="&#x9;"/><Run Text="OR "/><Run Text=" &#x9;&#x9;SIgn in with your Social Media Account:"/><Run Text="&#x9;&#x9;&#x9;"/></TextBlock>
+            <TextBlock Height="37.577" Canvas.Left="40.8" TextWrapping="Wrap" Canvas.Top="400" Width="542.6" FontWeight="Bold" FontSize="18" Foreground="#FF238CB4"><Run Text="Enter you"/><Run Text="r "/><Run Text="username "/><Run Text="and "/><Run Text="p"/><Run Text="assword"/><Run Text=":"/><Run Text="&#x9;&#x9;"/><Run Text="&#x9;"/><Run Text="&#x9;&#x9;&#x9;&#x9;"/></TextBlock>
             <TextBlock Height="224" Canvas.Left="696.2" TextWrapping="Wrap" Canvas.Top="149" Width="353.2" Foreground="#FF4F4F4F" FontWeight="Bold" FontSize="36"><Run Text="CITY"/><Run Text=" "/><LineBreak/><Run Text="ATTRACTIONS "/><LineBreak/><Run Text="AND EVENTS "/><LineBreak/><Run Text="GUIDE"/></TextBlock>
-            <Button x:Name="FacebookButton" Content="Button" Height="83.8" Canvas.Left="734" Style="{DynamicResource ButtonStyleFacebook}" Canvas.Top="529.195" Width="83.8"/>
-            <Button x:Name="LinkedInButton" Content="Button" Height="83.8" Canvas.Left="882.8" Style="{DynamicResource ButtonStyleLinkedIn}" Canvas.Top="529.195" Width="83.8"/>
-            <PasswordBox x:Name="PasswordInput" Height="32                          " Canvas.Left="199.2" Canvas.Top="559.8" Width="319.6" FontSize="18"/>
-            <TextBlock x:Name="InvalidLoginMessage" Height="48.945" Canvas.Left="40.8" TextWrapping="Wrap" Canvas.Top="449.832" Width="478" FontSize="18" Foreground="#FFCA1B1B" FontWeight="Bold"><Run Text="Invalid "/><Run Text="u"/><Run Text="ser "/><Run Text="n"/><Run Text="ame or passwor"/><Run Text="d. Please try again"/><Run Text=" :)"/></TextBlock>
+            <Button x:Name="FacebookButton" Content="Button" Height="83.8" Canvas.Left="706.2" Style="{DynamicResource ButtonStyleFacebook}" Canvas.Top="543.945" Width="83.8"/>
+            <Button x:Name="LinkedInButton" Content="Button" Height="83.8" Canvas.Left="855" Style="{DynamicResource ButtonStyleLinkedIn}" Canvas.Top="543.945" Width="83.8"/>
+            <TextBlock x:Name="InvalidLoginMessage" Height="28.145" Canvas.Left="40.8" TextWrapping="Wrap" Canvas.Top="437.577" Width="478" FontSize="18" Foreground="#FFCA1B1B" FontWeight="Bold"><Run Text="Invalid "/><Run Text="u"/><Run Text="se"/><Run Text="r"/><Run Text="n"/><Run Text="ame or passwor"/><Run Text="d. Please try again"/><Run Text="."/></TextBlock>
+            <TextBlock Height="37.577" Canvas.Left="706.2" TextWrapping="Wrap" Canvas.Top="400" Width="395.4" FontWeight="Bold" FontSize="18" Foreground="#FF238CB4" Text="Create a new account:"/>
+            <TextBlock Height="29.023" Canvas.Left="706.2" TextWrapping="Wrap" Canvas.Top="509.922" Width="395.4" FontWeight="Bold" FontSize="18" Foreground="#FF238CB4" Text="Log in with social media:"/>
+            <Button x:Name="RegisterButton" Content="Button" Height="35.2" Canvas.Left="706.2" Style="{DynamicResource RegisterButtonStyle}" Canvas.Top="430.522" Width="117.6"/>
 
         </Canvas>
         <Canvas x:Name="ContactUsPage" Height="63.245" Canvas.Left="415.232" Canvas.Top="123.8" Width="298.524" d:IsHidden="True">
@@ -2280,6 +2333,35 @@
             <Grid x:Name="NickProfileGrid" Height="568" Width="1110" >
                 <ProfileV2:ProfileOther HorizontalAlignment="Center"/>
             </Grid>
+
+        </Canvas>
+        <Canvas x:Name="CreateAccountCanvas" Height="546.133" Canvas.Left="11.6" Canvas.Top="141.267" Width="1098.4" d:IsHidden="True">
+            <StackPanel Height="546.133" Width="1098.4">
+                <TextBlock x:Name="textBlock" Height="40" Margin="310.2,75,310.2,0" TextAlignment="Center" TextWrapping="Wrap" FontSize="22"><Run FontWeight="Bold" Text="Create Account"/></TextBlock>
+                <Grid x:Name="CreateUsernameGrid" Height="32" Width="478" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20">
+                    <TextBlock TextWrapping="Wrap" Width="116.8" FontSize="18" FontWeight="Bold" Foreground="#FF238CB4" HorizontalAlignment="Left"><Run Text="User Name"/><Run Text=":"/></TextBlock>
+                    <TextBox x:Name="CreateUsernameField" TextWrapping="Wrap" FontSize="18" Margin="156.4,0,0,0"/>
+                    <TextBlock x:Name="UsernameWarning" TextWrapping="Wrap" FontSize="18" Foreground="#FFCA1B1B" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,0,-232.8,0" Width="211.6" Text="Username already exists." Visibility="Hidden"/>
+                </Grid>
+                <Grid x:Name="EmailGrid" Height="32" Width="478" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0">
+                    <TextBlock TextWrapping="Wrap" Width="116.8" FontSize="18" FontWeight="Bold" Foreground="#FF238CB4" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Text="Email:"/>
+                    <TextBox x:Name="CreateEmailField" TextWrapping="Wrap" FontSize="18" Margin="156.4,0,0,0"/>
+                    <TextBlock x:Name="EmailWarning" TextWrapping="Wrap" FontSize="18" Foreground="#FFCA1B1B" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,0,-232.8,0" Width="211.6" Visibility="Hidden"><Run Text="Email "/><Run Text="already exists."/></TextBlock>
+                </Grid>
+                <Grid x:Name="CreatePasswordGrid" Height="32" Width="478" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20">
+                    <TextBlock TextWrapping="Wrap" Width="116.8" FontSize="18" Foreground="#FF238CB4" HorizontalAlignment="Left" Margin="0,3.24,0,0"><Run FontWeight="Bold" Text="Password"/><Run Text=":"/></TextBlock>
+                    <PasswordBox x:Name="CreatePasswordField1" FontSize="18" Margin="158.4,0,0,0"/>
+                    <TextBlock x:Name="PasswordEmptyWarning" TextWrapping="Wrap" FontSize="18" Foreground="#FFCA1B1B" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,0,-258.4,0" Width="237.2" Visibility="Hidden"><Run Text="Password cannot be empty"/><Run Text="."/></TextBlock>
+                </Grid>
+                <Grid x:Name="CreatePasswordGrid2" Height="32" Width="478" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20">
+                    <TextBlock TextWrapping="Wrap" Width="116.8" FontSize="18" Foreground="#FF238CB4" HorizontalAlignment="Left" Margin="0,-18.627,0,0"><Run FontWeight="Bold" Text="Confirm"/><LineBreak/><Run FontWeight="Bold"/><Run FontWeight="Bold" Text="Password"/><Run Text=":"/></TextBlock>
+                    <PasswordBox x:Name="CreatePasswordField2" FontSize="18" Margin="158.4,0,0,0"/>
+                    <TextBlock x:Name="PasswordMismatchWarning" TextWrapping="Wrap" FontSize="18" Foreground="#FFCA1B1B" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,0,-249.6,-18" Width="228.4" Visibility="Hidden"><Run Text="Password entered does not match the one above"/><Run Text="."/></TextBlock>
+                </Grid>
+                <Grid x:Name="ButtonGridCA" Height="35.2" Width="321.6" HorizontalAlignment="Center" Margin="0,40,0,20" VerticalAlignment="Center">
+                    <Button x:Name="CreateAccountButton" Content="Button" Style="{DynamicResource CreateAccountButtonStyle}"/>
+                </Grid>
+            </StackPanel>
 
         </Canvas>
 
