@@ -643,7 +643,7 @@ namespace CityAttractionsAndEvents
             Place vgSymphony = new Place("Video Games Live: Legend of Zelda", 1, 4.1, 56, 44.2, 65.50, 446, 384, "videogameslive.jpg", details);
             Place pizzaHut = new Place("Pizza Hut", 2, 3.1, 10, 15.2, 13.50, 408, 65, "pizzahut.jpg", details);
             Place tubbyDog = new Place("Tubby Dog", 2, 4.3, 102, 23.2, 8.49, 909, 129, "tubbydog.jpg", details);
-            Place fourSpot = new Place("Fourth Spot", 2, 4.5, 53, 62.1, 32.99, 160, 32, "fourthspot.jpg", details);
+            Place fourSpot = new Place("Fourth Spot", 2, 4.5, 53, 62.1, 32.99, 160, 132, "fourthspot.jpg", details);
             Place stronghold = new Place("Stronghold", 3, 4.6, 84, 23.1, 16.99, 246, 196, "stronghold.jpg", details);
             Place farmersMarket = new Place("Farmer's Market", 4, 4.7, 184, 19.1, 31.99, 308, 285, "farmersmarket.jpg", details);
             List<Place> places = new List<Place> { cgyTower, glenbowMuseum, studioBell, sledIsland, vgSymphony, pizzaHut, tubbyDog, fourSpot, stronghold, farmersMarket };
