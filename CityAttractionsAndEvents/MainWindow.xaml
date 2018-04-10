@@ -2044,6 +2044,64 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="PrintButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Canvas>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <Storyboard>
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="ellipse">
+                                                <EasingColorKeyFrame KeyTime="0" Value="#334F4F4F"/>
+                                            </ColorAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="ellipse">
+                                                <EasingColorKeyFrame KeyTime="0" Value="#7FD4D4D4"/>
+                                            </ColorAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image2">
+                                                <EasingDoubleKeyFrame KeyTime="0" Value="0.5"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.OpacityMask)" Storyboard.TargetName="ellipse">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <SolidColorBrush Color="Black"/>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="ellipse">
+                                                <EasingColorKeyFrame KeyTime="0" Value="Black"/>
+                                            </ColorAnimationUsingKeyFrames>
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="ellipse">
+                                                <EasingColorKeyFrame KeyTime="0" Value="#66000000"/>
+                                            </ColorAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled"/>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Image x:Name="image2" Width="52" Canvas.Top="4.6" Source="printer.png" Height="33.733"/>
+                            <Ellipse x:Name="ellipse" Width="44.8" Stroke="Black" Canvas.Left="3.467" Height="43.333" Fill="#4C4F4F4F"/>
+                        </Canvas>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
     <Window.Triggers>
         <EventTrigger RoutedEvent="RangeBase.ValueChanged" SourceName="TimeSlider">
@@ -2259,15 +2317,15 @@
 
         </Canvas>
 
-        <Canvas x:Name="CompassCanvas" Height="570" Width="1100" Canvas.Left="10" Canvas.Top="129" Visibility="Hidden" d:IsHidden="True">
+        <Canvas x:Name="CompassCanvas" Height="570" Width="1100" Canvas.Left="10" Canvas.Top="129" Visibility="Hidden">
 
-            <Rectangle x:Name="Map" Height="560" Stroke="Black" Width="1100">
+            <Rectangle x:Name="Map" Height="563.2" Stroke="Black" Width="1100" Canvas.Top="-3.2">
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="Images/KM4Wa.png"/>
                 </Rectangle.Fill>
             </Rectangle>
-            <Rectangle x:Name="NightShader" Fill="Black" Height="570" Stroke="Black" Width="1100" Opacity="0"/>
-            <Rectangle Fill="#FF4F4F4F" Height="46" Stroke="Black" Width="1100"/>
+            <Rectangle x:Name="NightShader" Fill="Black" Height="570" Stroke="Black" Width="1100" Opacity="0" Canvas.Top="-10"/>
+            <Rectangle Fill="#A54F4F4F" Height="49.2" Stroke="Black" Width="1100" Canvas.Top="-3.2"/>
 
             <Ellipse x:Name="CompassBack" HorizontalAlignment="Left" Height="88" Stroke="Black" VerticalAlignment="Top" Width="92" Canvas.Left="937" Canvas.Top="456">
                 <Ellipse.Effect>
@@ -2290,17 +2348,29 @@
                 </Ellipse.Fill>
             </Ellipse>
             <Rectangle x:Name="Bar" Fill="#FF0A2672" Height="1" Stroke="Black" Canvas.Top="46" Width="1100"/>
-            <ComboBox x:Name="SortBy" Height="25" Canvas.Left="928" Canvas.Top="10" Width="142" Cursor="Hand" HorizontalContentAlignment="Right" SelectedIndex="0" Foreground="#FF0A2672">
-                <ComboBoxItem x:Name="SortByRating" Content="Star Rating" HorizontalAlignment="Left" Width="140.152" HorizontalContentAlignment="Right"/>
-                <ComboBoxItem x:Name="SortByObscurity" Content="Obscurity Rating" HorizontalAlignment="Left" Width="140.152" HorizontalContentAlignment="Right"/>
-                <ComboBoxItem x:Name="SortByPrice" Content="Price" HorizontalAlignment="Left" Width="140.152" HorizontalContentAlignment="Right"/>
+            <ComboBox x:Name="SortBy" Height="25" Canvas.Left="479" Canvas.Top="10" Width="132.8" Cursor="Hand" HorizontalContentAlignment="Right" SelectedIndex="0" Foreground="#FF0A2672">
+                <ComboBoxItem x:Name="SortByRating" Content="Star Rating" HorizontalAlignment="Left" Width="130.6" HorizontalContentAlignment="Right"/>
+                <ComboBoxItem x:Name="SortByObscurity" Content="Obscurity Rating" HorizontalAlignment="Left" Width="130.6" HorizontalContentAlignment="Right"/>
+                <ComboBoxItem x:Name="SortByPrice" Content="Price" HorizontalAlignment="Left" Width="130.6" HorizontalContentAlignment="Right"/>
             </ComboBox>
             <TextBlock x:Name="TimeText" TextAlignment="Center" Height="22" Canvas.Left="954" TextWrapping="Wrap" Text="TextBlock" Canvas.Top="524" Width="60" Opacity="0" Background="White"/>
+            <Ellipse Fill="#FF34B0CE" Height="19.4" Canvas.Left="32.583" Canvas.Top="11.867" Width="20"/>
+            <Ellipse Fill="#FF61E000" Height="19.4" Canvas.Left="129.783" Canvas.Top="11.867" Width="20"/>
+            <Ellipse Fill="#FFE08E00" Height="19.4" Canvas.Left="205.983" Canvas.Top="11.867" Width="20"/>
+            <Ellipse Fill="#FF0002AD" Height="19.4" Canvas.Left="311.983" Canvas.Top="11.867" Width="20"/>
+            <Ellipse Fill="#FF315E21" Height="19.4" Canvas.Left="389.05" Canvas.Top="11.867" Width="20"/>
             <CheckBox x:Name="checkAttraction" Content="Attraction" Height="21" Canvas.Left="34.6" Canvas.Top="14" Width="83" Background="White" Foreground="White" IsChecked="True"/>
             <CheckBox x:Name="checkEvent" Content="Event" Height="21" Canvas.Left="132" Canvas.Top="14" Width="83" Background="White" Foreground="White"/>
             <CheckBox x:Name="checkRestaurant" Content="Restaurant" Height="21" Canvas.Left="208" Canvas.Top="14" Width="83" Foreground="White"/>
             <CheckBox x:Name="checkSport" Content="Sport" Height="21" Canvas.Left="314" Canvas.Top="14" Width="83" Foreground="White"/>
             <CheckBox x:Name="checkShopping" Content="Shopping" Height="21" Canvas.Left="391" Canvas.Top="14" Width="83" Foreground="White"/>
+            <Canvas x:Name="HelpHover" Height="76.5" Canvas.Left="10" Canvas.Top="467.5" Width="77.817">
+                <Ellipse Fill="#A5397594" Height="74.5" Width="77.817"/>
+                <TextBlock x:Name="textBlock2" Height="74.233" TextWrapping="Wrap" Text="?" TextAlignment="Center" Canvas.Top="2.267" Width="77.817" Foreground="White" FontWeight="Bold" FontSize="48"/>
+
+            </Canvas>
+            <ed:Callout x:Name="MapHelpBox" AnchorPoint="0.101,1.23" CalloutStyle="Rectangle" Content="Helpful text here." Foreground="White" Fill="#E54F4F4F" FontSize="{DynamicResource SizeDouble-Sketch}" FontFamily="{DynamicResource FontFamily-Sketch}" Height="126.4" Canvas.Left="48.6" Stroke="Black" Canvas.Top="333.6" Width="200" d:IsHidden="True" Visibility="Hidden"/>
+            <Button x:Name="PrintButton" ToolTip="Print" Content="Button" Height="43.333" Canvas.Left="1038" Style="{DynamicResource PrintButtonStyle}" Width="52"/>
 
         </Canvas>
         <Canvas x:Name="SearchSortCanvas" Height="697" Width="1120" Visibility="Hidden" d:IsHidden="True">

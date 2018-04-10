@@ -130,6 +130,19 @@ namespace CityAttractionsAndEvents
             this.checkRestaurant.Unchecked += MapChecked;
             this.SortBy.SelectionChanged += onSortBy;
             this.NightShader.MouseDown += clickScreen;
+
+            this.HelpHover.MouseEnter += DisplayMapHelp;
+            this.HelpHover.MouseLeave += HideMapHelp;
+        }
+
+        private void HideMapHelp(object sender, MouseEventArgs e)
+        {
+            this.MapHelpBox.Visibility = Visibility.Hidden;
+        }
+
+        private void DisplayMapHelp(object sender, MouseEventArgs e)
+        {
+            this.MapHelpBox.Visibility = Visibility.Visible;
         }
 
         private void MapChecked(object sender, RoutedEventArgs e)
