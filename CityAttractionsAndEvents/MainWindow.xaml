@@ -2082,7 +2082,7 @@
             <TextBlock Height="73.8" TextBlock.TextAlignment="Center" Canvas.Left="939.4" TextWrapping="Wrap" Canvas.Top="431.2" Width="145.6" FontSize="18" VerticalAlignment="Center" FontWeight="Bold" Foreground="#FF238CB4"><Run Text="Current "/><LineBreak/><Run Text="Weather "/><LineBreak/><Run Text="Conditions"/></TextBlock>
             <Button x:Name="ContactUsButton" Content="TextBlock" Height="29.8" Canvas.Left="935.95" Style="{DynamicResource ButtonStyleContactUs2}" Canvas.Top="270.2" Width="149.05"/>
         </Canvas>
-        <Canvas x:Name="LoginPage" Height="678.8" Canvas.Left="10" Canvas.Top="10" Width="1101.6">
+        <Canvas x:Name="LoginPage" Height="678.8" Canvas.Left="10" Canvas.Top="10" Width="1101.6" d:IsHidden="True">
             <TextBlock Height="32" TextWrapping="Wrap" Width="116.8" FontSize="18" Canvas.Left="40.8" Canvas.Top="475.722" FontWeight="Bold" Foreground="#FF238CB4"><Run Text="User Name"/><Run Text=":"/></TextBlock>
             <TextBlock Canvas.Left="40.8" TextWrapping="Wrap" Canvas.Top="534.985" Height="28.76" Width="116.8" FontSize="18" Foreground="#FF238CB4"><Run FontWeight="Bold" Text="Password"/><Run Text=":"/></TextBlock>
             <TextBox x:Name="UserNameInput" Height="32" Canvas.Left="197.2" TextWrapping="Wrap" Canvas.Top="475.722" Width="321.6" FontSize="18"/>
@@ -2218,9 +2218,6 @@
             <TextBlock Height="20.8" Canvas.Left="520.367" TextWrapping="Wrap" Text="MARCH 2018" Canvas.Top="6.8" Width="221.233" FontWeight="Bold" Foreground="#FF238CB4" FontSize="18"/>
 
             <!--Music Notes image created by Wikpedia user Tokyoship, found at the page "File:Simple Music.svg". URL as of March 22, 2018: https://en.wikipedia.org/wiki/File:Simple_Music.svg -->
-            <Image Height="63.254" Canvas.Left="867.2" Canvas.Top="259.1" Width="50.8" Source="music.png"/>
-
-            <TextBlock Height="26.3" Canvas.Left="947.2" TextWrapping="Wrap" Text=" Concert" Canvas.Top="272.5" Width="131.2" FontSize="18" FontWeight="Bold"/>
             <Image Height="39.2" Canvas.Left="467.2" Canvas.Top="403.6" Width="47.2" Source="WeatherToday1.png"/>
             <Image Height="44.2" Canvas.Left="539.533" Canvas.Top="398.6" Width="56.467" Source="WeatherToday1.png"/>
             <Image Height="44.2" Canvas.Left="622.2" Canvas.Top="398.6" Width="55.8" Source="WeatherToday1.png"/>
@@ -2232,6 +2229,9 @@
             <Image Height="44.2" Canvas.Left="458.533" Canvas.Top="398.6" Width="55.867" Source="WeatherToday1.png"/>
             <Image Height="48.4" Canvas.Left="458.533" Canvas.Top="470.4" Width="55.867" Source="WeatherToday1.png"/>
             <Image Height="36.625" Canvas.Left="785.6" Canvas.Top="482.175" Width="39.2" Source="music.png"/>
+            <ScrollViewer x:Name="wishScroll" CanContentScroll="True" VerticalScrollBarVisibility="Visible" Height="299" Canvas.Left="857" Canvas.Top="247" Width="244">
+                <StackPanel x:Name="wishStack" Height="314.223" Width="225.4"/>
+            </ScrollViewer>
         </Canvas>
         <Canvas x:Name="NotificationsPage" Height="570" Canvas.Left="10" Canvas.Top="118.8" Width="1101.6" d:IsHidden="True">
 
@@ -2259,7 +2259,7 @@
 
         </Canvas>
 
-        <Canvas x:Name="CompassCanvas" Height="570" Width="1100" Canvas.Left="10" Canvas.Top="129" Visibility="Hidden">
+        <Canvas x:Name="CompassCanvas" Height="570" Width="1100" Canvas.Left="10" Canvas.Top="129" Visibility="Hidden" d:IsHidden="True">
 
             <Rectangle x:Name="Map" Height="560" Stroke="Black" Width="1100">
                 <Rectangle.Fill>
@@ -2324,7 +2324,7 @@
             <MapView:LoadProgress x:Name="loadProgress" Margin="368,359,591,178.4" Visibility="Hidden"/>
 
         </Canvas>
-        <Canvas x:Name="ProfilePageCanvas" Height="563.6" Canvas.Left="10" Canvas.Top="123.8" Width="1100" Visibility="Hidden" d:IsHidden="True">
+        <Canvas x:Name="ProfilePageCanvas" Height="563.6" Canvas.Left="10" Canvas.Top="123.8" Width="1100" Visibility="Hidden">
             <ScrollViewer x:Name="profileScroller" CanContentScroll="True" VerticalScrollBarVisibility="Visible" Height="563.6" Width="1100">
                 <StackPanel x:Name="profileStack" Height="563.6" Width="1074.732"/>
             </ScrollViewer>

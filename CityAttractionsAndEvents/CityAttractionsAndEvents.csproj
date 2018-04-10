@@ -61,6 +61,9 @@
     <Compile Include="ViewAllButton.xaml.cs">
       <DependentUpon>ViewAllButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WishEntry.xaml.cs">
+      <DependentUpon>WishEntry.xaml</DependentUpon>
+    </Compile>
     <Page Include="AnswerQuestion.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -158,6 +161,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="ViewAllButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WishEntry.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

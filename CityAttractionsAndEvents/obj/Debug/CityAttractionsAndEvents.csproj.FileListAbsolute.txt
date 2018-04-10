@@ -1245,3 +1245,5 @@ C:\Users\Sergey\Desktop\Git\city-guide-hci\CityAttractionsAndEvents\obj\Debug\Ci
 C:\Users\Sergey\Desktop\Git\city-guide-hci\CityAttractionsAndEvents\bin\Debug\output_pzoxmU.gif
 C:\Users\Cole\Documents\city-guide-hci\CityAttractionsAndEvents\bin\Debug\output_pzoxmU.gif
 C:\Users\Cole\Documents\city-guide-hci\CityAttractionsAndEvents\obj\Debug\App.baml
+C:\Users\Cole\Documents\city-guide-hci\CityAttractionsAndEvents\obj\Debug\WishEntry.g.cs
+C:\Users\Cole\Documents\city-guide-hci\CityAttractionsAndEvents\obj\Debug\WishEntry.baml

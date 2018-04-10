@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Sergey\Desktop\Git\city-guide-hci\CityAttractionsAndEvents\obj\Debug\
+C:\Users\Cole\Documents\city-guide-hci\CityAttractionsAndEvents\obj\Debug\
 CityAttractionsAndEvents
 none
 false
 DEBUG;TRACE
-C:\Users\Sergey\Desktop\Git\city-guide-hci\CityAttractionsAndEvents\App.xaml
-17-1115809036
+C:\Users\Cole\Documents\city-guide-hci\CityAttractionsAndEvents\App.xaml
+18115607374
 
-27-1235864819
+28-1464217584
 141651101841
-AnswerQuestion.xaml;AskQuestion.xaml;BackButton.xaml;GlanceView.xaml;InfoAnswered.xaml;InfoExpander.xaml;Interest.xaml;InterestSport.xaml;LoadProgress.xaml;MainWindow.xaml;NotificationsPresenter.xaml;panelButton.xaml;PlacePopout.xaml;prioSlider.xaml;ProfileExpanded.xaml;ProfileOther.xaml;ViewAllButton.xaml;
+AnswerQuestion.xaml;AskQuestion.xaml;BackButton.xaml;GlanceView.xaml;InfoAnswered.xaml;InfoExpander.xaml;Interest.xaml;InterestSport.xaml;LoadProgress.xaml;MainWindow.xaml;NotificationsPresenter.xaml;panelButton.xaml;PlacePopout.xaml;prioSlider.xaml;ProfileExpanded.xaml;ProfileOther.xaml;ViewAllButton.xaml;WishEntry.xaml;
 
 False
 

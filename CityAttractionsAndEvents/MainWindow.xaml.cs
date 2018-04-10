@@ -31,6 +31,7 @@ namespace CityAttractionsAndEvents
         private List<string> usernames;
         private List<string> passwords;
         private List<string> emails;
+        public static List<WishEntry> wishlist = new List<WishEntry>();
 
         Boolean searchClicked = false;
         public MainWindow()
@@ -183,6 +184,29 @@ namespace CityAttractionsAndEvents
         private void CalendarButton_Click(object sender, RoutedEventArgs e)
         {
             UpdateCurrentAndPreviousPages(CalendarPage);
+            bool alreadyAdded;
+            List<WishEntry> cloneList = new List<WishEntry>();
+            foreach (WishEntry w in wishStack.Children)
+            {
+                alreadyAdded = false;
+                foreach (WishEntry j in cloneList)
+                {
+                    if (w.text.Text == j.text.Text)
+                    {
+                        alreadyAdded = true;
+                    }
+                }
+                if (!alreadyAdded)
+                {
+                    cloneList.Add(w);
+                }
+            }
+            wishStack.Children.Clear();
+            foreach (WishEntry w in cloneList)
+            {
+                wishStack.Children.Add(w);
+            }
+            wishlist = cloneList;
             CalendarButton.IsEnabled = false;
         }
 
@@ -531,6 +555,7 @@ namespace CityAttractionsAndEvents
             DayButton.Click += DayButton_Click;
         }
 
+
         private void DayButton_Click(object sender, RoutedEventArgs e)
         {
             EventInformationTextBlock.Visibility = Visibility.Visible;
@@ -845,6 +870,7 @@ namespace CityAttractionsAndEvents
                 if (name == place.name)
                 {
                     GlanceView glanceview = new GlanceView(place.name, place.details, place.starRating, place.obscurityRating, place.price, place.imagePath);
+                    currentPlace = place;
                     glanceview.Height = 285;
                     glanceview.Width = 902.5;
                     glanceview.obscurityBar.Value = place.obscurityRating;
@@ -872,8 +898,8 @@ namespace CityAttractionsAndEvents
                     percentage = 1 - percentage;
                     glanceview.priceBar.Value = percentage * 100;
                     glanceview.expandButton.Visibility = Visibility.Hidden;
+                    glanceview.wishlistImage.MouseDown += WishlistAdd;
                     profileStack.Children.Add(glanceview);
-                    currentPlace = place;
                     break;
                 }
             }
@@ -888,6 +914,11 @@ namespace CityAttractionsAndEvents
             wtgInfo.Width = (902.5);
             profileStack.Children.Add(wtgInfo);
 
+        }
+
+        private void WishlistAdd(object sender, MouseButtonEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void ViewButton_Click(object sender, RoutedEventArgs e)
