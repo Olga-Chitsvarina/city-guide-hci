@@ -71,6 +71,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CalendarCell.xaml.cs">
+      <DependentUpon>CalendarCell.xaml</DependentUpon>
+    </Compile>
     <Compile Include="panelButton.xaml.cs">
       <DependentUpon>panelButton.xaml</DependentUpon>
     </Compile>
@@ -91,6 +94,10 @@
     <Page Include="BackButton.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CalendarCell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="GlanceView.xaml">
       <Generator>MSBuild:Compile</Generator>

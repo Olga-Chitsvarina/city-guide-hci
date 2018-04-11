@@ -637,7 +637,15 @@ namespace CityAttractionsAndEvents
                                      "22", "23", "24", "25", "26", "27", "28",
                                      "29", "30", "1", "2", "3", "4", "5"};
 
-             
+            CalendarCell[,] arrayOfCalendarCells = new CalendarCell [5,7];
+
+            int i = 0;
+            while(i< daysOfApril.Length)
+            {
+                CalendarUniformGrid.Children.Add(new CalendarCell(daysOfApril[i]));
+                i++;
+            }
+               
             //DayButton.Click += DayButton_Click;
         }
 

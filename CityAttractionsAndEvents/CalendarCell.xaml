@@ -4,9 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CityAttractionsAndEvents"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+             mc:Ignorable="d" Height="155.898" Width="169.344">
+    <Canvas Margin="0,0,20,20" OpacityMask="#FFC59E9E" Background="#FF9595A4">
+        <Rectangle Fill="#FFDDDDE5" Stroke="Black" Margin="6.4,8.4,0,10"/>
+        <TextBlock x:Name="DayTextBlock" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="8.4" FontSize="20" Width="84.452" Height="28.868"><Run Text="jkjjllk"/><LineBreak/><Run/></TextBlock>
+        <Image Height="76.7" Canvas.Left="10" Canvas.Top="47.418" Width="129.344"/>
+    </Canvas>
 </UserControl>
