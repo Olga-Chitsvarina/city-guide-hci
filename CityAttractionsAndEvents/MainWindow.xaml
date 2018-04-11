@@ -2779,7 +2779,7 @@
 
         </Canvas>
         <Canvas x:Name="SearchSortCanvas" Height="697" Width="1120" Visibility="Hidden">
-            <MapView:prioSlider Margin="913,167.367,0,187.4"/>
+            <local:prioSlider Height="341" Canvas.Left="914" Canvas.Top="161" Width="207"/>
             <ScrollViewer x:Name="glanceScroller" CanContentScroll="True" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Left" Height="531" VerticalAlignment="Top" Width="921" Canvas.Top="167" Canvas.Left="-8">
                 <DockPanel x:Name="DockForSmoothScroll1">
                     <StackPanel x:Name="glanceStack" Width="911"/>

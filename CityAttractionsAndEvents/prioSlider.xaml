@@ -1,9 +1,9 @@
-﻿<UserControl x:Class="MapView.prioSlider"
+﻿<UserControl x:Class="CityAttractionsAndEvents.prioSlider"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:MapView"
+             xmlns:local="clr-namespace:CityAttractionsAndEvents"
              mc:Ignorable="d" 
              d:DesignHeight="342.633" d:DesignWidth="207">
     <Canvas x:Name="Container">

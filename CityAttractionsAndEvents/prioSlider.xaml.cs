@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MapView
+namespace CityAttractionsAndEvents
 {
     public class Utils
     {
@@ -119,6 +119,7 @@ namespace MapView
             MoveRangeRectangle();
 
             RaiseChanged(new RangeSliderChangedEventArgs(this.currentMin, this.currentMax));
+            updatePriceRange();
         }
 
         private void MoveRangeRectangle()
@@ -202,6 +203,7 @@ namespace MapView
             this.priceMaxText.Text = String.Format("{0:0.##}", this.currentMax);
 
             RaiseChanged(new RangeSliderChangedEventArgs(this.currentMin, this.currentMax));
+            updatePriceRange();
         }
 
         private void OnWindowMouseMove(object sender, MouseEventArgs e)
@@ -221,6 +223,11 @@ namespace MapView
                 }
                 UpdateMaxMin();
             }
+        }
+
+        private void updatePriceRange()
+        {
+            ((MainWindow)((Canvas)((Canvas)this.Parent).Parent).Parent).updatePriceRange(currentMin, currentMax);
         }
     }
 }
