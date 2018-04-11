@@ -2458,7 +2458,7 @@
                 <TextBlock x:Name="textBlock2" Height="74.233" TextWrapping="Wrap" Text="?" TextAlignment="Center" Canvas.Top="2.267" Width="77.817" Foreground="White" FontWeight="Bold" FontSize="48"/>
 
             </Canvas>
-            <ed:Callout x:Name="MapHelpBox" AnchorPoint="0.101,1.23" CalloutStyle="Rectangle" Content="Helpful text here." Foreground="White" Fill="#E54F4F4F" FontSize="{DynamicResource SizeDouble-Sketch}" FontFamily="{DynamicResource FontFamily-Sketch}" Height="126.4" Canvas.Left="48.6" Stroke="Black" Canvas.Top="333.6" Width="200" d:IsHidden="True" Visibility="Hidden"/>
+            <ed:Callout x:Name="MapHelpBox" AnchorPoint="0.101,1.23" CalloutStyle="Rectangle" Content="Helpful text here." Foreground="White" Fill="#E54F4F4F" FontSize="{DynamicResource SizeDouble-Sketch}" FontFamily="{DynamicResource FontFamily-Sketch}" Height="126.4" Canvas.Left="48.6" Stroke="Black" Canvas.Top="333.6" Width="200" Visibility="Hidden"/>
             <Button x:Name="PrintButton" ToolTip="Print" Content="Button" Height="43.333" Canvas.Left="1038" Style="{DynamicResource PrintButtonStyle}" Width="52"/>
             <Canvas x:Name="PrintNotification" Height="217.6" Canvas.Left="411.2" Canvas.Top="99" Width="315.2" RenderTransformOrigin="0.5,0.5">
                 <Canvas.RenderTransform>
@@ -2480,16 +2480,14 @@
 
                     </Border>
 
-                    <Grid Margin="0" Height="134.2" HorizontalAlignment="Center">
-                        <Image x:Name="image2" Source="Attractions1.png" Margin="0" Height="110"/>
-
-                    </Grid>
+                    <Grid Margin="0" Height="134.2" HorizontalAlignment="Center"/>
 
                 </StackPanel>
                 <Grid Height="28.2" HorizontalAlignment="Center" Canvas.Left="119.6" Canvas.Top="179.4" Width="82.4">
                     <Button x:Name="CancelButton" Content="Cancel" Style="{DynamicResource TransparentCancelStyle}"/>
 
                 </Grid>
+                <MediaElement x:Name="printGif" MediaEnded="printGif_MediaEnded" UnloadedBehavior="Manual" Height="117.8" Canvas.Left="84.302" Canvas.Top="56.6" Width="146.298" Source="printGif.gif"/>
 
             </Canvas>
 
@@ -2515,7 +2513,7 @@
             <MapView:LoadProgress x:Name="loadProgress" Margin="368,359,591,178.4" Visibility="Hidden"/>
 
         </Canvas>
-        <Canvas x:Name="ProfilePageCanvas" Height="563.6" Canvas.Left="10" Canvas.Top="123.8" Width="1100" Visibility="Hidden">
+        <Canvas x:Name="ProfilePageCanvas" Height="563.6" Canvas.Left="10" Canvas.Top="123.8" Width="1100" Visibility="Hidden" d:IsHidden="True">
             <ScrollViewer x:Name="profileScroller" CanContentScroll="True" VerticalScrollBarVisibility="Visible" Height="563.6" Width="1100">
                 <StackPanel x:Name="profileStack" Height="563.6" Width="1074.732"/>
             </ScrollViewer>

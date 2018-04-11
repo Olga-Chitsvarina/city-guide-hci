@@ -415,5 +415,10 @@
   <ItemGroup>
     <Resource Include="restaurantsBlack2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="printGif.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

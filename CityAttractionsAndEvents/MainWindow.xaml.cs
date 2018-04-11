@@ -680,6 +680,15 @@ namespace CityAttractionsAndEvents
             NotificationsButtonWithRedEllipse.Visibility = Visibility.Visible;
         }
 
+        //========================================================================
+        // RELATED TO PRINTING
+
+        //Based on: https://stackoverflow.com/questions/19694640/animating-gif-in-wpf
+        private void printGif_MediaEnded (object sender, RoutedEventArgs e)
+        {
+            printGif.Position = new TimeSpan(0, 0, 1);
+            printGif.Play();
+        }
 
         //======================================================================
         // RELATED TO ALL PAGES
