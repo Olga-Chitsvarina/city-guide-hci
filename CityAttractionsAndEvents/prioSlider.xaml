@@ -6,15 +6,9 @@
              xmlns:local="clr-namespace:MapView"
              mc:Ignorable="d" 
              d:DesignHeight="342.633" d:DesignWidth="207">
-    <Grid>
+    <Canvas x:Name="Container">
         <Rectangle x:Name="backdropRect" Fill="White" HorizontalAlignment="Left" Height="342.633" Margin="0,0,-207,-342.633" Stroke="White" VerticalAlignment="Top" Width="207"/>
-        <Rectangle x:Name="priceSliderRect" Fill="Black" HorizontalAlignment="Left" Height="4" Margin="23,38,0,0" Stroke="White" VerticalAlignment="Top" Width="165"/>
         <Rectangle x:Name="sliderRect_Copy" Fill="Black" HorizontalAlignment="Left" Height="4" Margin="23,119.667,0,0" Stroke="White" VerticalAlignment="Top" Width="165"/>
-        <TextBlock x:Name="priceMinText" HorizontalAlignment="Left" Height="16" Margin="10,51,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="51"/>
-        <TextBlock x:Name="priceMaxText" HorizontalAlignment="Left" Height="16" Margin="146,50,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="51"/>
-        <Rectangle x:Name="rangeRect" Fill="White" HorizontalAlignment="Left" Height="4" Margin="73,38,0,0" Stroke="Black" VerticalAlignment="Top" Width="50"/>
-        <Ellipse x:Name="priceMinEllipse" Fill="White" HorizontalAlignment="Left" Height="13" Margin="61,33,0,0" Stroke="Black" VerticalAlignment="Top" Width="12" Cursor="Hand"/>
-        <Ellipse x:Name="priceMaxEllipse" Fill="White" HorizontalAlignment="Left" Height="13" Margin="123,33,0,0" Stroke="Black" VerticalAlignment="Top" Width="12" Cursor="Hand"/>
         <TextBlock HorizontalAlignment="Left" TextAlignment ="Center" Height="18" Margin="73,10,0,0" TextWrapping="Wrap" Text="Price" VerticalAlignment="Top" Width="62"/>
         <Rectangle Fill="Black" HorizontalAlignment="Left" Height="2" Margin="0,18,0,0" Stroke="Black" VerticalAlignment="Top" Width="62"/>
         <Rectangle Fill="Black" HorizontalAlignment="Left" Height="2" Margin="145,18,0,0" Stroke="Black" VerticalAlignment="Top" Width="62"/>
@@ -33,6 +27,16 @@
         <Ellipse x:Name="priceEllipse" Fill="White" HorizontalAlignment="Left" Height="13" Margin="50,115.667,0,0" Stroke="Black" VerticalAlignment="Top" Width="12" Cursor="Hand"/>
         <Ellipse x:Name="obscEllipse" Fill="White" HorizontalAlignment="Left" Height="13" Margin="79,115.667,0,0" Stroke="Black" VerticalAlignment="Top" Width="12" Cursor="Hand"/>
         <Ellipse x:Name="starEllipse" Fill="White" HorizontalAlignment="Left" Height="13" Margin="133,114.667,0,0" Stroke="Black" VerticalAlignment="Top" Width="12" Cursor="Hand"/>
+        <Canvas x:Name="priceContainer" Height="37" Canvas.Left="10" Canvas.Top="28" Width="180.667">
+            <Rectangle x:Name="priceSliderRect" Fill="Black" HorizontalAlignment="Left" Height="4" Stroke="White" VerticalAlignment="Top" Width="160.667" Canvas.Top="7.333" Canvas.Left="10"/>
+            <TextBlock x:Name="priceMinText" TextAlignment="Center" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="51" Canvas.Top="20.333" Canvas.Left="-5"/>
+            <TextBlock x:Name="priceMaxText" TextAlignment="Center" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="51" Canvas.Left="128.667" Canvas.Top="19.333"/>
+            <Rectangle x:Name="rangeRect" Fill="#FF198799" HorizontalAlignment="Left" Height="4" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="63" Canvas.Top="7.333"/>
+            <Ellipse x:Name="priceMinEllipse" Fill="White" HorizontalAlignment="Left" Height="13" Stroke="Black" VerticalAlignment="Top" Width="12" Cursor="Hand" Canvas.Left="51" Canvas.Top="2.333"/>
+            <Ellipse x:Name="priceMaxEllipse" Fill="White" HorizontalAlignment="Left" Height="13" Stroke="Black" VerticalAlignment="Top" Width="12" Cursor="Hand" Canvas.Left="113" Canvas.Top="2.333"/>
+            <TextBox x:Name="lowerBoundTextBox" TextAlignment="Center" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="52" Canvas.Top="20.333" Canvas.Left="-5"/>
+            <TextBox x:Name="upperBoundTextBox" TextAlignment="Center" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="52" Canvas.Left="128.667" Canvas.Top="19.333"/>
+        </Canvas>
 
-    </Grid>
+    </Canvas>
 </UserControl>
