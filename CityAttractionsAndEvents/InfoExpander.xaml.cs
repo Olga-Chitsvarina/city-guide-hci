@@ -47,12 +47,14 @@ namespace CityAttractionsAndEvents
             {
                 backdropRect.Height = 56;
                 this.Height = 56;
+                //this.ExpanderCanvasInternal.Height = 56;
                 expandInfoButton.Content = "+";
                 expandedCanvas.Visibility = Visibility.Hidden;
                 expanded = false;
             } else
             {
                 backdropRect.Height = 56 + (70*expandedCanvas.Children.Count);
+                //this.ExpanderCanvasInternal.Height = 56 + (50 * expandedCanvas.Children.Count);
                 this.Height = 56 + (50 * expandedCanvas.Children.Count);
                 expandedCanvas.Visibility = Visibility.Visible;
                 expandInfoButton.Content = "-";
