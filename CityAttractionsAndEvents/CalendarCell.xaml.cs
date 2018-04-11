@@ -24,7 +24,7 @@ namespace CityAttractionsAndEvents
         public CalendarCell(string day)
         {
             InitializeComponent();
-            DayTextBlock.Text = day;
+            //DayTextBlock.Text = day;
         }
     }
 }

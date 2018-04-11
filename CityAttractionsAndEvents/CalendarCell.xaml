@@ -5,9 +5,56 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CityAttractionsAndEvents"
              mc:Ignorable="d" Height="116.617" Width="120.177">
-    <Canvas Margin="0,0,18.308,16.528" OpacityMask="#FFC59E9E" Background="#FFDEDEED">
-        <Rectangle Fill="#FF636365" Stroke="Black" Margin="6.4,8.4,0,10"/>
-        <TextBlock x:Name="DayTextBlock" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="8.4" Width="65.461" Height="21.153"><Run Text="jhjhhjj"/><LineBreak/><Run/></TextBlock>
-        <Image Height="60.536" Canvas.Left="10.939" Canvas.Top="29.553" Width="80.93"/>
-    </Canvas>
+    <UserControl.Resources>
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Button Content="Button" Style="{DynamicResource ButtonStyle2}"/>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ButtonStyle2" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Canvas x:Name="canvas" Background="#FFDEDEED" OpacityMask="#FFC59E9E">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="canvas">
+                                                <EasingColorKeyFrame KeyTime="0" Value="#FF68686F"/>
+                                            </ColorAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed"/>
+                                    <VisualState x:Name="Disabled"/>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Image Height="62.8" Canvas.Left="4" Canvas.Top="21.7" Width="95.15"/>
+                            <TextBlock Height="18" Canvas.Left="4" TextWrapping="Wrap" Text="TextBlock" Canvas.Top="3.7" Width="53.75"/>
+                        </Canvas>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Button Content="" Margin="0,0,18.308,16.528" Style="{DynamicResource ButtonStyle1}"/>
 </UserControl>
