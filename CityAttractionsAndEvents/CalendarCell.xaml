@@ -147,6 +147,6 @@
     <Canvas HorizontalAlignment="Left" Height="76.951" VerticalAlignment="Top" Width="81.377" Background="#FFB9B7B7" Margin="0,0,-11.2,-12">
         <Image x:Name="PlacePicture" Height="46.351" Canvas.Left="5.55" Canvas.Top="26.6" Width="69.294"/>
         <TextBlock x:Name="TextDay" Height="17.2" Canvas.Left="5.55" TextWrapping="Wrap" Text="TextBlock" Canvas.Top="4.4" Width="54.094"/>
-        <Button Content="Button" Height="76.951" Style="{DynamicResource CalendarButton}" Width="81.377"/>
+        <Button x:Name="CalendarButton" Content="Button" Height="76.951" Style="{DynamicResource CalendarButton}" Width="81.377"/>
     </Canvas>
 </UserControl>

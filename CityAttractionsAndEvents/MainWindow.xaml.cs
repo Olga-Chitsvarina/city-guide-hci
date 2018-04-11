@@ -631,21 +631,35 @@ namespace CityAttractionsAndEvents
             PageIsNotVisible(CalendarPage);
             EventInformationTextBlock.Visibility = Visibility.Hidden;
 
+            // Fill calendar day cells dynamically:
             string [] daysOfApril = {"1", "2", "3", "4" , "5", "6", "7",
                                      "8", "9", "10", "11", "12", "13", "14",
                                      "15", "16", "17", "18", "19", "20", "21",
                                      "22", "23", "24", "25", "26", "27", "28",
                                      "29", "30", "1", "2", "3", "4", "5"};
-
-            CalendarCell[,] arrayOfCalendarCells = new CalendarCell [5,7];
-
+            CalendarCell[] arrayOfCalendarCells = new CalendarCell [35];
             int i = 0;
             while(i< daysOfApril.Length)
             {
                 CalendarUniformGrid.Children.Add(new CalendarCell(daysOfApril[i]));
                 i++;
             }
-               
+
+            // Fill days of the week dynamically:
+            string[] daysOfWeek = { "SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT" };
+            string [] arrayOfDaysOfWeek = new string[7];
+            int j = 0;
+            while (j < arrayOfDaysOfWeek.Length)
+            {
+                TextBlock textBlock = new TextBlock();
+                CalendarDaysOfWeek.Children.Add(textBlock);
+                textBlock.Text = daysOfWeek[j];
+                j++;
+            }
+
+
+
+
             //DayButton.Click += DayButton_Click;
         }
 
