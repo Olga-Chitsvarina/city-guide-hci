@@ -2479,6 +2479,56 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="CancelButtonRed" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid Cursor="Hand">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill)" Storyboard.TargetName="rectangle">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <SolidColorBrush Color="#FF238CB4"/>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill)" Storyboard.TargetName="rectangle">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                            <GradientStop Color="Black" Offset="0"/>
+                                                            <GradientStop Color="#FF238CB4" Offset="1"/>
+                                                        </LinearGradientBrush>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled"/>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Rectangle x:Name="rectangle" Fill="#FFBF2020" Stroke="#FF200C0C"/>
+                            <TextBlock HorizontalAlignment="Center" TextAlignment="Center" Height="30.8" Margin="0,4.4,0,0" TextWrapping="Wrap" Text="Cancel" VerticalAlignment="Top" Width="Auto" FontSize="18" FontWeight="Bold" Foreground="#FFFDFEFE" d:LayoutOverrides="LeftMargin, RightMargin"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
     <Window.Triggers>
         <EventTrigger RoutedEvent="RangeBase.ValueChanged" SourceName="TimeSlider">
@@ -2509,7 +2559,7 @@
 
         </Canvas>
 
-        <Canvas x:Name="HomePage" Height="698.8" Width="1121.6">
+        <Canvas x:Name="HomePage" Height="698.8" Width="1121.6" d:IsHidden="True">
             <Button x:Name="AttractionsButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyle1}" Canvas.Top="123.8" Width="255"/>
             <Button x:Name="EventsButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyleEvents}" Canvas.Top="232.6" Width="255"/>
             <Button x:Name="RestaurantsButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyleRestaurants}" Canvas.Top="341.4" Width="255                     "/>
@@ -2703,7 +2753,7 @@
 
         </Canvas>
 
-        <Canvas x:Name="CompassCanvas" Height="570" Width="1100" Canvas.Left="10" Canvas.Top="129">
+        <Canvas x:Name="CompassCanvas" Height="570" Width="1100" Canvas.Left="10" Canvas.Top="129" Visibility="Hidden" d:IsHidden="True">
             <Canvas x:Name="JustMapCanvas" Height="563.2" Canvas.Top="-3.2" Width="1100">
 
                 <Rectangle x:Name="Map" Height="563.2" Stroke="Black" Width="1100">
@@ -2836,7 +2886,7 @@
             </Grid>
 
         </Canvas>
-        <Canvas x:Name="CreateAccountCanvas" Height="546.133" Canvas.Left="11.6" Canvas.Top="141.267" Width="1098.4" d:IsHidden="True">
+        <Canvas x:Name="CreateAccountCanvas" Height="546.133" Canvas.Left="11.6" Canvas.Top="141.267" Width="1098.4">
             <StackPanel Height="546.133" Width="1098.4">
                 <TextBlock x:Name="textBlock" Height="40" Margin="310.2,75,310.2,0" TextAlignment="Center" TextWrapping="Wrap" FontSize="22"><Run FontWeight="Bold" Text="Create Account"/></TextBlock>
                 <Grid x:Name="CreateUsernameGrid" Height="32" Width="478" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20">
@@ -2860,7 +2910,8 @@
                     <TextBlock x:Name="PasswordMismatchWarning" TextWrapping="Wrap" FontSize="18" Foreground="#FFCA1B1B" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,0,-249.6,-18" Width="228.4" Visibility="Hidden"><Run Text="Password entered does not match the one above"/><Run Text="."/></TextBlock>
                 </Grid>
                 <Grid x:Name="ButtonGridCA" Height="35.2" Width="321.6" HorizontalAlignment="Center" Margin="0,40,0,20" VerticalAlignment="Center">
-                    <Button x:Name="CreateAccountButton" Content="Button" Style="{DynamicResource CreateAccountButtonStyle}"/>
+                    <Button x:Name="CreateAccountButton" Content="Button" Style="{DynamicResource CreateAccountButtonStyle}" Margin="120,0,-34.8,0" Height="35.2" VerticalAlignment="Bottom"/>
+                    <Button x:Name="CancelButtonRegister" Content="Button" Style="{DynamicResource CancelButtonRed}" HorizontalAlignment="Left" Margin="-12.4,0,0,0" Width="104" Background="#FFDAAAAA"/>
                 </Grid>
             </StackPanel>
 
