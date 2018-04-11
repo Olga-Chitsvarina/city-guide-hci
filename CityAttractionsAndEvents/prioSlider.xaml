@@ -8,25 +8,12 @@
              d:DesignHeight="342.633" d:DesignWidth="207">
     <Canvas x:Name="Container">
         <Rectangle x:Name="backdropRect" Fill="White" HorizontalAlignment="Left" Height="342.633" Margin="0,0,-207,-342.633" Stroke="White" VerticalAlignment="Top" Width="207"/>
-        <Rectangle x:Name="sliderRect_Copy" Fill="Black" HorizontalAlignment="Left" Height="4" Margin="23,119.667,0,0" Stroke="White" VerticalAlignment="Top" Width="165"/>
         <TextBlock HorizontalAlignment="Left" TextAlignment ="Center" Height="18" Margin="73,10,0,0" TextWrapping="Wrap" Text="Price" VerticalAlignment="Top" Width="62"/>
         <Rectangle Fill="Black" HorizontalAlignment="Left" Height="2" Margin="0,18,0,0" Stroke="Black" VerticalAlignment="Top" Width="62"/>
         <Rectangle Fill="Black" HorizontalAlignment="Left" Height="2" Margin="145,18,0,0" Stroke="Black" VerticalAlignment="Top" Width="62"/>
         <Rectangle Fill="Black" HorizontalAlignment="Left" Height="2" Margin="-1,94,0,0" Stroke="Black" VerticalAlignment="Top" Width="62"/>
         <Rectangle Fill="Black" HorizontalAlignment="Left" Height="2" Margin="146,94,-1,0" Stroke="Black" VerticalAlignment="Top" Width="62"/>
         <TextBlock HorizontalAlignment="Left" TextAlignment ="Center" Height="32.667" Margin="63,77,0,0" TextWrapping="Wrap" Text="Importance Factors" VerticalAlignment="Top" Width="78"/>
-        <Rectangle x:Name="priceBorderRect" Fill="White" HorizontalAlignment="Left" Height="31" Margin="31,154,0,0" Stroke="Black" VerticalAlignment="Top" Width="48" Cursor="Hand"/>
-        <Rectangle x:Name="priceLinkRect" Fill="White" HorizontalAlignment="Left" Height="31.333" Margin="56,122.667,0,0" Stroke="Black" VerticalAlignment="Top" Width="1"/>
-        <TextBlock x:Name="priceBoxText" HorizontalAlignment="Left" TextAlignment ="Center" Height="26" Margin="31,159,0,0" TextWrapping="Wrap" Text="Price" VerticalAlignment="Top" Width="48"/>
-        <Rectangle x:Name="starBorderRect" Fill="White" HorizontalAlignment="Left" Height="31" Margin="103,208,0,0" Stroke="Black" VerticalAlignment="Top" Width="69" Cursor="Hand"/>
-        <Rectangle x:Name="starLinkRect" Fill="White" HorizontalAlignment="Left" Height="85.333" Margin="138,123.667,0,0" Stroke="Black" VerticalAlignment="Top" Width="1"/>
-        <TextBlock x:Name="starBoxText" HorizontalAlignment="Left" TextAlignment ="Center" Height="25" Margin="103,214,0,0" TextWrapping="Wrap" Text="Star Rating" VerticalAlignment="Top" Width="69"/>
-        <Rectangle x:Name="obscLinkRect" Fill="White" HorizontalAlignment="Left" Height="128.333" Margin="84,123.667,0,0" Stroke="Black" VerticalAlignment="Top" Width="1"/>
-        <Rectangle x:Name="obscBorderRect" Fill="White" HorizontalAlignment="Left" Height="31" Margin="37,251,0,0" Stroke="Black" VerticalAlignment="Top" Width="95" Cursor="Hand"/>
-        <TextBlock x:Name="obscBoxText" HorizontalAlignment="Left" TextAlignment ="Center" Height="25" Margin="37,257,0,0" TextWrapping="Wrap" Text="Obscurity Rating" VerticalAlignment="Top" Width="95"/>
-        <Ellipse x:Name="priceEllipse" Fill="White" HorizontalAlignment="Left" Height="13" Margin="50,115.667,0,0" Stroke="Black" VerticalAlignment="Top" Width="12" Cursor="Hand"/>
-        <Ellipse x:Name="obscEllipse" Fill="White" HorizontalAlignment="Left" Height="13" Margin="79,115.667,0,0" Stroke="Black" VerticalAlignment="Top" Width="12" Cursor="Hand"/>
-        <Ellipse x:Name="starEllipse" Fill="White" HorizontalAlignment="Left" Height="13" Margin="133,114.667,0,0" Stroke="Black" VerticalAlignment="Top" Width="12" Cursor="Hand"/>
         <Canvas x:Name="priceContainer" Height="37" Canvas.Left="10" Canvas.Top="28" Width="180.667">
             <Rectangle x:Name="priceSliderRect" Fill="Black" HorizontalAlignment="Left" Height="4" Stroke="White" VerticalAlignment="Top" Width="160.667" Canvas.Top="7.333" Canvas.Left="10"/>
             <TextBlock x:Name="priceMinText" TextAlignment="Center" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="51" Canvas.Top="20.333" Canvas.Left="-5"/>
@@ -36,6 +23,9 @@
             <Ellipse x:Name="priceMaxEllipse" Fill="White" HorizontalAlignment="Left" Height="13" Stroke="Black" VerticalAlignment="Top" Width="12" Cursor="Hand" Canvas.Left="113" Canvas.Top="2.333"/>
             <TextBox x:Name="lowerBoundTextBox" TextAlignment="Center" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="52" Canvas.Top="20.333" Canvas.Left="-5"/>
             <TextBox x:Name="upperBoundTextBox" TextAlignment="Center" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="52" Canvas.Left="128.667" Canvas.Top="19.333"/>
+        </Canvas>
+        <Canvas x:Name="impCanvas" Height="187.833" Canvas.Left="23" Canvas.Top="109.667" Width="165">
+            <Rectangle x:Name="sliderRect_Copy" Fill="Black" HorizontalAlignment="Left" Height="4" Stroke="White" VerticalAlignment="Top" Width="165" Canvas.Top="10"/>
         </Canvas>
 
     </Canvas>

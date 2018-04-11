@@ -110,6 +110,23 @@ namespace CityAttractionsAndEvents
             this.upperBoundTextBox.KeyUp += OnTextBoxEnterReleased;
 
             UpdateMaxMinFromValues();
+
+            priceBorderRectControl priceRectControl = new priceBorderRectControl(35, "Price");
+            Canvas.SetTop(priceRectControl, 6);
+            Canvas.SetLeft(priceRectControl, 30);
+            Canvas.SetZIndex(priceRectControl, 2);
+            this.impCanvas.Children.Add(priceRectControl);
+            priceBorderRectControl obscRectControl = new priceBorderRectControl(70, "Obscurity Rating");
+            Canvas.SetTop(obscRectControl, 6);
+            Canvas.SetLeft(obscRectControl, 25);
+            Canvas.SetZIndex(obscRectControl, 1);
+            this.impCanvas.Children.Add(obscRectControl);
+            priceBorderRectControl starRectControl = new priceBorderRectControl(105, "Star Rating");
+            Canvas.SetTop(starRectControl, 6);
+            Canvas.SetLeft(starRectControl, 40);
+            Canvas.SetZIndex(starRectControl, 0);
+            this.impCanvas.Children.Add(starRectControl);
+
         }
 
         private void UpdateMaxMinFromValues()

@@ -77,6 +77,9 @@
     <Compile Include="panelButton.xaml.cs">
       <DependentUpon>panelButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="priceBorderRectControl.xaml.cs">
+      <DependentUpon>priceBorderRectControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewAllButton.xaml.cs">
       <DependentUpon>ViewAllButton.xaml</DependentUpon>
     </Compile>
@@ -170,6 +173,10 @@
     <Page Include="PlacePopout.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="priceBorderRectControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="prioSlider.xaml">
       <Generator>MSBuild:Compile</Generator>
