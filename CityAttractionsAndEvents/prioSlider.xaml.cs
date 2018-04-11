@@ -87,6 +87,13 @@ namespace CityAttractionsAndEvents
 
         }
 
+        public void resetPriceSlider()
+        {
+            this.currentMin = 0;
+            this.currentMax = 300.00;
+            UpdateMaxMinFromValues();
+        }
+
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
             Window.GetWindow(this).MouseMove += OnWindowMouseMove;

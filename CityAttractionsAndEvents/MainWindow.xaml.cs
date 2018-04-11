@@ -118,6 +118,27 @@ namespace CityAttractionsAndEvents
             this.sportCheck.Unchecked += Check_Unchecked;
             this.shopCheck.Checked += Check_Checked;
             this.shopCheck.Unchecked += Check_Unchecked;
+            this.resetSearchButt.Click += ResetSearch;
+            this.clearBlackButt.Click += ClearBlacklist;
+        }
+
+        private void ClearBlacklist(object sender, RoutedEventArgs e)
+        {
+            blacklist.Clear();
+            startSearch();
+            
+        }
+
+        private void ResetSearch(object sender, RoutedEventArgs e)
+        {
+            this.searchBar.Text = "Search...";
+            this.searchClicked = false;
+            this.attCheck.IsChecked = true;
+            this.eveCheck.IsChecked = true;
+            this.restCheck.IsChecked = true;
+            this.sportCheck.IsChecked = true;
+            this.shopCheck.IsChecked = true;
+            this.prioSlider.resetPriceSlider();
         }
 
         private void setCompassCanvas()

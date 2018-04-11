@@ -2565,7 +2565,7 @@
 
         </Canvas>
 
-        <Canvas x:Name="HomePage" Height="698.8" Width="1121.6">
+        <Canvas x:Name="HomePage" Height="698.8" Width="1121.6" d:IsHidden="True">
             <Button x:Name="AttractionsButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyle1}" Canvas.Top="123.8" Width="255"/>
             <Button x:Name="EventsButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyleEvents}" Canvas.Top="232.6" Width="255"/>
             <Button x:Name="RestaurantsButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyleRestaurants}" Canvas.Top="341.4" Width="255                     "/>
@@ -2753,8 +2753,8 @@
             </Canvas>
 
         </Canvas>
-        <Canvas x:Name="SearchSortCanvas" Height="697" Width="1120" Visibility="Hidden" d:IsHidden="True">
-            <local:prioSlider Height="341" Canvas.Left="914" Canvas.Top="161" Width="207"/>
+        <Canvas x:Name="SearchSortCanvas" Height="697" Width="1120">
+            <local:prioSlider x:Name="prioSlider" Height="341" Canvas.Left="914" Canvas.Top="161" Width="207"/>
             <ScrollViewer x:Name="glanceScroller" CanContentScroll="True" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Left" Height="531" VerticalAlignment="Top" Width="921" Canvas.Top="167" Canvas.Left="-8">
                 <DockPanel x:Name="DockForSmoothScroll1">
                     <StackPanel x:Name="glanceStack" Width="911"/>
@@ -2762,7 +2762,7 @@
             </ScrollViewer>
             <Rectangle x:Name="horizBar" Fill="Black" HorizontalAlignment="Left" Height="49" Margin="911,119,0,0" Stroke="Black" VerticalAlignment="Top" Width="2"/>
             <Rectangle x:Name="vertBar" Fill="Black" HorizontalAlignment="Left" Height="2" Margin="0,166,0,0" Stroke="Black" VerticalAlignment="Top" Width="1120"/>
-            <TextBox x:Name="searchBar" TextAlignment="Right"  HorizontalAlignment="Left" Height="23" Margin="10,129,0,0" TextWrapping="Wrap" Text="Search..." VerticalAlignment="Top" Width="779" FontSize="16"/>
+            <TextBox x:Name="searchBar" TextAlignment="Right"  HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Search..." VerticalAlignment="Top" Width="527" FontSize="16" Canvas.Left="254" Canvas.Top="129"/>
             <Button x:Name="searchButton" Content="Search" HorizontalAlignment="Left" Height="23" Margin="794,129,0,0" VerticalAlignment="Top" Width="112"/>
             <TextBlock HorizontalAlignment="Left" TextAlignment ="Center" Height="42" Margin="920,125.367,0,0" TextWrapping="Wrap" Text="ADVANCED" VerticalAlignment="Top" Width="192" FontWeight="Bold" FontSize="24"/>
             <CheckBox x:Name="attCheck" Content="Attractions" HorizontalAlignment="Left" Height="18" Margin="932,537,0,0" VerticalAlignment="Top" Width="167" IsChecked="True"/>
@@ -2774,6 +2774,8 @@
             <Rectangle Fill="Black" HorizontalAlignment="Left" Height="2" Margin="1058,510,0,0" Stroke="Black" VerticalAlignment="Top" Width="62"/>
             <TextBlock HorizontalAlignment="Left" TextAlignment ="Center" Height="18" Margin="963,501,0,0" TextWrapping="Wrap" Text="Categories" VerticalAlignment="Top" Width="107"/>
             <MapView:LoadProgress x:Name="loadProgress" Margin="368,359,591,178.4" Visibility="Hidden"/>
+            <Button x:Name="clearBlackButt" Content="Clear Blacklist" HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="96" Canvas.Left="134" Canvas.Top="129" RenderTransformOrigin="0.433,0.609"/>
+            <Button x:Name="resetSearchButt" Content="Reset Search" HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="90" Canvas.Left="23" Canvas.Top="129"/>
 
         </Canvas>
         <Canvas x:Name="ProfilePageCanvas" Height="563.6" Canvas.Left="10" Canvas.Top="123.8" Width="1100" Visibility="Hidden" d:IsHidden="True">
