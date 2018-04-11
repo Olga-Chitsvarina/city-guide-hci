@@ -24,19 +24,33 @@ namespace CityAttractionsAndEvents
         {
             InitializeComponent();
         }
+        string imagepath;
         public GlanceView(string name, string details, double starRating, double obscurityRating, double price, string imagePath)
         {
             InitializeComponent();
+            this.imagepath = imagePath;
             this.nameText.Text = name;
             this.detailsText.Text = details;
             this.obscValueText.Text = obscurityRating.ToString() + "/100";
             this.priceValueText.Text = "$" + price.ToString();
+            this.wishlistImage.MouseDown += WishlistImage_MouseDown;
+            this.blacklistImage.MouseDown += BlacklistImage_MouseDown;
             if (imagePath != "")
             { 
                 List<String> imageFileNames = HelperMethods481.AssemblyManager.GetAllEmbeddedResourceFilesEndingWith(".png", ".jpg");
                 Image image = HelperMethods481.AssemblyManager.GetImageFromEmbeddedResources(imagePath);
                 this.placeImage.Source = image.Source;
             }
+        }
+
+        private void BlacklistImage_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            ((MainWindow)((Canvas)((Canvas)((ScrollViewer)((DockPanel)((StackPanel)this.Parent).Parent).Parent).Parent).Parent).Parent).addToBlacklist(this.nameText.Text);
+        }
+
+        private void WishlistImage_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            ((MainWindow)((Canvas)((Canvas)((ScrollViewer)((DockPanel)((StackPanel)this.Parent).Parent).Parent).Parent).Parent).Parent).wishStack.Children.Add(new WishEntry(this.nameText.Text, this.imagepath));
         }
 
         private void ExpandButton_Click(object sender, RoutedEventArgs e)

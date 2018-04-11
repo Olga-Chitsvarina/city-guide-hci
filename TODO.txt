@@ -1,25 +1,18 @@
 
 == To Do ==
-Implement Wishlist
-Implement drag and drop from wishlist
-Implement blacklist
+
 Implement personal profile
-On Map page create background for combobox
-Map "border" on top, the black line intersection, was troublesome.
-Change colour to represent location
-Make combobox for place type a checkbox
+
 If events on same place, implement arrows to view next
 Implement "view all reflections"
 Use Olga's fix on Place Profile Page
 Implement sliders for search
-Change plus button from expand to info
 Implement visited for completion bar
 Implement completion bar
-Implement register page
 "Create reflections" view
 User search
 Fake social media sharing
-Help button
+	"The app will allow users to share their Completion Bar, an Attraction/Event Page, their profile or a reflection to Twitter/Facebook/Instagram."
 (ICONS)
 Persona profiles
 Place a print button, so that a user can print a map (edited)
@@ -27,7 +20,6 @@ Place a print button, so that a user can print a map (edited)
 
 
 == David's Critiques Not Covered Above == 
-I feel there's a lot of competing content, right panel on the home looks just as important as the top panel. Maybe make those white so they blend with the interface more.
 
 Calendar - is red selected? Maybe have a speech bubble point to the selected date.
 Red makes it look like the one that is currently selected. Maybe there's a better way to show that?
@@ -45,13 +37,13 @@ Blacklist?
 
 Friends - does it mean you can search for people and add them? I feel like that has a lot of functionality that would need to be unpacked.
 
-Highlight current page on the top panel
+
 
 
 == Partially Resolved / WIP ==
-(None yet)
-Get rid of arrows on sliders
-Shift up day information (Calendar)
+
+Help button
+"I feel there's a lot of competing content, right panel on the home looks just as important as the top panel. Maybe make those white so they blend with the interface more."
 
 
 == Resolved ==
@@ -64,3 +56,18 @@ make background color of buttons less extreme, did David say that? I just rememb
 ~Text over hover icons for GlanceView~
 ~Change colour of progress bar GlanceView~
 ~Highlight current view~
+Implement Wishlist
+Implement drag and drop from wishlist
+Implement blacklist
+On Map page create background for combobox
+Map "border" on top, the black line intersection, was troublesome.
+Change colour to represent location
+Make combobox for place type a checkbox
+Implement register page
+Change plus button from expand to info
+Highlight current view
+Get rid of arrows on sliders
+Shift up day information (Calendar)
+
+== Resolved (David) ==
+Highlight current page on the top panel

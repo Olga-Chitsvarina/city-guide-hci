@@ -9,9 +9,11 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace CityAttractionsAndEvents
 {
@@ -23,13 +25,31 @@ namespace CityAttractionsAndEvents
     {   private Canvas previousWindow;
         private Canvas currentWindow;
         private bool userAuthorized = false;
+        private bool userRegistering = false;
         private bool notificationsOn = false;
+        private int curUserID;
         static List<Ellipse> currentPlacesShown = new List<Ellipse>();
         static PlacePopout currentPopout = new PlacePopout();
+        private List<string> usernames;
+        private List<string> passwords;
+        private List<string> emails;
+        static List<WishEntry> wishlist = new List<WishEntry>();
+        static List<string> blacklist = new List<string>();
+
+        private DispatcherTimer dispatchTimer;
+
+        static GlanceView curGlanceView;
+        static ProfileExpanded curProfileExpanded;
+        static InfoExpander curWTG;
+        static InfoExpander curNTK;
+
         Boolean searchClicked = false;
+        private bool isPrinting;
+
         public MainWindow()
         {  
             InitializeComponent();
+            InitializeUserLists();
 
             SetHomePage();
             SetLoginPage();
@@ -41,6 +61,23 @@ namespace CityAttractionsAndEvents
             SetNotificationsPage();
             setCompassCanvas();
             setSearchSortPage();
+
+        }
+
+        private void InitializeUserLists()
+        {
+            this.usernames = new List<string>();
+            this.passwords = new List<string>();
+            this.emails = new List<string>();
+
+            this.usernames.Add("Travor Trapp");
+            this.usernames.Add("Loren Lane");
+
+            this.passwords.Add("123");
+            this.passwords.Add("123");
+
+            this.emails.Add("travor@email.com");
+            this.emails.Add("loren@email.com");
         }
 
         //=============================================================================================
@@ -87,15 +124,93 @@ namespace CityAttractionsAndEvents
             this.TimeSlider.ValueChanged += onTimeSlider;
             List<Place> places = generatePlaces();
             renderPlaces(places);
-            this.TypeCombo.SelectionChanged += onTypeCombo;
+            this.checkAttraction.Checked += MapChecked;
+            this.checkAttraction.Unchecked += MapChecked;
+            this.checkEvent.Checked += MapChecked;
+            this.checkEvent.Unchecked += MapChecked;
+            this.checkShopping.Checked += MapChecked;
+            this.checkShopping.Unchecked += MapChecked;
+            this.checkSport.Checked += MapChecked;
+            this.checkSport.Unchecked += MapChecked;
+            this.checkRestaurant.Checked += MapChecked;
+            this.checkRestaurant.Unchecked += MapChecked;
             this.SortBy.SelectionChanged += onSortBy;
             this.NightShader.MouseDown += clickScreen;
+
+            this.HelpHover.MouseEnter += DisplayMapHelp;
+            this.HelpHover.MouseLeave += HideMapHelp;
+
+            this.PrintButton.Click += StartPrinting;
+            this.CancelButton.Click += CancelPrinting;
+            dispatchTimer = new System.Windows.Threading.DispatcherTimer();
+
+        }
+
+        private void StartPrinting(object sender, RoutedEventArgs e)
+        {
+            if (!isPrinting)
+            {
+                isPrinting = true;
+                this.PrintLabel.Text = "Printing";
+
+                Storyboard sb = this.FindResource("PrintBegin") as Storyboard;
+                sb.Begin();
+
+                dispatchTimer.Tick += new EventHandler(DonePrinting);
+                dispatchTimer.Interval = new TimeSpan(0, 0, 4);
+                dispatchTimer.Start();
+            }
+        }
+
+        private void DonePrinting(object sender, EventArgs e)
+        {
+            isPrinting = false;
+            this.PrintLabel.Text = "Done!";
+            Storyboard sb = this.FindResource("PrintEnd") as Storyboard;
+            sb.Begin();
+            dispatchTimer.Tick -= new EventHandler(DonePrinting);
+        }
+
+        private void CancelPrinting(object sender, EventArgs e) {
+            this.PrintLabel.Text = "Cancelling";
+            isPrinting = false;
+            dispatchTimer.Tick -= new EventHandler(DonePrinting);
+        }
+
+        private void HideMapHelp(object sender, MouseEventArgs e)
+        {
+            this.MapHelpBox.Visibility = Visibility.Hidden;
+        }
+
+        private void DisplayMapHelp(object sender, MouseEventArgs e)
+        {
+            this.MapHelpBox.Visibility = Visibility.Visible;
+        }
+
+        private void MapChecked(object sender, RoutedEventArgs e)
+        {
+            List<Place> places = generatePlaces();
+            renderPlaces(places);
+        }
+
+        private void CheckMap(object sender, MouseButtonEventArgs e)
+        {
+            List<Place> places = generatePlaces();
+            renderPlaces(places);
         }
 
         private void HomeButton_Click(object sender, RoutedEventArgs e)
         {
             UpdateCurrentAndPreviousPages(HomePage);
 
+        }
+
+        public void addToBlacklist(string name)
+        {
+            blacklist.Add(name);
+            List<Place> places = generatePlaces();
+            renderGlanceViews(places);
+            renderPlaces(places);
         }
 
         private void MyProfileButton_Click(object sender, RoutedEventArgs e)
@@ -137,6 +252,29 @@ namespace CityAttractionsAndEvents
         private void CalendarButton_Click(object sender, RoutedEventArgs e)
         {
             UpdateCurrentAndPreviousPages(CalendarPage);
+            bool alreadyAdded;
+            List<WishEntry> cloneList = new List<WishEntry>();
+            foreach (WishEntry w in wishStack.Children)
+            {
+                alreadyAdded = false;
+                foreach (WishEntry j in cloneList)
+                {
+                    if (w.text.Text == j.text.Text)
+                    {
+                        alreadyAdded = true;
+                    }
+                }
+                if (!alreadyAdded)
+                {
+                    cloneList.Add(w);
+                }
+            }
+            wishStack.Children.Clear();
+            foreach (WishEntry w in cloneList)
+            {
+                wishStack.Children.Add(w);
+            }
+            wishlist = cloneList;
             CalendarButton.IsEnabled = false;
         }
 
@@ -190,6 +328,14 @@ namespace CityAttractionsAndEvents
 
         //==========================================================================================
         // RELATED TO HOME PAGE
+
+        //Based on: https://stackoverflow.com/questions/19694640/animating-gif-in-wpf
+        private void myGif_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            myGif.Position = new TimeSpan(0, 0, 1);
+            myGif.Play();
+        }
+
         public void SetHomePage()
         {
             currentWindow = HomePage;
@@ -271,11 +417,110 @@ namespace CityAttractionsAndEvents
         public void SetLoginPage()
         {
             PageIsNotVisible(LoginPage);
+            PageIsNotVisible(this.CreateAccountCanvas);
             InvalidLoginMessage.Visibility = Visibility.Hidden;
 
             LoginButton.Click += LoginButton_Click;
             FacebookButton.Click += FacebookButton_Click;
             LinkedInButton.Click += LinkedInButton_Click;
+            this.RegisterButton.Click += StartCreatingAccount;
+            this.CreateAccountButton.Click += CreatingAccountAttempt;
+
+            this.PasswordInput.KeyDown += LoginButton_Enter;
+            this.UserNameInput.KeyDown += LoginButton_Enter;
+            
+        }
+
+        private void LoginButton_Enter(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                attemptLogin();
+
+            //if (e.Key == Key.Tab)
+            //    FocusManager.SetFocusedElement(FocusManager.GetFocusScope(PasswordInput), PasswordInput);
+        }
+
+        private void CreatingAccountAttempt(object sender, RoutedEventArgs e)
+        {
+            bool creationValid = true;
+
+            if (this.CreateUsernameField.Text == "")
+            {
+                creationValid = false;
+                this.UsernameWarning.Visibility = Visibility.Visible;
+                this.UsernameWarning.Text = "Username cannot be empty";
+            }
+            else if (this.usernames.IndexOf(this.CreateUsernameField.Text) >= 0)
+            {
+                creationValid = false;
+                this.UsernameWarning.Visibility = Visibility.Visible;
+                this.UsernameWarning.Text = "Username already exists";
+            }
+            else
+            {
+                this.UsernameWarning.Visibility = Visibility.Hidden;
+            }
+
+
+
+
+
+            if (this.CreateEmailField.Text == "")
+            {
+                creationValid = false;
+                this.EmailWarning.Visibility = Visibility.Visible;
+                this.EmailWarning.Text = "Email cannot be empty";
+            }
+            else if (this.emails.IndexOf(this.CreateEmailField.Text) >= 0)
+            {
+                creationValid = false;
+                this.EmailWarning.Visibility = Visibility.Visible;
+                this.EmailWarning.Text = "Email already exists";
+
+            }
+            else
+            {
+                this.EmailWarning.Visibility = Visibility.Hidden;
+            }
+
+
+            if (this.CreatePasswordField1.Password == "")
+            {
+                creationValid = false;
+                this.PasswordEmptyWarning.Visibility = Visibility.Visible;
+            }
+            else {
+                this.PasswordEmptyWarning.Visibility = Visibility.Hidden;
+            }
+
+            if (this.CreatePasswordField1.Password != this.CreatePasswordField2.Password)
+            {
+                creationValid = false;
+                this.PasswordMismatchWarning.Visibility = Visibility.Visible;
+            }
+            else {
+                this.PasswordMismatchWarning.Visibility = Visibility.Hidden;
+            }
+
+            if (creationValid)
+            {
+                this.usernames.Add(this.CreateUsernameField.Text);
+                this.emails.Add(this.CreateEmailField.Text);
+                this.passwords.Add(this.CreatePasswordField1.Password);
+                UpdateCurrentAndPreviousPages(LoginPage);
+            }
+            else {
+                this.CreatePasswordField1.Password = "";
+                this.CreatePasswordField2.Password = "";
+            }
+
+
+
+        }
+
+        private void StartCreatingAccount(object sender, RoutedEventArgs e)
+        {
+            UpdateCurrentAndPreviousPages(this.CreateAccountCanvas);
         }
 
         public void placeProfileExpand(String name)
@@ -297,21 +542,14 @@ namespace CityAttractionsAndEvents
         public bool UserNameIsValid()
         {
             string userName = UserNameInput.Text;
-            if (userName == "BadUserName" || userName.Length < 1 )
-            {
-                return false;
-            }
-            return true;
+            return this.usernames.Contains(userName);
         }
 
         public bool UserPasswordIsValid()
         {
-
-            if (PasswordInput.Password.ToString() == "")
-            {
-                return false;
-            }
-            return true;
+            int index = getUserID();
+            if (index < 0) return false;
+            return PasswordInput.Password == passwords[index];
 
         }
 
@@ -320,22 +558,33 @@ namespace CityAttractionsAndEvents
             return UserNameIsValid() && UserPasswordIsValid();
         }
 
-
-        private void LoginButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (! UserNameAndPasswordAreValid())
+        private void attemptLogin() {
+            if (!UserNameAndPasswordAreValid())
             {
                 InvalidLoginMessage.Visibility = Visibility.Visible;
-                UserNameInput.Text = "";
+                //UserNameInput.Text = "";
                 PasswordInput.Password = "";
 
             }
             else
             {
+                curUserID = getUserID();
                 UpdateCurrentAndPreviousPages(NickProfileCanvas);
                 userAuthorized = true;
                 InvalidLoginMessage.Visibility = Visibility.Hidden;
             }
+        }
+
+        private int getUserID()
+        {
+            string name = UserNameInput.Text;
+            return this.usernames.IndexOf(name);
+        }
+
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            attemptLogin();
+            
                 
         }
         
@@ -381,6 +630,7 @@ namespace CityAttractionsAndEvents
 
             DayButton.Click += DayButton_Click;
         }
+
 
         private void DayButton_Click(object sender, RoutedEventArgs e)
         {
@@ -445,6 +695,15 @@ namespace CityAttractionsAndEvents
             NotificationsButtonWithRedEllipse.Visibility = Visibility.Visible;
         }
 
+        //========================================================================
+        // RELATED TO PRINTING
+
+        //Based on: https://stackoverflow.com/questions/19694640/animating-gif-in-wpf
+        private void printGif_MediaEnded (object sender, RoutedEventArgs e)
+        {
+            printGif.Position = new TimeSpan(0, 0, 1);
+            printGif.Play();
+        }
 
         //======================================================================
         // RELATED TO ALL PAGES
@@ -494,11 +753,22 @@ namespace CityAttractionsAndEvents
             Place vgSymphony = new Place("Video Games Live: Legend of Zelda", 1, 4.1, 56, 44.2, 65.50, 446, 384, "videogameslive.jpg", details);
             Place pizzaHut = new Place("Pizza Hut", 2, 3.1, 10, 15.2, 13.50, 408, 65, "pizzahut.jpg", details);
             Place tubbyDog = new Place("Tubby Dog", 2, 4.3, 102, 23.2, 8.49, 909, 129, "tubbydog.jpg", details);
-            Place fourSpot = new Place("Fourth Spot", 2, 4.5, 53, 62.1, 32.99, 160, 32, "fourthspot.jpg", details);
+            Place fourSpot = new Place("Fourth Spot", 2, 4.5, 53, 62.1, 32.99, 160, 132, "fourthspot.jpg", details);
             Place stronghold = new Place("Stronghold", 3, 4.6, 84, 23.1, 16.99, 246, 196, "stronghold.jpg", details);
             Place farmersMarket = new Place("Farmer's Market", 4, 4.7, 184, 19.1, 31.99, 308, 285, "farmersmarket.jpg", details);
             List<Place> places = new List<Place> { cgyTower, glenbowMuseum, studioBell, sledIsland, vgSymphony, pizzaHut, tubbyDog, fourSpot, stronghold, farmersMarket };
-            return places;
+            List<Place> tempPlaces = new List<Place>();
+            foreach (Place p in places)
+            {
+                if (blacklist.Contains(p.name))
+                {
+
+                } else
+                {
+                    tempPlaces.Add(p);
+                }
+            }
+            return tempPlaces;
         }
 
         private void onSortBy(object sender, SelectionChangedEventArgs e)
@@ -507,23 +777,18 @@ namespace CityAttractionsAndEvents
             renderPlaces(places);
         }
 
-        private void onTypeCombo(object sender, SelectionChangedEventArgs e)
-        {
-            List<Place> places = generatePlaces();
-            renderPlaces(places);
-        }
-
         private void renderPlaces(List<Place> places)
         {
             CompassCanvas.Children.Remove(currentPopout);
+            List<int> selectedPlaces = getSelectedPlaces();
             foreach (Ellipse e in currentPlacesShown)
             {
-                this.CompassCanvas.Children.Remove(e);
+                this.JustMapCanvas.Children.Remove(e);
             }
             currentPlacesShown.Clear();
             foreach (Place p in places)
             {
-                if (p.placeType == this.TypeCombo.SelectedIndex)
+                if (selectedPlaces.Contains(p.placeType))
                 {
                     Ellipse ellipse = new Ellipse();
                     string ellipseName = p.name.Replace(" ", "");
@@ -535,10 +800,36 @@ namespace CityAttractionsAndEvents
                     Canvas.SetLeft(ellipse, p.posLeft);
                     Canvas.SetTop(ellipse, p.posTop);
                     ellipse = generateColourSize(ellipse, p);
-                    this.CompassCanvas.Children.Add(ellipse);
+                    this.JustMapCanvas.Children.Add(ellipse);
                     currentPlacesShown.Add(ellipse);
                 }
             }
+        }
+
+        private List<int> getSelectedPlaces()
+        {
+            List<int> selectedPlaces = new List<int>();
+            if (checkAttraction.IsChecked == true)
+            {
+                selectedPlaces.Add(0);
+            }
+            if (checkEvent.IsChecked == true)
+            {
+                selectedPlaces.Add(1);
+            }
+            if (checkRestaurant.IsChecked == true)
+            {
+                selectedPlaces.Add(2);
+            }
+            if (checkSport.IsChecked == true)
+            {
+                selectedPlaces.Add(3);
+            }
+            if (checkShopping.IsChecked == true)
+            {
+                selectedPlaces.Add(4);
+            }
+            return selectedPlaces;
         }
 
         private double getPercentage(Place p)
@@ -595,19 +886,22 @@ namespace CityAttractionsAndEvents
             ellipse.Width = size;
             ellipse.Height = size;
 
-            double red;
-            double green;
-            if (percentage < 0.5)
+            if (p.placeType == 0) {
+                ellipse.Fill = new SolidColorBrush(Color.FromRgb(52,167,209));
+            } else if (p.placeType == 1)
             {
-                red = 255;
-                green = Math.Round(255 * (percentage * 2));
-            }
-            else
+                ellipse.Fill = new SolidColorBrush(Color.FromRgb(97, 224, 0));
+            } else if (p.placeType == 2)
             {
-                green = 255;
-                red = Math.Round(255 - (255 * (percentage * 0.5)));
+                ellipse.Fill = new SolidColorBrush(Color.FromRgb(224,142,0));
+            } else if (p.placeType == 3)
+            {
+                ellipse.Fill = new SolidColorBrush(Color.FromRgb(0, 2, 173));
+            } else if (p.placeType == 4)
+            {
+                ellipse.Fill = new SolidColorBrush(Color.FromRgb(49, 94, 37));
             }
-            ellipse.Fill = new SolidColorBrush(Color.FromRgb((byte)red, (byte)green, 0));
+
 
             ellipse.Cursor = Cursors.Hand;
 
@@ -672,6 +966,7 @@ namespace CityAttractionsAndEvents
                 if (name == place.name)
                 {
                     GlanceView glanceview = new GlanceView(place.name, place.details, place.starRating, place.obscurityRating, place.price, place.imagePath);
+                    currentPlace = place;
                     glanceview.Height = 285;
                     glanceview.Width = 902.5;
                     glanceview.obscurityBar.Value = place.obscurityRating;
@@ -699,22 +994,34 @@ namespace CityAttractionsAndEvents
                     percentage = 1 - percentage;
                     glanceview.priceBar.Value = percentage * 100;
                     glanceview.expandButton.Visibility = Visibility.Hidden;
+                    curGlanceView = glanceview;
                     profileStack.Children.Add(glanceview);
-                    currentPlace = place;
                     break;
                 }
             }
             ProfileExpanded reflections = new ProfileExpanded();
             reflections.Height = 285;
             reflections.Width = 902.5;
+            curProfileExpanded = reflections;
             profileStack.Children.Add(reflections);
             InfoExpander ntkInfo = new InfoExpander("Why Should I Visit?");
             ntkInfo.Width = (902.5);
+            curNTK = ntkInfo;
             profileStack.Children.Add(ntkInfo);
             InfoExpander wtgInfo = new InfoExpander("Planning My Visit");
             wtgInfo.Width = (902.5);
+            curWTG = wtgInfo;
             profileStack.Children.Add(wtgInfo);
 
+        }
+
+        public void renderPlaceProfile()
+        {
+            profileStack.Children.Clear();
+            profileStack.Children.Add(curGlanceView);
+            profileStack.Children.Add(curProfileExpanded);
+            profileStack.Children.Add(curNTK);
+            profileStack.Children.Add(curWTG);
         }
 
         private void ViewButton_Click(object sender, RoutedEventArgs e)
