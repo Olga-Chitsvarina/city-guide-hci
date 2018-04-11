@@ -239,7 +239,9 @@
                                     <VisualState x:Name="Disabled"/>
                                 </VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
-                            <Rectangle x:Name="rectangle" Fill="White" Stroke="{x:Null}"/>
+                            <Border BorderBrush="Black" BorderThickness="0,0,0,2">
+                                <Rectangle x:Name="rectangle" Fill="White" Stroke="{x:Null}"/>
+                            </Border>
                             <ContentPresenter TextBlock.FontSize="20" TextBlock.FontWeight="Bold" TextBlock.Foreground="Black"  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="109.9,36.42,0,20" Content="RESTAURANTS" Height="52.38" Width="145.1"/>
                             <Image RenderOptions.BitmapScalingMode ="HighQuality" HorizontalAlignment="Left" Height="98.8" Margin="5.6,10,0,0" VerticalAlignment="Top" Width="99.6" Source="restaurantsBlack2.png"/>
                         </Grid>
@@ -290,7 +292,9 @@
                                     <VisualState x:Name="Disabled"/>
                                 </VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
-                            <Rectangle x:Name="rectangle" Fill="White" Stroke="{x:Null}"/>
+                            <Border BorderBrush="Black" BorderThickness="0,0,0,2">
+                                <Rectangle x:Name="rectangle" Fill="White" Stroke="{x:Null}"/>
+                            </Border>
                             <ContentPresenter TextBlock.FontSize="25" TextBlock.FontWeight="Bold" TextBlock.Foreground="Black"  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="124.9,41,15.2,15.42" Content="SPORT" Height="52.38" Width="114.9" RenderTransformOrigin="1.218,0.549"/>
                             <Image RenderOptions.BitmapScalingMode ="HighQuality" HorizontalAlignment="Left" Height="85.126" Margin="10,13.674,0,0" VerticalAlignment="Top" Width="110.6" Source="Sport.png"/>
                         </Grid>
@@ -341,7 +345,9 @@
                                     <VisualState x:Name="Disabled"/>
                                 </VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
-                            <Rectangle x:Name="rectangle" Fill="White" Stroke="{x:Null}"/>
+                            <Border BorderBrush="Black" BorderThickness="0,0,0,2">
+                                <Rectangle x:Name="rectangle" Fill="White" Stroke="{x:Null}"/>
+                            </Border>
                             <ContentPresenter TextBlock.FontSize="25" TextBlock.FontWeight="Bold" TextBlock.Foreground="Black"  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="109.9,37.42,15.2,19" Content="SHOPPING" Height="52.38" Width="129.9" RenderTransformOrigin="1.308,0.717"/>
                             <Image RenderOptions.BitmapScalingMode ="HighQuality" HorizontalAlignment="Left" Height="71.58" Margin="10,27.22,0,0" VerticalAlignment="Top" Width="84.8" Source="shoppingBlack.png"/>
                         </Grid>
@@ -2559,7 +2565,7 @@
 
         </Canvas>
 
-        <Canvas x:Name="HomePage" Height="698.8" Width="1121.6" d:IsHidden="True">
+        <Canvas x:Name="HomePage" Height="698.8" Width="1121.6">
             <Button x:Name="AttractionsButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyle1}" Canvas.Top="123.8" Width="255"/>
             <Button x:Name="EventsButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyleEvents}" Canvas.Top="232.6" Width="255"/>
             <Button x:Name="RestaurantsButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyleRestaurants}" Canvas.Top="341.4" Width="255                     "/>
@@ -2610,7 +2616,7 @@
             <TextBlock Height="312.52" TextWrapping="Wrap" Canvas.Top="249.2" Width="1008.6" FontSize="18"><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text="-----------------------------------------------------------------------------------------------------------------------------------------"/><LineBreak/><Run Foreground="#FF4F4F4F" FontWeight="Bold"/><LineBreak/><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text="GENERAL INFORMATION:"/><LineBreak/><Run Foreground="#FF238CB4" FontWeight="Bold"/><LineBreak/><Run Foreground="#FF238CB4" FontWeight="Bold" Text="We intend our app to be useful to anyone who wants to discover/research new attractions or events"/><Run Foreground="#FF238CB4" FontWeight="Bold" Text=" in the city."/><LineBreak/><Run Foreground="#FF238CB4" FontWeight="Bold"/><LineBreak/><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text="-----------------------------------------------------------------------------------------------------------------------------------------"/><LineBreak/><Run Foreground="#FF4F4F4F" FontWeight="Bold"/><LineBreak/><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text="M"/><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text="ISSION STATEMENT"/><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text=":"/><LineBreak/><Run Foreground="#FF4F4F4F" FontWeight="Bold"/><LineBreak/><Run Foreground="#FF238CB4" FontWeight="Bold" Text="Encourage people to explore cities' attractions and events and help them to find enjoyable experiences."/><LineBreak/><Run Foreground="#FF238CB4" FontWeight="Bold"/><LineBreak/><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text="-----------------------"/><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text="-------------------------------------------------------------------------------------------------------------------"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
 
         </Canvas>
-        <Canvas x:Name="CalendarPage" Height="580.467" Canvas.Left="10" Canvas.Top="128.8" Width="1101.6">
+        <Canvas x:Name="CalendarPage" Height="580.467" Canvas.Left="10" Canvas.Top="128.8" Width="1101.6" d:IsHidden="True">
             <TextBlock Height="25.6" Canvas.Left="300.6" TextWrapping="Wrap" Canvas.Top="32.6" Width="81" FontSize="18" FontWeight="Bold"><Run Text="SU"/><Run Text="N"/></TextBlock>
             <TextBlock Height="25.6" Canvas.Left="386.6" TextWrapping="Wrap" Canvas.Top="32.6" Width="81" FontSize="18" FontWeight="Bold"><Run Text="MO"/><Run Text="N"/></TextBlock>
             <TextBlock Height="25.6" Canvas.Left="458.533" TextWrapping="Wrap" Text="TUE" Canvas.Top="32.6" Width="81" FontSize="18" FontWeight="Bold"/>
@@ -2747,7 +2753,7 @@
             </Canvas>
 
         </Canvas>
-        <Canvas x:Name="SearchSortCanvas" Height="697" Width="1120" Visibility="Hidden">
+        <Canvas x:Name="SearchSortCanvas" Height="697" Width="1120" Visibility="Hidden" d:IsHidden="True">
             <local:prioSlider Height="341" Canvas.Left="914" Canvas.Top="161" Width="207"/>
             <ScrollViewer x:Name="glanceScroller" CanContentScroll="True" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Left" Height="531" VerticalAlignment="Top" Width="921" Canvas.Top="167" Canvas.Left="-8">
                 <DockPanel x:Name="DockForSmoothScroll1">
@@ -2770,7 +2776,7 @@
             <MapView:LoadProgress x:Name="loadProgress" Margin="368,359,591,178.4" Visibility="Hidden"/>
 
         </Canvas>
-        <Canvas x:Name="ProfilePageCanvas" Height="563.6" Canvas.Left="10" Canvas.Top="123.8" Width="1100" Visibility="Hidden">
+        <Canvas x:Name="ProfilePageCanvas" Height="563.6" Canvas.Left="10" Canvas.Top="123.8" Width="1100" Visibility="Hidden" d:IsHidden="True">
             <ScrollViewer x:Name="profileScroller" CanContentScroll="True" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Center" Height="550" Width="1100" VerticalAlignment="Top">
                 <DockPanel x:Name="DockForSmoothScroll2">
                     <StackPanel x:Name="profileStack" Width="1074.732"/>
@@ -2788,7 +2794,7 @@
             </Grid>
 
         </Canvas>
-        <Canvas x:Name="CreateAccountCanvas" Height="546.133" Canvas.Left="11.6" Canvas.Top="141.267" Width="1098.4">
+        <Canvas x:Name="CreateAccountCanvas" Height="546.133" Canvas.Left="11.6" Canvas.Top="141.267" Width="1098.4" d:IsHidden="True">
             <StackPanel Height="546.133" Width="1098.4">
                 <TextBlock x:Name="textBlock" Height="40" Margin="310.2,75,310.2,0" TextAlignment="Center" TextWrapping="Wrap" FontSize="22"><Run FontWeight="Bold" Text="Create Account"/></TextBlock>
                 <Grid x:Name="CreateUsernameGrid" Height="32" Width="478" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20">

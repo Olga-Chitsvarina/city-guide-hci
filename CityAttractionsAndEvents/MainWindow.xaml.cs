@@ -832,8 +832,7 @@ namespace CityAttractionsAndEvents
                     ellipseName = ellipseName.Replace("'", "");
                     ellipseName = ellipseName.Replace(":", "");
                     ellipse.Name = ellipseName;
-                    ellipse.Fill = Brushes.White;
-                    ellipse.Stroke = Brushes.Black;
+                    ellipse.Stroke = null;
                     Canvas.SetLeft(ellipse, p.posLeft);
                     Canvas.SetTop(ellipse, p.posTop);
                     ellipse = generateColourSize(ellipse, p);
