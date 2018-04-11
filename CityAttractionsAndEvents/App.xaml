@@ -42,7 +42,7 @@
                                 </VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
                             <Rectangle x:Name="rectangle" Fill="#FF4F4F4F" Stroke="#FF200C0C"/>
-                            <TextBlock HorizontalAlignment="Left" TextAlignment="Center" Height="30.8" Margin="10,4.4,0,0" TextWrapping="Wrap" Text="CREATE ACCOUNT" VerticalAlignment="Top" Width="301.6" FontSize="18" FontWeight="Bold" Foreground="#FFFDFEFE"/>
+                            <TextBlock HorizontalAlignment="Center" TextAlignment="Center" Height="30.8" Margin="0,4.4,0,0" TextWrapping="Wrap" Text="Create Account" VerticalAlignment="Top" Width="301.6" FontSize="18" FontWeight="Bold" Foreground="#FFFDFEFE"/>
                         </Grid>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsFocused" Value="True"/>

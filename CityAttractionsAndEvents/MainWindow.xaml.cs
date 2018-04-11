@@ -428,6 +428,7 @@ namespace CityAttractionsAndEvents
             LinkedInButton.Click += LinkedInButton_Click;
             this.RegisterButton.Click += StartCreatingAccount;
             this.CreateAccountButton.Click += CreatingAccountAttempt;
+            this.CancelButtonRegister.Click += CancelCreatingAccount;
 
             this.PasswordInput.KeyDown += LoginButton_Enter;
             this.UserNameInput.KeyDown += LoginButton_Enter;
@@ -521,9 +522,27 @@ namespace CityAttractionsAndEvents
 
         }
 
+        private void ClearRegisterPage() {
+            this.CreateEmailField.Text = "";
+            this.CreateUsernameField.Text = "";
+            this.CreatePasswordField1.Password = "";
+            this.CreatePasswordField2.Password = "";
+
+            this.EmailWarning.Visibility = Visibility.Hidden;
+            this.UsernameWarning.Visibility = Visibility.Hidden;
+            this.PasswordEmptyWarning.Visibility = Visibility.Hidden;
+            this.PasswordMismatchWarning.Visibility = Visibility.Hidden;
+        }
+
         private void StartCreatingAccount(object sender, RoutedEventArgs e)
         {
+            this.ClearRegisterPage();
             UpdateCurrentAndPreviousPages(this.CreateAccountCanvas);
+
+        }
+        private void CancelCreatingAccount(object sender, RoutedEventArgs e)
+        {
+            UpdateCurrentAndPreviousPages(this.LoginPage);
         }
 
         public void placeProfileExpand(String name)
