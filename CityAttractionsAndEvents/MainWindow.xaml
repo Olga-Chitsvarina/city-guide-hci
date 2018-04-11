@@ -2610,8 +2610,7 @@
             <TextBlock Height="312.52" TextWrapping="Wrap" Canvas.Top="249.2" Width="1008.6" FontSize="18"><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text="-----------------------------------------------------------------------------------------------------------------------------------------"/><LineBreak/><Run Foreground="#FF4F4F4F" FontWeight="Bold"/><LineBreak/><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text="GENERAL INFORMATION:"/><LineBreak/><Run Foreground="#FF238CB4" FontWeight="Bold"/><LineBreak/><Run Foreground="#FF238CB4" FontWeight="Bold" Text="We intend our app to be useful to anyone who wants to discover/research new attractions or events"/><Run Foreground="#FF238CB4" FontWeight="Bold" Text=" in the city."/><LineBreak/><Run Foreground="#FF238CB4" FontWeight="Bold"/><LineBreak/><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text="-----------------------------------------------------------------------------------------------------------------------------------------"/><LineBreak/><Run Foreground="#FF4F4F4F" FontWeight="Bold"/><LineBreak/><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text="M"/><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text="ISSION STATEMENT"/><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text=":"/><LineBreak/><Run Foreground="#FF4F4F4F" FontWeight="Bold"/><LineBreak/><Run Foreground="#FF238CB4" FontWeight="Bold" Text="Encourage people to explore cities' attractions and events and help them to find enjoyable experiences."/><LineBreak/><Run Foreground="#FF238CB4" FontWeight="Bold"/><LineBreak/><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text="-----------------------"/><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text="-------------------------------------------------------------------------------------------------------------------"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
 
         </Canvas>
-        <Canvas x:Name="CalendarPage" Height="580.467" Canvas.Left="10" Canvas.Top="128.8" Width="1101.6" d:IsHidden="True">
-            <Calendar Height="177.6" Width="211.2" Canvas.Left="867.2" Canvas.Top="40.4"/>
+        <Canvas x:Name="CalendarPage" Height="580.467" Canvas.Left="10" Canvas.Top="128.8" Width="1101.6">
             <TextBlock Height="25.6" Canvas.Left="300.6" TextWrapping="Wrap" Canvas.Top="32.6" Width="81" FontSize="18" FontWeight="Bold"><Run Text="SU"/><Run Text="N"/></TextBlock>
             <TextBlock Height="25.6" Canvas.Left="386.6" TextWrapping="Wrap" Canvas.Top="32.6" Width="81" FontSize="18" FontWeight="Bold"><Run Text="MO"/><Run Text="N"/></TextBlock>
             <TextBlock Height="25.6" Canvas.Left="458.533" TextWrapping="Wrap" Text="TUE" Canvas.Top="32.6" Width="81" FontSize="18" FontWeight="Bold"/>
@@ -2619,113 +2618,16 @@
             <TextBlock Height="25.6" Canvas.Left="622.2" TextWrapping="Wrap" Text="THU" Canvas.Top="32.6" Width="47.4" FontSize="18" FontWeight="Bold" RenderTransformOrigin="-0.095,0.34"/>
             <TextBlock Height="25.6" Canvas.Left="711" TextWrapping="Wrap" Text="FRI" Canvas.Top="32.6" Width="30.6" FontSize="18" FontWeight="Bold"/>
             <TextBlock Height="25.6" Canvas.Left="793.8" TextWrapping="Wrap" Text="SAT" Canvas.Top="32.6" Width="37.8" FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.81,0.336"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="284.8" Stroke="Black" Canvas.Top="76.4" Width="75.6"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="284.8" Stroke="Black" Canvas.Top="152.2" Width="75.6"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="284.8" Stroke="Black" Canvas.Top="303.6" Width="75.6"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="284.8" Stroke="Black" Canvas.Top="379.4" Width="75.6"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="365.4" Stroke="Black" Canvas.Top="76.4" Width="75.6"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="446" Stroke="Black" Canvas.Top="76.4" Width="75.6"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="526.6" Stroke="Black" Canvas.Top="76.4" Width="75.6"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="607.2" Stroke="Black" Canvas.Top="76.4" Width="75.6"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="687.8" Stroke="Black" Canvas.Top="76.4" Width="75.6"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="768.4" Stroke="Black" Canvas.Top="76.4" Width="75.6"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="365.4" Stroke="Black" Canvas.Top="152.2" Width="75.6"/>
-            <Button x:Name="DayButton" Content="Button" Height="70.8" Canvas.Left="446" Style="{DynamicResource ButtonStyle23}" Canvas.Top="152.2" Width="75.6"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="526.6" Stroke="Black" Canvas.Top="152.2" Width="75.6"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="607.2" Stroke="Black" Canvas.Top="152.2" Width="75.6"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="687.8" Stroke="Black" Canvas.Top="152.2" Width="75.6"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="768.4" Stroke="Black" Canvas.Top="152.2" Width="75.6"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="365.4" Stroke="Black" Canvas.Top="303.6" Width="75.6"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="446" Stroke="Black" Canvas.Top="303.6" Width="75.6"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="526.6" Stroke="Black" Canvas.Top="303.6" Width="75.6"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="607.2" Stroke="Black" Canvas.Top="303.6" Width="75.6"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="687.8" Stroke="Black" Canvas.Top="303.6" Width="75.6"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="768.4" Stroke="Black" Canvas.Top="303.6" Width="75.6"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="365.4" Stroke="Black" Canvas.Top="379.4" Width="75.6"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="446" Stroke="#FFEA2020" Canvas.Top="379.4" Width="75.6" StrokeThickness="6" Cursor="Hand"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="526.6" Stroke="Black" Canvas.Top="379.4" Width="75.6"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="607.2" Stroke="Black" Canvas.Top="379.4" Width="75.6"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="687.8" Stroke="Black" Canvas.Top="379.4" Width="75.6"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="768.4" Stroke="Black" Canvas.Top="379.4" Width="75.6"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="526.6" Stroke="Black" Canvas.Top="455.177" Width="75.6"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="768.4" Stroke="Black" Canvas.Top="455.4" Width="75.6"/>
-            <TextBlock Height="19.2" Canvas.Left="284.8" TextWrapping="Wrap" Text="25" Canvas.Top="76.4" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"/>
-            <TextBlock Height="19.2" Canvas.Left="365.4" TextWrapping="Wrap" Canvas.Top="76.4" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"><Run Text="2"/><Run Text="6"/></TextBlock>
-            <TextBlock Height="19.2" Canvas.Left="446.6" TextWrapping="Wrap" Canvas.Top="76.4" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"><Run Text="2"/><Run Text="7"/></TextBlock>
-            <TextBlock Height="19.2" Canvas.Left="526.6" TextWrapping="Wrap" Text="28" Canvas.Top="76.4" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"/>
-            <TextBlock Height="19.2" Canvas.Left="607.2" TextWrapping="Wrap" Text="1" Canvas.Top="76.4" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"/>
-            <TextBlock Height="19.2" Canvas.Left="687.8" TextWrapping="Wrap" Text="2" Canvas.Top="76.4" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"/>
-            <TextBlock Height="19.2" Canvas.Left="768.4" TextWrapping="Wrap" Text="3" Canvas.Top="76.4" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"/>
-            <TextBlock Height="19.2" Canvas.Left="284.8" TextWrapping="Wrap" Text="25" Canvas.Top="76.4" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"/>
-            <TextBlock Height="19.2" Canvas.Left="284.8" TextWrapping="Wrap" Text="4" Canvas.Top="152.2" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"/>
-            <TextBlock Height="19.2" Canvas.Left="365.4" TextWrapping="Wrap" Text="5" Canvas.Top="152.2" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"/>
-            <TextBlock Height="19.2" Canvas.Left="446.6" TextWrapping="Wrap" Text="6" Canvas.Top="152.2" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"/>
-            <TextBlock Height="19.2" Canvas.Left="526.6" TextWrapping="Wrap" Text="7" Canvas.Top="152.2" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"/>
-            <TextBlock Height="19.2" Canvas.Left="607.2" TextWrapping="Wrap" Text="8" Canvas.Top="152.2" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"/>
-            <TextBlock Height="19.2" Canvas.Left="687.8" TextWrapping="Wrap" Text="9" Canvas.Top="152.2" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"/>
-            <TextBlock Height="19.2" Canvas.Left="768.4" TextWrapping="Wrap" Text="10" Canvas.Top="152.2" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"/>
-            <TextBlock Height="19.2" Canvas.Left="365.4" TextWrapping="Wrap" Canvas.Top="303.377" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"><Run Text="19"/><Run Text="7"/></TextBlock>
-            <TextBlock Height="19.2" Canvas.Left="446.6" TextWrapping="Wrap" Canvas.Top="303.377" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"><Run Text="2"/><Run Text="0"/></TextBlock>
-            <TextBlock Height="19.2" Canvas.Left="526.6" TextWrapping="Wrap" Canvas.Top="303.6" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"><Run Text="2"/><Run Text="1"/></TextBlock>
-            <TextBlock Height="19.2" Canvas.Left="607.2" TextWrapping="Wrap" Canvas.Top="303.154" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"><Run Text="22"/><Run Text="0"/></TextBlock>
-            <TextBlock Height="19.2" Canvas.Left="687.8" TextWrapping="Wrap" Canvas.Top="303.6" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"><Run Text="2"/><Run Text="3"/></TextBlock>
-            <TextBlock Height="19.2" Canvas.Left="768.4" TextWrapping="Wrap" Canvas.Top="303.6" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"><Run Text="2"/><Run Text="4"/></TextBlock>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="365.4" Stroke="Black" Canvas.Top="227.8" Width="75.6"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="446.6" Stroke="Black" Canvas.Top="227.577" Width="75.6"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="527.2" Stroke="Black" Canvas.Top="228" Width="75.6"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="607.8" Stroke="Black" Canvas.Top="228" Width="75.6"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="687.8" Stroke="Black" Canvas.Top="228" Width="75.6"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="768.4" Stroke="Black" Canvas.Top="228" Width="75.6"/>
-            <TextBlock Height="19.2" Canvas.Left="284.8" TextWrapping="Wrap" Canvas.Top="303.6" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18" Text="18"/>
-            <TextBlock Height="19.2" Canvas.Left="284.8" TextWrapping="Wrap" Text="25" Canvas.Top="379.4" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"/>
-            <TextBlock Height="19.2" Canvas.Left="365.4" TextWrapping="Wrap" Canvas.Top="379.177" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"><Run Text="2"/><Run Text="6"/></TextBlock>
-            <TextBlock Height="19.2" Canvas.Left="453.533" TextWrapping="Wrap" Canvas.Top="379.4" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"><Run Text="2"/><Run Text="7"/></TextBlock>
-            <TextBlock Height="19.2" Canvas.Left="526.6" TextWrapping="Wrap" Canvas.Top="379.4" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"><Run Text="2"/><Run Text="8"/></TextBlock>
-            <TextBlock Height="19.2" Canvas.Left="607.2" TextWrapping="Wrap" Text="29" Canvas.Top="379.4" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"/>
-            <TextBlock Height="19.2" Canvas.Left="687.8" TextWrapping="Wrap" Text="30" Canvas.Top="379.4" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="284.8" Stroke="Black" Canvas.Top="227.8" Width="75.6"/>
-            <TextBlock Height="19.2" Canvas.Left="768.4" TextWrapping="Wrap" Text="31" Canvas.Top="379.4" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"/>
-            <TextBlock Height="19.2" Canvas.Left="526.6" TextWrapping="Wrap" Text="4" Canvas.Top="455.177" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"/>
-            <TextBlock Height="19.2" Canvas.Left="768.4" TextWrapping="Wrap" Text="7" Canvas.Top="455.4" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="284.8" Stroke="Black" Canvas.Top="455.4" Width="75.6"/>
-            <TextBlock Height="19.2" Canvas.Left="284.8" TextWrapping="Wrap" Text="1" Canvas.Top="455.4" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="365.4" Stroke="Black" Canvas.Top="455.4" Width="75.6"/>
-            <TextBlock Height="19.2" Canvas.Left="365.4" TextWrapping="Wrap" Text="2" Canvas.Top="455.4" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="446" Stroke="Black" Canvas.Top="455.4" Width="75.6"/>
-            <TextBlock Height="19.2" Canvas.Left="446.6" TextWrapping="Wrap" Text="3" Canvas.Top="455.4" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"/>
-            <Rectangle Fill="#FF46C043" Height="70.8" Canvas.Left="607.2" Stroke="Black" Canvas.Top="455.4" Width="75.6" Cursor="Hand"/>
-            <TextBlock Height="19.2" Canvas.Left="607.2" TextWrapping="Wrap" Text="5" Canvas.Top="455.4" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"/>
-            <Rectangle Fill="#FFF4F4F5" Height="70.8" Canvas.Left="687.8" Stroke="Black" Canvas.Top="455.4" Width="75.6"/>
-            <TextBlock Height="19.2" Canvas.Left="687.8" TextWrapping="Wrap" Text="6" Canvas.Top="455.4" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"/>
-            <TextBlock Height="19.2" Canvas.Left="284.8" TextWrapping="Wrap" Canvas.Top="303.6" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18" Text="18"/>
-            <TextBlock Height="19.2" Canvas.Left="284.8" TextWrapping="Wrap" Canvas.Top="228" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"><Run Text="1"/><Run Text="1"/></TextBlock>
-            <TextBlock Height="19.2" Canvas.Left="365.4" TextWrapping="Wrap" Canvas.Top="228" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18" Text="12"/>
-            <TextBlock Height="19.2" Canvas.Left="446.6" TextWrapping="Wrap" Canvas.Top="228" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18" Text="13"/>
-            <TextBlock Height="19.2" Canvas.Left="526.6" TextWrapping="Wrap" Canvas.Top="227.777" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"><Run Text="1"/><Run Text="4"/></TextBlock>
-            <TextBlock Height="19.2" Canvas.Left="607.2" TextWrapping="Wrap" Canvas.Top="228" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18"><Run Text="15"/><Run Text="2"/><Run Text="0"/></TextBlock>
-            <TextBlock Height="19.2" Canvas.Left="687.8" TextWrapping="Wrap" Canvas.Top="228" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18" Text="16"/>
-            <TextBlock Height="19.2" Canvas.Left="768.4" TextWrapping="Wrap" Canvas.Top="228" Width="21" RenderTransformOrigin="0.029,0.125" FontSize="18" Text="17"/>
             <TextBlock Height="22.533" Canvas.Left="31.6" TextWrapping="Wrap" Canvas.Top="6.914" Width="187" FontWeight="Bold" Foreground="#FF238CB4" FontSize="18"><Run Text="DAY INFORMATION"/><Run Text=":"/></TextBlock>
-            <TextBlock x:Name="EventInformationTextBlock" Height="449.577" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="73.546" Width="257.3"><Run FontWeight="Bold" FontSize="18" Text="Event"/><Run FontWeight="Bold" FontSize="18" Text=": "/><Run FontSize="18" Text="Symphony "/><Run FontSize="18" Text="Concert"/><LineBreak/><Run FontWeight="Bold" FontSize="18" Text="Place"/><Run FontSize="18" Text=": Jubilee Auditorium"/><LineBreak/><Run FontWeight="Bold" FontSize="18" Text="Address:"/><Run FontWeight="Bold" FontSize="18" Text=" "/><Run FontSize="18" Text="1415 14 Ave NW, Calgary, AB T2N 1M4"/><LineBreak/><Run FontWeight="Bold" FontSize="18" Text="Time: "/><Run FontSize="18" Text="18:00 pm"/><LineBreak/><Run FontWeight="Bold" FontSize="18" Text="Friend 1: "/><Run FontSize="18" Text="Bob"/><LineBreak/><Run FontWeight="Bold" FontSize="18" Text="Friend 2: "/><Run FontSize="18" Text="Alice"/><LineBreak/><Run FontSize="18"/><LineBreak/><Run FontSize="18" Text="-----------------------------------"/><LineBreak/><Run FontWeight="Bold" FontSize="18" Text="Attraction"/><Run FontWeight="Bold" FontSize="18" Text=": "/><Run FontSize="18" Text="Calgary Tower"/><LineBreak/><Run FontWeight="Bold" FontSize="18" Text="Address: "/><Run FontSize="18" Text="101 9 Ave SW, Calgary, AB T2P 1J9"/><LineBreak/><Run FontWeight="Bold" FontSize="18" Text="Time: "/><Run FontSize="18" Text="12:00 pm"/><LineBreak/><Run FontWeight="Bold" FontSize="18" Text="Friend 1: "/><Run FontSize="18" Text="Bob"/><LineBreak/><LineBreak/><Run FontSize="18"/><LineBreak/><Run FontWeight="Bold" FontSize="18" Text=""/><LineBreak/><Run/><LineBreak/></TextBlock>
-            <Image Height="42.344" Canvas.Left="644.4" Canvas.Top="479.6" Width="38.4" Source="human.png"/>
+            <TextBlock x:Name="EventInformationTextBlock" Height="449.577" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="73.546" Width="208.6"><Run FontWeight="Bold" FontSize="18" Text="Event"/><Run FontWeight="Bold" FontSize="18" Text=": "/><Run FontSize="18" Text="Symphony "/><Run FontSize="18" Text="Concert"/><LineBreak/><Run FontWeight="Bold" FontSize="18" Text="Place"/><Run FontSize="18" Text=": Jubilee Auditorium"/><LineBreak/><Run FontWeight="Bold" FontSize="18" Text="Address:"/><Run FontWeight="Bold" FontSize="18" Text=" "/><Run FontSize="18" Text="1415 14 Ave NW, Calgary, AB T2N 1M4"/><LineBreak/><Run FontWeight="Bold" FontSize="18" Text="Time: "/><Run FontSize="18" Text="18:00 pm"/><LineBreak/><Run FontWeight="Bold" FontSize="18" Text="Friend 1: "/><Run FontSize="18" Text="Bob"/><LineBreak/><Run FontWeight="Bold" FontSize="18" Text="Friend 2: "/><Run FontSize="18" Text="Alice"/><LineBreak/><Run FontSize="18"/><LineBreak/><Run FontSize="18" Text="-----------------------------------"/><LineBreak/><Run FontWeight="Bold" FontSize="18" Text="Attraction"/><Run FontWeight="Bold" FontSize="18" Text=": "/><Run FontSize="18" Text="Calgary Tower"/><LineBreak/><Run FontWeight="Bold" FontSize="18" Text="Address: "/><Run FontSize="18" Text="101 9 Ave SW, Calgary, AB T2P 1J9"/><LineBreak/><Run FontWeight="Bold" FontSize="18" Text="Time: "/><Run FontSize="18" Text="12:00 pm"/><LineBreak/><Run FontWeight="Bold" FontSize="18" Text="Friend 1: "/><Run FontSize="18" Text="Bob"/><LineBreak/><LineBreak/><Run FontSize="18"/><LineBreak/><Run FontWeight="Bold" FontSize="18" Text=""/><LineBreak/><Run/><LineBreak/></TextBlock>
             <TextBlock Height="22.533" Canvas.Left="867.2" TextWrapping="Wrap" Canvas.Top="218" Width="187" FontWeight="Bold" Foreground="#FF238CB4" FontSize="18"><Run Text="WISH LIST"/><Run Text=":"/></TextBlock>
             <TextBlock Height="20.8" Canvas.Left="520.367" TextWrapping="Wrap" Text="MARCH 2018" Canvas.Top="6.8" Width="221.233" FontWeight="Bold" Foreground="#FF238CB4" FontSize="18"/>
 
             <!--Music Notes image created by Wikpedia user Tokyoship, found at the page "File:Simple Music.svg". URL as of March 22, 2018: https://en.wikipedia.org/wiki/File:Simple_Music.svg -->
-            <Image Height="39.2" Canvas.Left="467.2" Canvas.Top="403.6" Width="47.2" Source="WeatherToday1.png"/>
-            <Image Height="44.2" Canvas.Left="539.533" Canvas.Top="398.6" Width="56.467" Source="WeatherToday1.png"/>
-            <Image Height="44.2" Canvas.Left="622.2" Canvas.Top="398.6" Width="55.8" Source="WeatherToday1.png"/>
-            <Image Height="44.2" Canvas.Left="703" Canvas.Top="398.6" Width="55.2" Source="WeatherToday1.png"/>
-            <Image Height="44.2" Canvas.Left="785.6" Canvas.Top="398.6" Width="51" Source="WeatherToday1.png"/>
-            <Image Height="48.4" Canvas.Left="300.6" Canvas.Top="470.4" Width="53.6" Source="WeatherToday1.png"/>
-            <Image Height="39.2" Canvas.Left="467.2" Canvas.Top="403.6" Width="47.2" Source="WeatherToday1.png"/>
-            <Image Height="48.4" Canvas.Left="374.8" Canvas.Top="470.4" Width="54.8" Source="WeatherToday1.png"/>
-            <Image Height="44.2" Canvas.Left="458.533" Canvas.Top="398.6" Width="55.867" Source="WeatherToday1.png"/>
-            <Image Height="48.4" Canvas.Left="458.533" Canvas.Top="470.4" Width="55.867" Source="WeatherToday1.png"/>
-            <Image Height="36.625" Canvas.Left="785.6" Canvas.Top="482.175" Width="39.2" Source="music.png"/>
             <ScrollViewer x:Name="wishScroll" CanContentScroll="True" VerticalScrollBarVisibility="Visible" Height="299" Canvas.Left="857" Canvas.Top="247" Width="244">
                 <StackPanel x:Name="wishStack" Height="314.223" Width="225.4"/>
             </ScrollViewer>
+            <UniformGrid x:Name="CalendarUniformGrid" Height="472.454" Canvas.Left="250.7" Canvas.Top="73.546" Width="601.3" Rows="5" Columns="7"/>
         </Canvas>
         <Canvas x:Name="NotificationsPage" Height="570" Canvas.Left="10" Canvas.Top="118.8" Width="1101.6" d:IsHidden="True">
 

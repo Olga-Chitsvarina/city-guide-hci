@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace CityAttractionsAndEvents
 {
     /// <summary>
@@ -20,9 +21,10 @@ namespace CityAttractionsAndEvents
     /// </summary>
     public partial class CalendarCell : UserControl
     {
-        public CalendarCell()
+        public CalendarCell(string day)
         {
             InitializeComponent();
+            //DayTextBlock.Text = day;
         }
     }
 }
