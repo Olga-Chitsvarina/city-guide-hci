@@ -2776,6 +2776,7 @@
             <MapView:LoadProgress x:Name="loadProgress" Margin="368,359,591,178.4" Visibility="Hidden"/>
             <Button x:Name="clearBlackButt" Content="Clear Blacklist" HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="96" Canvas.Left="134" Canvas.Top="129" RenderTransformOrigin="0.433,0.609"/>
             <Button x:Name="resetSearchButt" Content="Reset Search" HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="90" Canvas.Left="23" Canvas.Top="129"/>
+            <TextBlock x:Name="DebugOut" Height="36" Canvas.Left="946" TextWrapping="Wrap" Text="TextBlock" Canvas.Top="651" Width="124" d:IsHidden="True"/>
 
         </Canvas>
         <Canvas x:Name="ProfilePageCanvas" Height="563.6" Canvas.Left="10" Canvas.Top="123.8" Width="1100" Visibility="Hidden" d:IsHidden="True">

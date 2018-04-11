@@ -1331,9 +1331,14 @@ namespace CityAttractionsAndEvents
 
         public void updatePriceRange(double min, double max)
         {
-            this.priceMin = min;
-            this.priceMax = max;
-            startSearch();
+            int oldPriceMin = (int)this.priceMin;
+            int oldPriceMax = (int)this.priceMax;
+            this.priceMin = (((int)min)/5)*5;
+            this.priceMax = (((int)max)/5)*5;
+            if(oldPriceMax != this.priceMax || oldPriceMin != this.priceMin)
+                startSearch();
+            this.DebugOut.Text = ("min: " + this.priceMin);
+
         }
     }
 }

@@ -136,8 +136,8 @@ namespace CityAttractionsAndEvents
                 minPosition = Utils.Map(this.currentMin, this.minimum, this.maximum, 0, this.priceSliderRect.Width);
                 Canvas.SetLeft(this.priceMinEllipse, minPosition);
             }
-            this.priceMinText.Text = String.Format("{0:0.##}", this.currentMin);
-            this.priceMaxText.Text = String.Format("{0:0.##}", this.currentMax);
+            this.priceMinText.Text = String.Format("{0:0.##}", ((int)this.currentMin/5)*5);
+            this.priceMaxText.Text = String.Format("{0:0.##}", ((int)this.currentMax/5)*5);
 
             MoveRangeRectangle();
 
@@ -253,8 +253,8 @@ namespace CityAttractionsAndEvents
                 minPosition = Utils.Map(this.currentMin, this.minimum, this.maximum, 0, this.priceSliderRect.Width);
                 Canvas.SetLeft(this.priceMinEllipse, minPosition);
             }
-            this.priceMinText.Text = String.Format("{0:0.##}", this.currentMin);
-            this.priceMaxText.Text = String.Format("{0:0.##}", this.currentMax);
+            this.priceMinText.Text = String.Format("{0:0.##}", ((int)this.currentMin / 5) * 5);
+            this.priceMaxText.Text = String.Format("{0:0.##}", ((int)this.currentMax / 5) * 5);
 
 
             RaiseChanged(new RangeSliderChangedEventArgs(this.currentMin, this.currentMax));
