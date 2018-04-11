@@ -224,7 +224,7 @@
                             </VisualStateManager.VisualStateGroups>
                             <Rectangle x:Name="rectangle" Fill="White" Stroke="{x:Null}"/>
                             <ContentPresenter TextBlock.FontSize="20" TextBlock.FontWeight="Bold" TextBlock.Foreground="Black"  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="109.9,36.42,0,20" Content="RESTAURANTS" Height="52.38" Width="145.1"/>
-                            <Image RenderOptions.BitmapScalingMode ="HighQuality" HorizontalAlignment="Left" Height="98.8" Margin="5.6,10,0,0" VerticalAlignment="Top" Width="99.6" Source="restaurantsBlack.png"/>
+                            <Image RenderOptions.BitmapScalingMode ="HighQuality" HorizontalAlignment="Left" Height="98.8" Margin="5.6,10,0,0" VerticalAlignment="Top" Width="99.6" Source="restaurantsBlack2.png"/>
                         </Grid>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsFocused" Value="True"/>
@@ -2220,12 +2220,12 @@
             <Image Height="255" Canvas.Left="284.8" Canvas.Top="383" Width="580.75" Source="Weather1.png" Stretch="UniformToFill"/>
             <Border Height="245.2" Canvas.Left="865.55" Canvas.Top="130" Width="246.05" BorderBrush="Black" BorderThickness="5" Background="#FFC7C7C7">
                 <Grid>
-                    <Image Source="WeatherToday1.png" RenderTransformOrigin="0.56,-0.14" Margin="0,75.733,0,10" OpacityMask="Black"/>
                     <TextBlock Height="73.8" TextBlock.TextAlignment="Center" TextWrapping="Wrap" FontSize="18" FontWeight="Bold" Foreground="Black" VerticalAlignment="Top" OpacityMask="Black" Margin="0,10,0,0"><Run FontStyle="Italic" Text="Current Weather"/><LineBreak/><Run FontStyle="Italic" Text="Conditions"/><Run FontStyle="Italic" Text=":"/></TextBlock>
                 </Grid>
             </Border>
             <Button x:Name="ContactUsButton" Content="TextBlock" Height="29.8" Canvas.Left="947.75" Style="{DynamicResource ButtonStyleContactUs2}" Canvas.Top="649.4" Width="149.05"/>
             <Image Height="255" Canvas.Left="865.55" Canvas.Top="383" Width="231.25" Source="Weather1.png" Stretch="UniformToFill"/>
+            <MediaElement x:Name="myGif" MediaEnded="myGif_MediaEnded" UnloadedBehavior="Manual" Height="175" Canvas.Left="895.502" Canvas.Top="200.2" Width="183.098" Source="output_pzoxmU.gif"/>
         </Canvas>
         <Canvas x:Name="LoginPage" Height="678.8" Canvas.Left="10" Canvas.Top="10" Width="1101.6" d:IsHidden="True">
             <TextBlock Height="32" TextWrapping="Wrap" Width="116.8" FontSize="18" Canvas.Left="40.8" Canvas.Top="475.722" FontWeight="Bold" Foreground="#FF238CB4"><Run Text="User Name"/><Run Text=":"/></TextBlock>
