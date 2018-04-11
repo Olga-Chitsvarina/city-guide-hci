@@ -30,6 +30,7 @@ Sliders: non-numerical
 Calendar: dynamic day selection
 Calendar: "Add to current day" button
 Calendar: shading for current day, border for selected
+Calendar: Grey out or darken days not in current month.
 
 Place profile: Cutoff
 
@@ -48,6 +49,8 @@ Search: "Advance" looks like button
 Map: Remove ellipse borders
 
 Navigation Bar: Decrease text size
+
+
 
 
 
