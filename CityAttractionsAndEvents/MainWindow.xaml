@@ -171,9 +171,9 @@
                                     <VisualState x:Name="Disabled"/>
                                 </VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
-                            <Rectangle x:Name="rectangle" Fill="#FF4F4F4F" Stroke="#FF200C0C"/>
-                            <ContentPresenter TextBlock.FontSize="25" TextBlock.FontWeight="Bold" TextBlock.Foreground="White"  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="114,35.02,40.2,21.4" Content="EVENTS" Height="52.38" Width="100.8"/>
-                            <Image RenderOptions.BitmapScalingMode ="HighQuality" HorizontalAlignment="Left" Height="88.8" Margin="26.4,10,0,0" VerticalAlignment="Top" Width="59.2" Source="Events1.png"/>
+                            <Rectangle x:Name="rectangle" Fill="White" Stroke="{x:Null}"/>
+                            <ContentPresenter TextBlock.FontSize="25" TextBlock.FontWeight="Bold" TextBlock.Foreground="Black"  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="114,35.02,40.2,21.4" Content="EVENTS" Height="52.38" Width="100.8"/>
+                            <Image RenderOptions.BitmapScalingMode ="HighQuality" HorizontalAlignment="Left" Height="88.8" Margin="26.4,10,0,0" VerticalAlignment="Top" Width="59.2" Source="Events1.png" OpacityMask="Black"/>
                         </Grid>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsFocused" Value="True"/>
@@ -222,8 +222,8 @@
                                     <VisualState x:Name="Disabled"/>
                                 </VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
-                            <Rectangle x:Name="rectangle" Fill="#FF4F4F4F" Stroke="#FF200C0C"/>
-                            <ContentPresenter TextBlock.FontSize="20" TextBlock.FontWeight="Bold" TextBlock.Foreground="White"  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="109.9,36.42,0,20" Content="RESTAURANTS" Height="52.38" Width="145.1"/>
+                            <Rectangle x:Name="rectangle" Fill="White" Stroke="{x:Null}"/>
+                            <ContentPresenter TextBlock.FontSize="20" TextBlock.FontWeight="Bold" TextBlock.Foreground="Black"  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="109.9,36.42,0,20" Content="RESTAURANTS" Height="52.38" Width="145.1"/>
                             <Image RenderOptions.BitmapScalingMode ="HighQuality" HorizontalAlignment="Left" Height="98.8" Margin="5.6,10,0,0" VerticalAlignment="Top" Width="99.6" Source="Restaurants1.png"/>
                         </Grid>
                         <ControlTemplate.Triggers>
@@ -273,8 +273,8 @@
                                     <VisualState x:Name="Disabled"/>
                                 </VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
-                            <Rectangle x:Name="rectangle" Fill="#FF4F4F4F" Stroke="#FF200C0C"/>
-                            <ContentPresenter TextBlock.FontSize="25" TextBlock.FontWeight="Bold" TextBlock.Foreground="White"  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="124.9,41,15.2,15.42" Content="SPORT" Height="52.38" Width="114.9" RenderTransformOrigin="1.218,0.549"/>
+                            <Rectangle x:Name="rectangle" Fill="White" Stroke="{x:Null}"/>
+                            <ContentPresenter TextBlock.FontSize="25" TextBlock.FontWeight="Bold" TextBlock.Foreground="Black"  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="124.9,41,15.2,15.42" Content="SPORT" Height="52.38" Width="114.9" RenderTransformOrigin="1.218,0.549"/>
                             <Image RenderOptions.BitmapScalingMode ="HighQuality" HorizontalAlignment="Left" Height="85.126" Margin="10,13.674,0,0" VerticalAlignment="Top" Width="110.6" Source="Sport1.png"/>
                         </Grid>
                         <ControlTemplate.Triggers>
@@ -324,8 +324,8 @@
                                     <VisualState x:Name="Disabled"/>
                                 </VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
-                            <Rectangle x:Name="rectangle" Fill="#FF4F4F4F" Stroke="#FF200C0C"/>
-                            <ContentPresenter TextBlock.FontSize="25" TextBlock.FontWeight="Bold" TextBlock.Foreground="White"  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="109.9,37.42,15.2,19" Content="SHOPPING" Height="52.38" Width="129.9" RenderTransformOrigin="1.308,0.717"/>
+                            <Rectangle x:Name="rectangle" Fill="White" Stroke="{x:Null}"/>
+                            <ContentPresenter TextBlock.FontSize="25" TextBlock.FontWeight="Bold" TextBlock.Foreground="Black"  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="109.9,37.42,15.2,19" Content="SHOPPING" Height="52.38" Width="129.9" RenderTransformOrigin="1.308,0.717"/>
                             <Image RenderOptions.BitmapScalingMode ="HighQuality" HorizontalAlignment="Left" Height="71.58" Margin="10,27.22,0,0" VerticalAlignment="Top" Width="84.8" Source="Shopping1.png"/>
                         </Grid>
                         <ControlTemplate.Triggers>
@@ -2209,7 +2209,7 @@
 
         </Canvas>
 
-        <Canvas x:Name="HomePage" Height="698.8" Width="1121.6" d:IsHidden="True">
+        <Canvas x:Name="HomePage" Height="698.8" Width="1121.6">
             <Button x:Name="AttractionsButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyle1}" Canvas.Top="123.8" Width="255"/>
             <Button x:Name="EventsButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyleEvents}" Canvas.Top="237.6" Width="255"/>
             <Button x:Name="RestaurantsButton" Content="Button" Height="108.8" Canvas.Left="10" Style="{DynamicResource ButtonStyleRestaurants}" Canvas.Top="350" Width="255
