@@ -44,9 +44,9 @@
                                     <VisualState x:Name="Disabled"/>
                                 </VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
-                            <Rectangle x:Name="rectangle" Fill="#FF4F4F4F" Stroke="#FF200C0C"/>
-                            <ContentPresenter TextBlock.FontSize="20" TextBlock.FontWeight="Bold" TextBlock.Foreground="White"  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="104.9,38.82,5.2,17.6" Content="ATTRACTIONS" Height="52.38" Width="144.9"/>
-                            <Image RenderOptions.BitmapScalingMode ="HighQuality"  HorizontalAlignment="Left" Height="88.8" Margin="10,10,0,0" VerticalAlignment="Top" Width="105.6" Source="Attractions1.png"/>
+                            <Rectangle x:Name="rectangle" Fill="White"/>
+                            <ContentPresenter TextBlock.FontSize="20" TextBlock.FontWeight="Bold" TextBlock.Foreground="Black"  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="104.9,38.82,5.2,17.6" Content="ATTRACTIONS" Height="52.38" Width="144.9"/>
+                            <Image RenderOptions.BitmapScalingMode ="HighQuality"  HorizontalAlignment="Left" Height="88.8" Margin="10,10,0,0" VerticalAlignment="Top" Width="105.6" Source="AttractionsBlack.png"/>
                         </Grid>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsFocused" Value="True"/>
@@ -2102,6 +2102,81 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="TransparentCancelStyle" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true" Background="#C9999999">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Storyboard x:Key="PrintBegin">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="PrintNotification">
+                <EasingDoubleKeyFrame KeyTime="0" Value="800"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="99">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseOut" Amplitude="0.3"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="PrintEnd">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="PrintNotification">
+                <EasingDoubleKeyFrame KeyTime="0" Value="99"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="800">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseIn" Amplitude="0.3"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
     </Window.Resources>
     <Window.Triggers>
         <EventTrigger RoutedEvent="RangeBase.ValueChanged" SourceName="TimeSlider">
@@ -2109,6 +2184,13 @@
         </EventTrigger>
         <EventTrigger RoutedEvent="FrameworkElement.Loaded">
             <BeginStoryboard Storyboard="{StaticResource InfoClick}"/>
+            <BeginStoryboard x:Name="PrintEnd_BeginStoryboard1" Storyboard="{StaticResource PrintEnd}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="PrintButton">
+            <BeginStoryboard x:Name="PrintBegin_BeginStoryboard1" Storyboard="{StaticResource PrintBegin}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="CancelButton">
+            <BeginStoryboard x:Name="PrintEnd_BeginStoryboard" Storyboard="{StaticResource PrintEnd}"/>
         </EventTrigger>
     </Window.Triggers>
     <Canvas x:Name="Container" Margin="-3.6,0,3.6,0">
@@ -2127,23 +2209,23 @@
 
         </Canvas>
 
-        <Canvas x:Name="HomePage" Height="698.8" Width="1121.6">
+        <Canvas x:Name="HomePage" Height="698.8" Width="1121.6" d:IsHidden="True">
             <Button x:Name="AttractionsButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyle1}" Canvas.Top="123.8" Width="255"/>
             <Button x:Name="EventsButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyleEvents}" Canvas.Top="237.6" Width="255"/>
             <Button x:Name="RestaurantsButton" Content="Button" Height="108.8" Canvas.Left="10" Style="{DynamicResource ButtonStyleRestaurants}" Canvas.Top="350" Width="255
                     "/>
             <Button x:Name="ShoppingButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyleShopping}" Canvas.Top="465.2" Width="255"/>
             <Button x:Name="SportButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyleSport}" Canvas.Top="579" Width="255"/>
-            <Image Height="258" Width="595.4" Source="Calgary1.jpg" Canvas.Left="284.8" Canvas.Top="130" Stretch="Fill"/>
-            <Image Height="255" Canvas.Left="284.8" Canvas.Top="393" Width="585.75" Source="Weather1.png" Stretch="UniformToFill"/>
-            <Border Height="258" Canvas.Left="885.2" Canvas.Top="130" Width="226.4" BorderBrush="Black" BorderThickness="5" Background="#FFC7C7C7">
+            <Image Height="245.2" Width="564.2" Source="Calgary1.jpg" Canvas.Left="284.8" Canvas.Top="130" Stretch="Fill"/>
+            <Image Height="255" Canvas.Left="284.8" Canvas.Top="383" Width="580.75" Source="Weather1.png" Stretch="UniformToFill"/>
+            <Border Height="245.2" Canvas.Left="865.55" Canvas.Top="130" Width="246.05" BorderBrush="Black" BorderThickness="5" Background="#FFC7C7C7">
                 <Grid>
                     <Image Source="WeatherToday1.png" RenderTransformOrigin="0.56,-0.14" Margin="0,75.733,0,10" OpacityMask="Black"/>
-                    <TextBlock Height="73.8" TextBlock.TextAlignment="Center" TextWrapping="Wrap" FontSize="18" FontWeight="Bold" Foreground="Black" VerticalAlignment="Top" OpacityMask="Black" Margin="0,10,0,0"><Run Text="Current Weather"/><LineBreak/><Run Text="Conditions"/></TextBlock>
+                    <TextBlock Height="73.8" TextBlock.TextAlignment="Center" TextWrapping="Wrap" FontSize="18" FontWeight="Bold" Foreground="Black" VerticalAlignment="Top" OpacityMask="Black" Margin="0,10,0,0"><Run FontStyle="Italic" Text="Current Weather"/><LineBreak/><Run FontStyle="Italic" Text="Conditions"/><Run FontStyle="Italic" Text=":"/></TextBlock>
                 </Grid>
             </Border>
-            <Button x:Name="ContactUsButton" Content="TextBlock" Height="29.8" Canvas.Left="962.55" Style="{DynamicResource ButtonStyleContactUs2}" Canvas.Top="659" Width="149.05"/>
-            <Image Height="255" Canvas.Left="870.55" Canvas.Top="393" Width="236.05" Source="Weather1.png" Stretch="UniformToFill"/>
+            <Button x:Name="ContactUsButton" Content="TextBlock" Height="29.8" Canvas.Left="947.75" Style="{DynamicResource ButtonStyleContactUs2}" Canvas.Top="649.4" Width="149.05"/>
+            <Image Height="255" Canvas.Left="865.55" Canvas.Top="383" Width="231.25" Source="Weather1.png" Stretch="UniformToFill"/>
         </Canvas>
         <Canvas x:Name="LoginPage" Height="678.8" Canvas.Left="10" Canvas.Top="10" Width="1101.6" d:IsHidden="True">
             <TextBlock Height="32" TextWrapping="Wrap" Width="116.8" FontSize="18" Canvas.Left="40.8" Canvas.Top="475.722" FontWeight="Bold" Foreground="#FF238CB4"><Run Text="User Name"/><Run Text=":"/></TextBlock>
@@ -2323,12 +2405,14 @@
         </Canvas>
 
         <Canvas x:Name="CompassCanvas" Height="570" Width="1100" Canvas.Left="10" Canvas.Top="129" Visibility="Hidden">
+            <Canvas x:Name="JustMapCanvas" Height="563.2" Canvas.Top="-3.2" Width="1100">
 
-            <Rectangle x:Name="Map" Height="563.2" Stroke="Black" Width="1100" Canvas.Top="-3.2">
-                <Rectangle.Fill>
-                    <ImageBrush ImageSource="Images/KM4Wa.png"/>
-                </Rectangle.Fill>
-            </Rectangle>
+                <Rectangle x:Name="Map" Height="563.2" Stroke="Black" Width="1100">
+                    <Rectangle.Fill>
+                        <ImageBrush ImageSource="Images/KM4Wa.png"/>
+                    </Rectangle.Fill>
+                </Rectangle>
+            </Canvas>
             <Rectangle x:Name="NightShader" Fill="Black" Height="570" Stroke="Black" Width="1100" Opacity="0" Canvas.Top="-10"/>
             <Rectangle Fill="#A54F4F4F" Height="49.2" Stroke="Black" Width="1100" Canvas.Top="-3.2"/>
 
@@ -2376,6 +2460,38 @@
             </Canvas>
             <ed:Callout x:Name="MapHelpBox" AnchorPoint="0.101,1.23" CalloutStyle="Rectangle" Content="Helpful text here." Foreground="White" Fill="#E54F4F4F" FontSize="{DynamicResource SizeDouble-Sketch}" FontFamily="{DynamicResource FontFamily-Sketch}" Height="126.4" Canvas.Left="48.6" Stroke="Black" Canvas.Top="333.6" Width="200" d:IsHidden="True" Visibility="Hidden"/>
             <Button x:Name="PrintButton" ToolTip="Print" Content="Button" Height="43.333" Canvas.Left="1038" Style="{DynamicResource PrintButtonStyle}" Width="52"/>
+            <Canvas x:Name="PrintNotification" Height="217.6" Canvas.Left="411.2" Canvas.Top="99" Width="315.2" RenderTransformOrigin="0.5,0.5">
+                <Canvas.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Canvas.RenderTransform>
+                <Rectangle Fill="#DB4F4F4F" Height="217.6" Width="315.2" RadiusX="10" RadiusY="14" StrokeThickness="5" Stroke="#DBA0A0A0"/>
+                <StackPanel Orientation="Vertical" Canvas.Top="12.8" Width="315.2">
+
+                    <Border HorizontalAlignment="Center" Height="32.4" Width="300" BorderBrush="Black" BorderThickness="0,0,0,1" >
+                        <Grid >
+                            <TextBlock x:Name="textBlock3" TextAlignment="Center" TextWrapping="Wrap" FontSize="18" FontFamily="Microsoft YaHei UI Light" Foreground="White" HorizontalAlignment="Center" Margin="0" Width="88" Text="Printing"/>
+
+                        </Grid>
+
+                    </Border>
+
+                    <Grid Margin="0" Height="134.2" HorizontalAlignment="Center">
+                        <Image x:Name="image2" Source="Attractions1.png" Margin="0" Height="110"/>
+
+                    </Grid>
+
+                </StackPanel>
+                <Grid Height="28.2" HorizontalAlignment="Center" Canvas.Left="119.6" Canvas.Top="179.4" Width="82.4">
+                    <Button x:Name="CancelButton" Content="Cancel" Style="{DynamicResource TransparentCancelStyle}"/>
+
+                </Grid>
+
+            </Canvas>
 
         </Canvas>
         <Canvas x:Name="SearchSortCanvas" Height="697" Width="1120" Visibility="Hidden" d:IsHidden="True">

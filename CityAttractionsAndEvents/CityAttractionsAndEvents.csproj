@@ -398,5 +398,10 @@
   <ItemGroup>
     <Resource Include="printer.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AttractionsBlack.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

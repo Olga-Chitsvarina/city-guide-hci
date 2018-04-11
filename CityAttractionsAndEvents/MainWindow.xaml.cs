@@ -741,7 +741,7 @@ namespace CityAttractionsAndEvents
                     Canvas.SetLeft(ellipse, p.posLeft);
                     Canvas.SetTop(ellipse, p.posTop);
                     ellipse = generateColourSize(ellipse, p);
-                    this.CompassCanvas.Children.Add(ellipse);
+                    this.JustMapCanvas.Children.Add(ellipse);
                     currentPlacesShown.Add(ellipse);
                 }
             }
@@ -853,7 +853,7 @@ namespace CityAttractionsAndEvents
 
         private void onPlace(object sender, MouseButtonEventArgs e)
         {
-            CompassCanvas.Children.Remove(currentPopout);
+            JustMapCanvas.Children.Remove(currentPopout);
             Ellipse ellipse = (Ellipse)sender;
             List<Place> places = generatePlaces();
             foreach (Place p in places)
