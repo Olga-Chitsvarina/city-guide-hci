@@ -2559,7 +2559,7 @@
 
         </Canvas>
 
-        <Canvas x:Name="HomePage" Height="698.8" Width="1121.6" d:IsHidden="True">
+        <Canvas x:Name="HomePage" Height="698.8" Width="1121.6">
             <Button x:Name="AttractionsButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyle1}" Canvas.Top="123.8" Width="255"/>
             <Button x:Name="EventsButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyleEvents}" Canvas.Top="232.6" Width="255"/>
             <Button x:Name="RestaurantsButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyleRestaurants}" Canvas.Top="341.4" Width="255                     "/>
@@ -2886,7 +2886,7 @@
             </Grid>
 
         </Canvas>
-        <Canvas x:Name="CreateAccountCanvas" Height="546.133" Canvas.Left="11.6" Canvas.Top="141.267" Width="1098.4">
+        <Canvas x:Name="CreateAccountCanvas" Height="546.133" Canvas.Left="11.6" Canvas.Top="141.267" Width="1098.4" d:IsHidden="True">
             <StackPanel Height="546.133" Width="1098.4">
                 <TextBlock x:Name="textBlock" Height="40" Margin="310.2,75,310.2,0" TextAlignment="Center" TextWrapping="Wrap" FontSize="22"><Run FontWeight="Bold" Text="Create Account"/></TextBlock>
                 <Grid x:Name="CreateUsernameGrid" Height="32" Width="478" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20">

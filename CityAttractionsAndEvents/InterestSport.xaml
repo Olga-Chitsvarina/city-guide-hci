@@ -11,7 +11,7 @@
 
         <Rectangle Fill="Black" RadiusX="4" RadiusY="4"  Stroke="#FF00B409" StrokeThickness="5"/>
         <StackPanel  d:LayoutOverrides="Height">
-            <Image x:Name="interestImg" Height="45.6" Width="44" Source="Sport.png" Margin="12,10,12,0"/>
+            <Image x:Name="interestImg" Height="45.6" Width="44" Source="Basketball.png" Margin="12,10,12,0"/>
             <TextBlock x:Name="interestTextbox" Foreground="White" TextAlignment="Center" TextWrapping="Wrap" Text="Sports"/>
         </StackPanel>
 
