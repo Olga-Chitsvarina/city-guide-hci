@@ -43,6 +43,9 @@ namespace CityAttractionsAndEvents
         static InfoExpander curWTG;
         static InfoExpander curNTK;
 
+        double priceMin;
+        double priceMax;
+
         Boolean searchClicked = false;
         private bool isPrinting;
 
@@ -1187,6 +1190,10 @@ namespace CityAttractionsAndEvents
                 if (searchBar.Text != "Search...")
                     if (!place.name.ToLower().Contains(searchBar.Text.ToLower()) && !place.details.ToLower().Contains(searchBar.Text.ToLower()))
                         filteredPlaces.Remove(place);
+                if (place.price < priceMin || place.price > priceMax)
+                {
+                    filteredPlaces.Remove(place);
+                }
             }
             renderGlanceViews(filteredPlaces);
             loadProgress.Visibility = Visibility.Hidden;
@@ -1266,6 +1273,13 @@ namespace CityAttractionsAndEvents
             Button button = (Button)sender;
             setPlaceProfile(((GlanceView)((Canvas)button.Parent).Parent).nameText.Text);
             UpdateCurrentAndPreviousPages(ProfilePageCanvas);
+        }
+
+        public void updatePriceRange(double min, double max)
+        {
+            this.priceMin = min;
+            this.priceMax = max;
+            startSearch();
         }
     }
 }
