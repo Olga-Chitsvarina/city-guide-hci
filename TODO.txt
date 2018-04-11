@@ -20,7 +20,6 @@ Place a print button, so that a user can print a map (edited)
 
 
 == David's Critiques Not Covered Above == 
-I feel there's a lot of competing content, right panel on the home looks just as important as the top panel. Maybe make those white so they blend with the interface more.
 
 Calendar - is red selected? Maybe have a speech bubble point to the selected date.
 Red makes it look like the one that is currently selected. Maybe there's a better way to show that?
@@ -38,12 +37,13 @@ Blacklist?
 
 Friends - does it mean you can search for people and add them? I feel like that has a lot of functionality that would need to be unpacked.
 
-Highlight current page on the top panel
+
 
 
 == Partially Resolved / WIP ==
 
 Help button
+"I feel there's a lot of competing content, right panel on the home looks just as important as the top panel. Maybe make those white so they blend with the interface more."
 
 
 == Resolved ==
@@ -67,3 +67,6 @@ Change plus button from expand to info
 Highlight current view
 Get rid of arrows on sliders
 Shift up day information (Calendar)
+
+== Resolved (David) ==
+Highlight current page on the top panel
