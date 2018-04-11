@@ -58,7 +58,7 @@ namespace CityAttractionsAndEvents
                 expandInfoButton.Content = "-";
                 expanded = true;
             }
-            ((MainWindow)((Canvas)((Canvas)((ScrollViewer)((StackPanel)this.Parent).Parent).Parent).Parent).Parent).renderPlaceProfile();
+            ((MainWindow)((Canvas)((Canvas)((ScrollViewer)((DockPanel)((StackPanel)this.Parent).Parent).Parent).Parent).Parent).Parent).renderPlaceProfile();
         }
 
         public void askQuestion(String question)
