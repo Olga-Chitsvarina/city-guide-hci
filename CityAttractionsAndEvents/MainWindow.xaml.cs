@@ -9,9 +9,11 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace CityAttractionsAndEvents
 {
@@ -33,6 +35,8 @@ namespace CityAttractionsAndEvents
         private List<string> emails;
         static List<WishEntry> wishlist = new List<WishEntry>();
         static List<string> blacklist = new List<string>();
+
+        private DispatcherTimer dispatchTimer;
 
         static GlanceView curGlanceView;
         static ProfileExpanded curProfileExpanded;
@@ -133,6 +137,29 @@ namespace CityAttractionsAndEvents
 
             this.HelpHover.MouseEnter += DisplayMapHelp;
             this.HelpHover.MouseLeave += HideMapHelp;
+
+            this.PrintButton.Click += StartPrinting;
+            this.CancelButton.Click += CancelPrinting;
+            dispatchTimer = new System.Windows.Threading.DispatcherTimer();
+
+        }
+
+        private void StartPrinting(object sender, RoutedEventArgs e)
+        {
+            dispatchTimer.Tick += new EventHandler(DonePrinting);
+            dispatchTimer.Interval = new TimeSpan(0, 0, 5);
+            dispatchTimer.Start();
+        }
+
+        private void DonePrinting(object sender, EventArgs e)
+        {
+            Storyboard sb = this.FindResource("PrintEnd") as Storyboard;
+            sb.Begin();
+            dispatchTimer.Tick -= new EventHandler(DonePrinting);
+        }
+
+        private void CancelPrinting(object sender, EventArgs e) {
+            dispatchTimer.Tick -= new EventHandler(DonePrinting);
         }
 
         private void HideMapHelp(object sender, MouseEventArgs e)
