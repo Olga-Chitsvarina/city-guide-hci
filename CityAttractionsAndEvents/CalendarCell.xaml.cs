@@ -24,7 +24,10 @@ namespace CityAttractionsAndEvents
         public CalendarCell(string day)
         {
             InitializeComponent();
+            //CalendarButton.
             //DayTextBlock.Text = day;
+            TextDay.Text = day;
+
         }
     }
 }

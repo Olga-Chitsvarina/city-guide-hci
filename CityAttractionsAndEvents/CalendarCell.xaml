@@ -4,25 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CityAttractionsAndEvents"
-             mc:Ignorable="d" Height="116.617" Width="120.177">
+             mc:Ignorable="d" Height="68.417" Width="72.577">
     <UserControl.Resources>
         <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Button Content="Button" Style="{DynamicResource ButtonStyle2}"/>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsFocused" Value="True"/>
-                            <Trigger Property="IsDefaulted" Value="True"/>
-                            <Trigger Property="IsMouseOver" Value="True"/>
-                            <Trigger Property="IsPressed" Value="True"/>
-                            <Trigger Property="IsEnabled" Value="False"/>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <Style x:Key="ButtonStyle2" TargetType="{x:Type Button}">
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -41,8 +25,8 @@
                                     <VisualState x:Name="Disabled"/>
                                 </VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
-                            <Image Height="62.8" Canvas.Left="4" Canvas.Top="21.7" Width="95.15"/>
-                            <TextBlock Height="18" Canvas.Left="4" TextWrapping="Wrap" Text="TextBlock" Canvas.Top="3.7" Width="53.75"/>
+                            <Image Height="64.336" Canvas.Left="5.55" Canvas.Top="30.753" Width="86.319"/>
+                            <TextBlock x:Name="CalendarCellTextBlock" Height="19.6" Canvas.Left="5.55" TextWrapping="Wrap" Text="TextBlock" Canvas.Top="6.153" Width="65"/>
                         </Canvas>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsFocused" Value="True"/>
@@ -55,6 +39,48 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Storyboard x:Key="Storyboard1"/>
+        <Style x:Key="CellRectangle" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid Margin="0,0,8,9">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill)" Storyboard.TargetName="rectangle">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Null}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="MouseOver"/>
+                                    <VisualState x:Name="Pressed"/>
+                                    <VisualState x:Name="Disabled"/>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Rectangle x:Name="rectangle" Stroke="Black" Fill="#FF807C7C" Opacity="0.1"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </UserControl.Resources>
-    <Button Content="" Margin="0,0,18.308,16.528" Style="{DynamicResource ButtonStyle1}"/>
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+        </EventTrigger>
+    </UserControl.Triggers>
+    <Canvas HorizontalAlignment="Left" Height="68.417" VerticalAlignment="Top" Width="72.577">
+        <TextBlock x:Name="TextDay" Height="17.2" Canvas.Left="5.55" TextWrapping="Wrap" Text="TextBlock" Canvas.Top="4.4" Width="55.227"/>
+        <Image x:Name="PlacePicture" Height="37.017" Canvas.Left="5.55" Canvas.Top="26.6" Width="55.227"/>
+        <Button x:Name="CalendarCellButton" Content="Button" Height="68.417" Style="{DynamicResource CellRectangle}" Width="72.577"/>
+    </Canvas>
 </UserControl>
