@@ -403,5 +403,14 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="eventsBlack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="restaurantsBlack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="shoppingBlack.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
