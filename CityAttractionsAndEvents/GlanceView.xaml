@@ -12,17 +12,8 @@
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Grid>
                             <Ellipse Fill="#FF000087" Stroke="#FF000087"/>
-                            <Rectangle Fill="White" HorizontalAlignment="Left" Height="18" Margin="19.167,13,0,0" Stroke="White" VerticalAlignment="Top" Width="5"/>
-                            <Rectangle Fill="White" HorizontalAlignment="Left" Height="18" Margin="19.167,13,0,0" Stroke="White" VerticalAlignment="Top" Width="5" RenderTransformOrigin="0.5,0.5">
-                                <Rectangle.RenderTransform>
-                                    <TransformGroup>
-                                        <ScaleTransform/>
-                                        <SkewTransform/>
-                                        <RotateTransform Angle="90"/>
-                                        <TranslateTransform/>
-                                    </TransformGroup>
-                                </Rectangle.RenderTransform>
-                            </Rectangle>
+                            <Rectangle Fill="White" HorizontalAlignment="Left" Height="16.669" Margin="19.167,20.164,0,0" Stroke="White" VerticalAlignment="Top" Width="5"/>
+                            <Ellipse Fill="White" HorizontalAlignment="Left" Height="6.333" Margin="18.332,8.831,0,0" Stroke="White" VerticalAlignment="Top" Width="6.5"/>
                         </Grid>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsFocused" Value="True"/>
