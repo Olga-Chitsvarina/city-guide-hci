@@ -15,7 +15,20 @@
                         <Grid Cursor="Hand">
                             <VisualStateManager.VisualStateGroups>
                                 <VisualStateGroup x:Name="CommonStates">
-                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="Normal">
+                                        <Storyboard>
+                                            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.BorderThickness)" Storyboard.TargetName="border">
+                                                <EasingThicknessKeyFrame KeyTime="0" Value="0,0,0,2"/>
+                                            </ThicknessAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.BorderBrush)" Storyboard.TargetName="border">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <SolidColorBrush Color="Black"/>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
                                     <VisualState x:Name="MouseOver">
                                         <Storyboard>
                                             <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill)" Storyboard.TargetName="rectangle">
@@ -44,7 +57,9 @@
                                     <VisualState x:Name="Disabled"/>
                                 </VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
-                            <Rectangle x:Name="rectangle" Fill="White"/>
+                            <Border x:Name="border" BorderThickness="0,0,0,2">
+                                <Rectangle x:Name="rectangle" Fill="White"/>
+                            </Border>
                             <ContentPresenter TextBlock.FontSize="20" TextBlock.FontWeight="Bold" TextBlock.Foreground="Black"  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="104.9,38.82,5.2,17.6" Content="ATTRACTIONS" Height="52.38" Width="144.9"/>
                             <Image RenderOptions.BitmapScalingMode ="HighQuality"  HorizontalAlignment="Left" Height="88.8" Margin="10,10,0,0" VerticalAlignment="Top" Width="105.6" Source="AttractionsBlack.png"/>
                         </Grid>
@@ -171,7 +186,9 @@
                                     <VisualState x:Name="Disabled"/>
                                 </VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
-                            <Rectangle x:Name="rectangle" Fill="White" Stroke="{x:Null}"/>
+                            <Border BorderBrush="Black" BorderThickness="0,0,0,2">
+                                <Rectangle x:Name="rectangle" Fill="White" Stroke="{x:Null}"/>
+                            </Border>
                             <ContentPresenter TextBlock.FontSize="25" TextBlock.FontWeight="Bold" TextBlock.Foreground="Black"  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="114,35.02,40.2,21.4" Content="EVENTS" Height="52.38" Width="100.8"/>
                             <Image RenderOptions.BitmapScalingMode ="HighQuality" HorizontalAlignment="Left" Height="88.8" Margin="26.4,10,0,0" VerticalAlignment="Top" Width="59.2" Source="eventsBlack.png" OpacityMask="Black"/>
                         </Grid>
@@ -2492,15 +2509,15 @@
 
         </Canvas>
 
-        <Canvas x:Name="HomePage" Height="698.8" Width="1121.6" d:IsHidden="True">
+        <Canvas x:Name="HomePage" Height="698.8" Width="1121.6">
             <Button x:Name="AttractionsButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyle1}" Canvas.Top="123.8" Width="255"/>
-            <Button x:Name="EventsButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyleEvents}" Canvas.Top="237.6" Width="255"/>
-            <Button x:Name="RestaurantsButton" Content="Button" Height="108.8" Canvas.Left="10" Style="{DynamicResource ButtonStyleRestaurants}" Canvas.Top="350" Width="255                     "/>
-            <Button x:Name="ShoppingButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyleShopping}" Canvas.Top="465.2" Width="255"/>
-            <Button x:Name="SportButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyleSport}" Canvas.Top="579" Width="255"/>
+            <Button x:Name="EventsButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyleEvents}" Canvas.Top="232.6" Width="255"/>
+            <Button x:Name="RestaurantsButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyleRestaurants}" Canvas.Top="341.4" Width="255                     "/>
+            <Button x:Name="ShoppingButton" Content="Button" Height="108.8" Canvas.Left="10" Style="{DynamicResource ButtonStyleShopping}" Canvas.Top="450.2" Width="255"/>
+            <Button x:Name="SportButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyleSport}" Canvas.Top="564" Width="255"/>
             <Image Height="245.2" Width="564.2" Source="Calgary1.jpg" Canvas.Left="284.8" Canvas.Top="130" Stretch="Fill"/>
             <Image Height="255" Canvas.Left="284.8" Canvas.Top="383" Width="580.75" Source="Weather1.png" Stretch="UniformToFill"/>
-            <Border Height="245.2" Canvas.Left="865.55" Canvas.Top="130" Width="246.05" BorderBrush="Black" BorderThickness="5" Background="#FFC7C7C7">
+            <Border Height="245.2" Canvas.Left="865.55" Canvas.Top="130" Width="246.05" BorderBrush="Black" BorderThickness="2" Background="White">
                 <Grid>
                     <TextBlock Height="73.8" TextBlock.TextAlignment="Center" TextWrapping="Wrap" FontSize="18" FontWeight="Bold" Foreground="Black" VerticalAlignment="Top" OpacityMask="Black" Margin="0,10,0,0"><Run FontStyle="Italic" Text="Current Weather"/><LineBreak/><Run FontStyle="Italic" Text="Conditions"/><Run FontStyle="Italic" Text=":"/></TextBlock>
                 </Grid>
@@ -2543,7 +2560,7 @@
             <TextBlock Height="312.52" TextWrapping="Wrap" Canvas.Top="249.2" Width="1008.6" FontSize="18"><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text="-----------------------------------------------------------------------------------------------------------------------------------------"/><LineBreak/><Run Foreground="#FF4F4F4F" FontWeight="Bold"/><LineBreak/><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text="GENERAL INFORMATION:"/><LineBreak/><Run Foreground="#FF238CB4" FontWeight="Bold"/><LineBreak/><Run Foreground="#FF238CB4" FontWeight="Bold" Text="We intend our app to be useful to anyone who wants to discover/research new attractions or events"/><Run Foreground="#FF238CB4" FontWeight="Bold" Text=" in the city."/><LineBreak/><Run Foreground="#FF238CB4" FontWeight="Bold"/><LineBreak/><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text="-----------------------------------------------------------------------------------------------------------------------------------------"/><LineBreak/><Run Foreground="#FF4F4F4F" FontWeight="Bold"/><LineBreak/><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text="M"/><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text="ISSION STATEMENT"/><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text=":"/><LineBreak/><Run Foreground="#FF4F4F4F" FontWeight="Bold"/><LineBreak/><Run Foreground="#FF238CB4" FontWeight="Bold" Text="Encourage people to explore cities' attractions and events and help them to find enjoyable experiences."/><LineBreak/><Run Foreground="#FF238CB4" FontWeight="Bold"/><LineBreak/><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text="-----------------------"/><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text="-------------------------------------------------------------------------------------------------------------------"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
 
         </Canvas>
-        <Canvas x:Name="CalendarPage" Height="580.467" Canvas.Left="10" Canvas.Top="128.8" Width="1101.6">
+        <Canvas x:Name="CalendarPage" Height="580.467" Canvas.Left="10" Canvas.Top="128.8" Width="1101.6" d:IsHidden="True">
             <Calendar Height="177.6" Width="211.2" Canvas.Left="867.2" Canvas.Top="40.4"/>
             <TextBlock Height="25.6" Canvas.Left="300.6" TextWrapping="Wrap" Canvas.Top="32.6" Width="81" FontSize="18" FontWeight="Bold"><Run Text="SU"/><Run Text="N"/></TextBlock>
             <TextBlock Height="25.6" Canvas.Left="386.6" TextWrapping="Wrap" Canvas.Top="32.6" Width="81" FontSize="18" FontWeight="Bold"><Run Text="MO"/><Run Text="N"/></TextBlock>

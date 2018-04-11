@@ -5,7 +5,6 @@ Implement personal profile
 
 If events on same place, implement arrows to view next
 Implement "view all reflections"
-Use Olga's fix on Place Profile Page
 Implement sliders for search
 Implement visited for completion bar
 Implement completion bar
@@ -15,7 +14,40 @@ Fake social media sharing
 	"The app will allow users to share their Completion Bar, an Attraction/Event Page, their profile or a reflection to Twitter/Facebook/Instagram."
 (ICONS)
 Persona profiles
-Place a print button, so that a user can print a map (edited)
+
+== New To Do ==
+Notifications: remove red and number once viewed.
+Notifications: Add link to Nick's profile.
+Notifications: Add an "attraction" notification.
+
+Blacklist: confirmation.
+Blacklist: "Clear blacklist" button
+Search: Reset button
+
+Sliders: bounds
+Sliders: non-numerical
+
+Calendar: dynamic day selection
+Calendar: "Add to current day" button
+Calendar: shading for current day, border for selected
+
+Place profile: Cutoff
+
+Profile: logout button
+
+Profile: User search?
+
+Registration: "Cancel" button
+
+Map: Change .gif file background colour
+
+Borders in: Notifications?, 
+
+Search: "Advance" looks like button
+
+Map: Remove ellipse borders
+
+Navigation Bar: Decrease text size
 
 
 
@@ -68,6 +100,10 @@ Change plus button from expand to info
 Highlight current view
 Get rid of arrows on sliders
 Shift up day information (Calendar)
+Use Olga's fix on Place Profile Page
+Place a print button, so that a user can print a map (edited)
+
+
 
 == Resolved (David) ==
 Highlight current page on the top panel
