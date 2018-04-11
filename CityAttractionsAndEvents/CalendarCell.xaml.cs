@@ -27,7 +27,7 @@ namespace CityAttractionsAndEvents
             //CalendarButton.
             //DayTextBlock.Text = day;
             TextDay.Text = day;
-
+            //this.OnMouseDown +=             
         }
     }
 }
