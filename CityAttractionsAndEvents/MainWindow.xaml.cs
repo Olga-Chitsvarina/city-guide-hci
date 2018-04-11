@@ -44,6 +44,8 @@ namespace CityAttractionsAndEvents
         static InfoExpander curNTK;
 
         Boolean searchClicked = false;
+        private bool isPrinting;
+
         public MainWindow()
         {  
             InitializeComponent();
@@ -146,19 +148,32 @@ namespace CityAttractionsAndEvents
 
         private void StartPrinting(object sender, RoutedEventArgs e)
         {
-            dispatchTimer.Tick += new EventHandler(DonePrinting);
-            dispatchTimer.Interval = new TimeSpan(0, 0, 5);
-            dispatchTimer.Start();
+            if (!isPrinting)
+            {
+                isPrinting = true;
+                this.PrintLabel.Text = "Printing";
+
+                Storyboard sb = this.FindResource("PrintBegin") as Storyboard;
+                sb.Begin();
+
+                dispatchTimer.Tick += new EventHandler(DonePrinting);
+                dispatchTimer.Interval = new TimeSpan(0, 0, 4);
+                dispatchTimer.Start();
+            }
         }
 
         private void DonePrinting(object sender, EventArgs e)
         {
+            isPrinting = false;
+            this.PrintLabel.Text = "Done!";
             Storyboard sb = this.FindResource("PrintEnd") as Storyboard;
             sb.Begin();
             dispatchTimer.Tick -= new EventHandler(DonePrinting);
         }
 
         private void CancelPrinting(object sender, EventArgs e) {
+            this.PrintLabel.Text = "Cancelling";
+            isPrinting = false;
             dispatchTimer.Tick -= new EventHandler(DonePrinting);
         }
 
@@ -768,7 +783,7 @@ namespace CityAttractionsAndEvents
             List<int> selectedPlaces = getSelectedPlaces();
             foreach (Ellipse e in currentPlacesShown)
             {
-                this.CompassCanvas.Children.Remove(e);
+                this.JustMapCanvas.Children.Remove(e);
             }
             currentPlacesShown.Clear();
             foreach (Place p in places)
@@ -897,7 +912,7 @@ namespace CityAttractionsAndEvents
 
         private void onPlace(object sender, MouseButtonEventArgs e)
         {
-            JustMapCanvas.Children.Remove(currentPopout);
+            CompassCanvas.Children.Remove(currentPopout);
             Ellipse ellipse = (Ellipse)sender;
             List<Place> places = generatePlaces();
             foreach (Place p in places)

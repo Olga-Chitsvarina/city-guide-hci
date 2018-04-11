@@ -2170,7 +2170,8 @@
         <Storyboard x:Key="PrintEnd">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="PrintNotification">
                 <EasingDoubleKeyFrame KeyTime="0" Value="99"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="800">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="99"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="800">
                     <EasingDoubleKeyFrame.EasingFunction>
                         <BackEase EasingMode="EaseIn" Amplitude="0.3"/>
                     </EasingDoubleKeyFrame.EasingFunction>
@@ -2186,9 +2187,7 @@
             <BeginStoryboard Storyboard="{StaticResource InfoClick}"/>
             <BeginStoryboard x:Name="PrintEnd_BeginStoryboard1" Storyboard="{StaticResource PrintEnd}"/>
         </EventTrigger>
-        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="PrintButton">
-            <BeginStoryboard x:Name="PrintBegin_BeginStoryboard1" Storyboard="{StaticResource PrintBegin}"/>
-        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="PrintButton"/>
         <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="CancelButton">
             <BeginStoryboard x:Name="PrintEnd_BeginStoryboard" Storyboard="{StaticResource PrintEnd}"/>
         </EventTrigger>
@@ -2412,8 +2411,8 @@
                         <ImageBrush ImageSource="Images/KM4Wa.png"/>
                     </Rectangle.Fill>
                 </Rectangle>
+                <Rectangle x:Name="NightShader" Fill="Black" Height="570" Stroke="Black" Width="1100" Opacity="0" Canvas.Top="-10"/>
             </Canvas>
-            <Rectangle x:Name="NightShader" Fill="Black" Height="570" Stroke="Black" Width="1100" Opacity="0" Canvas.Top="-10"/>
             <Rectangle Fill="#A54F4F4F" Height="49.2" Stroke="Black" Width="1100" Canvas.Top="-3.2"/>
 
             <Ellipse x:Name="CompassBack" HorizontalAlignment="Left" Height="88" Stroke="Black" VerticalAlignment="Top" Width="92" Canvas.Left="937" Canvas.Top="456">
@@ -2474,7 +2473,7 @@
 
                     <Border HorizontalAlignment="Center" Height="32.4" Width="300" BorderBrush="Black" BorderThickness="0,0,0,1" >
                         <Grid >
-                            <TextBlock x:Name="textBlock3" TextAlignment="Center" TextWrapping="Wrap" FontSize="18" FontFamily="Microsoft YaHei UI Light" Foreground="White" HorizontalAlignment="Center" Margin="0" Width="88" Text="Printing"/>
+                            <TextBlock x:Name="PrintLabel" TextAlignment="Center" TextWrapping="Wrap" FontSize="18" FontFamily="Microsoft YaHei UI Light" Foreground="White" HorizontalAlignment="Center" Margin="0" Width="88" Text="Printing"/>
 
                         </Grid>
 
@@ -2487,7 +2486,11 @@
                     <Button x:Name="CancelButton" Content="Cancel" Style="{DynamicResource TransparentCancelStyle}"/>
 
                 </Grid>
-                <MediaElement x:Name="printGif" MediaEnded="printGif_MediaEnded" UnloadedBehavior="Manual" Height="117.8" Canvas.Left="84.302" Canvas.Top="56.6" Width="146.298" Source="printGif.gif"/>
+                <MediaElement x:Name="printGif" MediaEnded="printGif_MediaEnded" UnloadedBehavior="Manual" Height="117.8" Canvas.Left="84.302" Canvas.Top="56.6" Width="146.298" Source="printGif.gif" >
+                    <!--<MediaElement.OpacityMask>
+                        <ImageBrush ImageSource="printGif.gif"/>
+                    </MediaElement.OpacityMask>-->
+                </MediaElement>
 
             </Canvas>
 
