@@ -393,7 +393,9 @@
     <Resource Include="CT2.jpg" />
     <Resource Include="CT3.jpg" />
     <Resource Include="home-1110867_640.png" />
-    <Resource Include="Sport.png" />
+    <Resource Include="Sport.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="compass.png" />
@@ -454,6 +456,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Basketball.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
