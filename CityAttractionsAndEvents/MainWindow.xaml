@@ -2703,7 +2703,7 @@
 
         </Canvas>
 
-        <Canvas x:Name="CompassCanvas" Height="570" Width="1100" Canvas.Left="10" Canvas.Top="129" Visibility="Hidden">
+        <Canvas x:Name="CompassCanvas" Height="570" Width="1100" Canvas.Left="10" Canvas.Top="129">
             <Canvas x:Name="JustMapCanvas" Height="563.2" Canvas.Top="-3.2" Width="1100">
 
                 <Rectangle x:Name="Map" Height="563.2" Stroke="Black" Width="1100">
@@ -2783,10 +2783,10 @@
 
                 </StackPanel>
                 <Grid Height="28.2" HorizontalAlignment="Center" Canvas.Left="119.6" Canvas.Top="179.4" Width="82.4">
-                    <Button x:Name="CancelButton" Content="Cancel" Style="{DynamicResource TransparentCancelStyle}"/>
+                    <Button x:Name="CancelButton" Content="Cancel" Style="{DynamicResource TransparentCancelStyle}" Foreground="White"/>
 
                 </Grid>
-                <MediaElement x:Name="printGif" MediaEnded="printGif_MediaEnded" UnloadedBehavior="Manual" Height="117.8" Canvas.Left="84.302" Canvas.Top="56.6" Width="146.298" Source="printGif.gif" >
+                <MediaElement x:Name="printGif" MediaEnded="printGif_MediaEnded" UnloadedBehavior="Manual" Height="117.8" Canvas.Left="84.302" Canvas.Top="56.6" Width="146.298" Source="printGif.gif" Opacity="0.8" >
                     <!--<MediaElement.OpacityMask>
                         <ImageBrush ImageSource="printGif.gif"/>
                     </MediaElement.OpacityMask>-->

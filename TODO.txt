@@ -31,6 +31,9 @@ Calendar: dynamic day selection
 Calendar: "Add to current day" button
 Calendar: shading for current day, border for selected
 Calendar: Grey out or darken days not in current month.
+Calendar: Remove item from day, putting it back into wishlist
+
+David: Consistent colour scheme (Page Profile), Adobe Kuler?
 
 Place profile: Cutoff
 
@@ -50,21 +53,23 @@ Map: Remove ellipse borders
 
 Navigation Bar: Decrease text size
 
+Remove items from wishlist.
+
 
 
 
 
 == David's Critiques Not Covered Above == 
 
-Calendar - is red selected? Maybe have a speech bubble point to the selected date.
-Red makes it look like the one that is currently selected. Maybe there's a better way to show that?
+~Calendar - is red selected? Maybe have a speech bubble point to the selected date.~
+~Red makes it look like the one that is currently selected. Maybe there's a better way to show that?~
 
-Maybe get rid of strokes (borders)?
+~Maybe get rid of strokes (borders)?~
 
 Place profile page - photo on left
 Good use of visual variables, but maybe use a consistent colour scheme? Try Adobe Kuler.
 
-Error messages.
+~Error messages.~
 
 What is obscurity rating again?
 
