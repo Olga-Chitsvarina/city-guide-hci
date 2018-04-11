@@ -45,12 +45,12 @@ namespace CityAttractionsAndEvents
 
         private void BlacklistImage_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            ((MainWindow)((Canvas)((Canvas)((ScrollViewer)((StackPanel)this.Parent).Parent).Parent).Parent).Parent).addToBlacklist(this.nameText.Text);
+            ((MainWindow)((Canvas)((Canvas)((ScrollViewer)((DockPanel)((StackPanel)this.Parent).Parent).Parent).Parent).Parent).Parent).addToBlacklist(this.nameText.Text);
         }
 
         private void WishlistImage_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            ((MainWindow)((Canvas)((Canvas)((ScrollViewer)((StackPanel)this.Parent).Parent).Parent).Parent).Parent).wishStack.Children.Add(new WishEntry(this.nameText.Text, this.imagepath));
+            ((MainWindow)((Canvas)((Canvas)((ScrollViewer)((DockPanel)((StackPanel)this.Parent).Parent).Parent).Parent).Parent).Parent).wishStack.Children.Add(new WishEntry(this.nameText.Text, this.imagepath));
         }
 
         private void ExpandButton_Click(object sender, RoutedEventArgs e)
