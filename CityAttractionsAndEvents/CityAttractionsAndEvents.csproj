@@ -74,6 +74,9 @@
     <Compile Include="CalendarCell.xaml.cs">
       <DependentUpon>CalendarCell.xaml</DependentUpon>
     </Compile>
+    <Compile Include="impFactorSlider.xaml.cs">
+      <DependentUpon>impFactorSlider.xaml</DependentUpon>
+    </Compile>
     <Compile Include="panelButton.xaml.cs">
       <DependentUpon>panelButton.xaml</DependentUpon>
     </Compile>
@@ -105,6 +108,10 @@
     <Page Include="GlanceView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="impFactorSlider.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="InfoAnswered.xaml">
       <SubType>Designer</SubType>

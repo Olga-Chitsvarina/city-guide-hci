@@ -15,18 +15,16 @@
         <Rectangle Fill="Black" HorizontalAlignment="Left" Height="2" Margin="146,94,-1,0" Stroke="Black" VerticalAlignment="Top" Width="62"/>
         <TextBlock HorizontalAlignment="Left" TextAlignment ="Center" Height="32.667" Margin="63,77,0,0" TextWrapping="Wrap" Text="Importance Factors" VerticalAlignment="Top" Width="78"/>
         <Canvas x:Name="priceContainer" Height="37" Canvas.Left="10" Canvas.Top="28" Width="180.667">
-            <Rectangle x:Name="priceSliderRect" Fill="Black" HorizontalAlignment="Left" Height="4" Stroke="White" VerticalAlignment="Top" Width="160.667" Canvas.Top="7.333" Canvas.Left="10"/>
-            <TextBlock x:Name="priceMinText" TextAlignment="Center" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="51" Canvas.Top="20.333" Canvas.Left="-5"/>
-            <TextBlock x:Name="priceMaxText" TextAlignment="Center" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="51" Canvas.Left="128.667" Canvas.Top="19.333"/>
-            <Rectangle x:Name="rangeRect" Fill="#FF198799" HorizontalAlignment="Left" Height="4" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="63" Canvas.Top="7.333"/>
-            <Ellipse x:Name="priceMinEllipse" Fill="White" HorizontalAlignment="Left" Height="13" Stroke="Black" VerticalAlignment="Top" Width="12" Cursor="Hand" Canvas.Left="51" Canvas.Top="2.333"/>
-            <Ellipse x:Name="priceMaxEllipse" Fill="White" HorizontalAlignment="Left" Height="13" Stroke="Black" VerticalAlignment="Top" Width="12" Cursor="Hand" Canvas.Left="113" Canvas.Top="2.333"/>
-            <TextBox x:Name="lowerBoundTextBox" TextAlignment="Center" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="52" Canvas.Top="20.333" Canvas.Left="-5"/>
-            <TextBox x:Name="upperBoundTextBox" TextAlignment="Center" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="52" Canvas.Left="128.667" Canvas.Top="19.333"/>
+            <Rectangle x:Name="priceSliderRect" Fill="Black" HorizontalAlignment="Left" Height="4" Stroke="White" VerticalAlignment="Top" Width="160.667" Canvas.Left="13.997" Canvas.Top="3.335"/>
+            <TextBlock x:Name="priceMinText" TextAlignment="Center" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="51" Canvas.Top="16.335" Canvas.Left="-1.003"/>
+            <TextBlock x:Name="priceMaxText" TextAlignment="Center" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="51" Canvas.Left="132.664" Canvas.Top="15.335"/>
+            <Rectangle x:Name="rangeRect" Fill="#FF198799" HorizontalAlignment="Left" Height="4" Stroke="Black" VerticalAlignment="Top" Width="50" Canvas.Left="66.997" Canvas.Top="3.335"/>
+            <Ellipse x:Name="priceMinEllipse" Fill="White" HorizontalAlignment="Left" Height="13" Stroke="Black" VerticalAlignment="Top" Width="12" Cursor="Hand" Canvas.Left="54.997" Canvas.Top="-1.665"/>
+            <Ellipse x:Name="priceMaxEllipse" Fill="White" HorizontalAlignment="Left" Height="13" Stroke="Black" VerticalAlignment="Top" Width="12" Cursor="Hand" Canvas.Left="116.997" Canvas.Top="-1.665"/>
+            <TextBox x:Name="lowerBoundTextBox" TextAlignment="Center" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="52" Canvas.Top="16.335" Canvas.Left="-1.003"/>
+            <TextBox x:Name="upperBoundTextBox" TextAlignment="Center" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="52" Canvas.Left="132.664" Canvas.Top="15.335"/>
         </Canvas>
-        <Canvas x:Name="impCanvas" Height="187.833" Canvas.Left="23" Canvas.Top="109.667" Width="165">
-            <Rectangle x:Name="sliderRect_Copy" Fill="Black" HorizontalAlignment="Left" Height="4" Stroke="White" VerticalAlignment="Top" Width="165" Canvas.Top="10"/>
-        </Canvas>
+        <local:impFactorSlider Height="187.833" Canvas.Left="23" Canvas.Top="109.667" Width="165"/>
 
     </Canvas>
 </UserControl>
