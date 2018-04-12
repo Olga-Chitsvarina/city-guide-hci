@@ -32,6 +32,8 @@ namespace CityAttractionsAndEvents
         priceBorderRectControl obscRectControl;
         priceBorderRectControl starRectControl;
 
+        private double HALFRECT = 95 / 2;
+
 
         public impFactorSlider()
         {
@@ -43,23 +45,23 @@ namespace CityAttractionsAndEvents
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
             this.priceRectControl = new priceBorderRectControl(35, "Price");
-            Canvas.SetTop(priceRectControl, 6);
-            Canvas.SetLeft(priceRectControl, 30);
-            Canvas.SetZIndex(priceRectControl, 2);
-            this.impCanvas.Children.Add(priceRectControl);
+            Canvas.SetTop(this.priceRectControl, 6);
+            Canvas.SetLeft(this.priceRectControl, 30);
+            Canvas.SetZIndex(this.priceRectControl, 2);
+            this.impCanvas.Children.Add(this.priceRectControl);
             this.obscRectControl = new priceBorderRectControl(70, "Obscurity Rating");
-            Canvas.SetTop(obscRectControl, 6);
-            Canvas.SetLeft(obscRectControl, 25);
-            Canvas.SetZIndex(obscRectControl, 1);
+            Canvas.SetTop(this.obscRectControl, 6);
+            Canvas.SetLeft(this.obscRectControl, 25);
+            Canvas.SetZIndex(this.obscRectControl, 1);
             this.impCanvas.Children.Add(obscRectControl);
             this.starRectControl = new priceBorderRectControl(105, "Star Rating");
-            Canvas.SetTop(starRectControl, 6);
-            Canvas.SetLeft(starRectControl, 40);
-            Canvas.SetZIndex(starRectControl, 0);
-            this.impCanvas.Children.Add(starRectControl);
-            priceRectControl.MouseDown += onClick;
-            obscRectControl.MouseDown += onClick;
-            starRectControl.MouseDown += onClick;
+            Canvas.SetTop(this.starRectControl, 6);
+            Canvas.SetLeft(this.starRectControl, 40);
+            Canvas.SetZIndex(this.starRectControl, 0);
+            this.impCanvas.Children.Add(this.starRectControl);
+            this.priceRectControl.MouseDown += onClick;
+            this.obscRectControl.MouseDown += onClick;
+            this.starRectControl.MouseDown += onClick;
             Window.GetWindow(this).MouseMove += OnWindowMouseMove;
             Window.GetWindow(this).MouseLeftButtonUp += onBoundClickReleased;
         }
@@ -103,12 +105,17 @@ namespace CityAttractionsAndEvents
         {
             if (selection != null)
             {
-                double pricePosition = Canvas.GetLeft(priceRectControl);
+                Canvas.SetLeft(selection, e.GetPosition(this.impCanvas).X - HALFRECT);
+                double pricePosition = Canvas.GetLeft(this.priceRectControl);
                 this.currentPrice = Utils.Map(pricePosition, 0, this.sliderRect.Width, this.minimum, this.maximum);
-                double starPosition = Canvas.GetLeft(starRectControl);
+                double starPosition = Canvas.GetLeft(this.starRectControl);
                 this.currentStar = Utils.Map(starPosition, 0, this.sliderRect.Width, this.minimum, this.maximum);
-                double obscPosition = Canvas.GetLeft(obscRectControl);
+                double obscPosition = Canvas.GetLeft(this.obscRectControl);
                 this.currentObsc = Utils.Map(obscPosition, 0, this.sliderRect.Width, this.minimum, this.maximum);
+
+                this.currentObsc += HALFRECT;
+                this.currentPrice += HALFRECT;
+                this.currentStar += HALFRECT;
             }
         }
         private void onClick(object sender, MouseButtonEventArgs e)
@@ -116,49 +123,54 @@ namespace CityAttractionsAndEvents
             this.selection = sender as priceBorderRectControl;
         }
 
+        private void updateWindowWithPositions()
+        {
+
+        }
+
         private void updatePosition()
         {
-            double pricePosition = Canvas.GetLeft(priceRectControl);
+            double pricePosition = Canvas.GetLeft(this.priceRectControl);
             this.currentPrice = Utils.Map(pricePosition, 0, this.sliderRect.Width, this.minimum, this.maximum);
-            double starPosition = Canvas.GetLeft(starRectControl);
+            double starPosition = Canvas.GetLeft(this.starRectControl);
             this.currentStar = Utils.Map(starPosition, 0, this.sliderRect.Width, this.minimum, this.maximum);
-            double obscPosition = Canvas.GetLeft(obscRectControl);
+            double obscPosition = Canvas.GetLeft(this.obscRectControl);
             this.currentObsc = Utils.Map(obscPosition, 0, this.sliderRect.Width, this.minimum, this.maximum);
             if (this.currentPrice > 100)
             {
                 this.currentPrice = 100.00;
                 pricePosition = Utils.Map(this.currentPrice, this.minimum, this.maximum, 0, this.sliderRect.Width);
-                Canvas.SetLeft(priceRectControl, pricePosition);
+                Canvas.SetLeft(this.priceRectControl, pricePosition - HALFRECT);
             }
             if (this.currentPrice < 0)
             {
                 this.currentPrice = 0.0;
                 pricePosition = Utils.Map(this.currentPrice, this.minimum, this.maximum, 0, this.sliderRect.Width);
-                Canvas.SetLeft(priceRectControl, pricePosition);
+                Canvas.SetLeft(this.priceRectControl, pricePosition - HALFRECT);
             }
             if (this.currentObsc > 100)
             {
                 this.currentObsc = 100.00;
                 obscPosition = Utils.Map(this.currentObsc, this.minimum, this.maximum, 0, this.sliderRect.Width);
-                Canvas.SetLeft(obscRectControl, obscPosition);
+                Canvas.SetLeft(this.obscRectControl, obscPosition-HALFRECT);
             }
             if (this.currentObsc < 0)
             {
                 this.currentObsc = 0.0;
                 obscPosition = Utils.Map(this.currentObsc, this.minimum, this.maximum, 0, this.sliderRect.Width);
-                Canvas.SetLeft(obscRectControl, obscPosition);
+                Canvas.SetLeft(this.obscRectControl, obscPosition - HALFRECT);
             }
             if (this.currentStar > 100)
             {
                 this.currentStar = 100.00;
                 starPosition = Utils.Map(this.currentStar, this.minimum, this.maximum, 0, this.sliderRect.Width);
-                Canvas.SetLeft(starRectControl, starPosition);
+                Canvas.SetLeft(this.starRectControl, starPosition - HALFRECT);
             }
             if (this.currentStar < 0)
             {
                 this.currentStar = 0.0;
                 starPosition = Utils.Map(this.currentStar, this.minimum, this.maximum, 0, this.sliderRect.Width);
-                Canvas.SetLeft(starRectControl, starPosition);
+                Canvas.SetLeft(this.starRectControl, starPosition - HALFRECT);
             }
         }
 
