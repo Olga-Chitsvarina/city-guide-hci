@@ -31,6 +31,12 @@ namespace CityAttractionsAndEvents
             reflectRightButton.Click += ReflectRightButton_Click;
             imageDownButton.Click += ImageDownButton_Click;
             imageUpButton.Click += ImageUpButton_Click;
+            viewAllButton.Click += OnViewAllButton;
+        }
+
+        private void OnViewAllButton(object sender, RoutedEventArgs e)
+        {
+            ((MainWindow)((Canvas)((Canvas)((ScrollViewer)((DockPanel)((StackPanel)((Grid)this.Parent).Parent).Parent).Parent).Parent).Parent).Parent).openReflectionsPage();
         }
 
         private void ImageUpButton_Click(object sender, RoutedEventArgs e)

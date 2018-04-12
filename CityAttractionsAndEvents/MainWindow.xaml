@@ -2535,6 +2535,45 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="ButtonStyle27" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Ellipse Fill="Black" Stroke="Black"/>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Content="X" OpacityMask="White"/>
+                            <Rectangle Fill="White" HorizontalAlignment="Left" Height="22.364" Margin="14.712,6.568,0,0" RadiusY="0" RadiusX="0" Stroke="White" VerticalAlignment="Top" Width="7.076" RenderTransformOrigin="0.5,0.5">
+                                <Rectangle.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="45"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Rectangle.RenderTransform>
+                            </Rectangle>
+                            <Rectangle Fill="White" HorizontalAlignment="Left" Height="22.01" Margin="14.837,7.37,0,0" RadiusY="0" RadiusX="0" Stroke="White" VerticalAlignment="Top" Width="7.076" RenderTransformOrigin="0.5,0.5">
+                                <Rectangle.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="135"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Rectangle.RenderTransform>
+                            </Rectangle>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
     <Window.Triggers>
         <EventTrigger RoutedEvent="RangeBase.ValueChanged" SourceName="TimeSlider">
@@ -2565,7 +2604,7 @@
 
         </Canvas>
 
-        <Canvas x:Name="HomePage" Height="698.8" Width="1121.6">
+        <Canvas x:Name="HomePage" Height="698.8" Width="1121.6" d:IsHidden="True">
             <Button x:Name="AttractionsButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyle1}" Canvas.Top="123.8" Width="255"/>
             <Button x:Name="EventsButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyleEvents}" Canvas.Top="232.6" Width="255"/>
             <Button x:Name="RestaurantsButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyleRestaurants}" Canvas.Top="341.4" Width="255                     "/>
@@ -2835,6 +2874,15 @@
                 </Grid>
             </StackPanel>
 
+        </Canvas>
+        <Canvas x:Name="ViewReflectionCanvas" Height="582" Canvas.Left="263.6" Canvas.Top="45" Width="574" Visibility="Hidden">
+            <Rectangle Fill="#FFF4F4F5" Height="582" Stroke="Black" Width="715" RadiusX="10" RadiusY="10" Canvas.Left="-52"/>
+            <Button x:Name="viewReflectionsCloseButt" Content="Button" Height="36" Canvas.Left="623" Style="{DynamicResource ButtonStyle27}" Width="36" Canvas.Top="3" Cursor="Hand"/>
+            <Rectangle Fill="Black" Height="5" Stroke="Black" Canvas.Top="40" Width="715" Canvas.Left="-52"/>
+            <TextBlock Height="34" TextAlignment ="Center" Canvas.Left="155" TextWrapping="Wrap" Text="REFLECTIONS" Canvas.Top="10" Width="278" FontSize="20" FontWeight="Bold"/>
+            <ScrollViewer x:Name="reflectionsScroll" Height="535" Canvas.Top="45" Width="708" Canvas.Left="-51" CanContentScroll="True" VerticalScrollBarVisibility="Visible">
+                <StackPanel x:Name="reflectionDock" Height="533" Width="689" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+            </ScrollViewer>
         </Canvas>
 
     </Canvas>
