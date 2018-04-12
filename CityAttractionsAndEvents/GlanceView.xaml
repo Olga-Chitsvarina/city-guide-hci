@@ -195,6 +195,12 @@
                 <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
+        <Storyboard x:Key="heartClick">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="wishlistImage">
+                <EasingDoubleKeyFrame KeyTime="0" Value="35"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="35"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
     </UserControl.Resources>
     <UserControl.Triggers>
         <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="blacklistImage">
@@ -227,6 +233,7 @@
         <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="transIconRect">
             <BeginStoryboard x:Name="buttMouseOut_BeginStoryboard3" Storyboard="{StaticResource buttMouseOut}"/>
         </EventTrigger>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded" SourceName="wishlistImage"/>
     </UserControl.Triggers>
     <Canvas Margin="0,0,0,-26.404">
 
@@ -251,7 +258,7 @@
         <Button x:Name="expandButton" Content="Button" Height="44" Canvas.Left="9" Style="{DynamicResource ButtonStyle1}" Canvas.Top="18" Width="44" Cursor="Hand"/>
         <Image x:Name="wishlistImage" Height="30" Canvas.Left="850" Canvas.Top="10" Width="37" Source="heart.png" Cursor="Hand">
             <Image.OpacityMask>
-                <ImageBrush ImageSource="Images/heart.png"/>
+                <ImageBrush ImageSource="heart.png"/>
             </Image.OpacityMask>
         </Image>
         <Rectangle x:Name="calHover" Fill="#FFF4F4F5" Height="21.617" Canvas.Left="750.043" Stroke="Black" Width="82.53" Canvas.Top="-1.441" Opacity="0"/>

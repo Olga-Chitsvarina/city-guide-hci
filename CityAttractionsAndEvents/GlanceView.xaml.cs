@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -25,6 +26,7 @@ namespace CityAttractionsAndEvents
             InitializeComponent();
         }
         string imagepath;
+
         public GlanceView(string name, string details, double starRating, double obscurityRating, double price, string imagePath)
         {
             InitializeComponent();
@@ -45,6 +47,11 @@ namespace CityAttractionsAndEvents
 
         private void BlacklistImage_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            Image image = HelperMethods481.AssemblyManager.GetImageFromEmbeddedResources("heart1.png");
+            this.blacklistImage.Source = image.Source;
+            System.Threading.Thread.Sleep(600);
+            //image = HelperMethods481.AssemblyManager.GetImageFromEmbeddedResources("heart.png");
+            //this.blacklistImage.Source = image.Source;
             ((MainWindow)((Canvas)((Canvas)((ScrollViewer)((DockPanel)((StackPanel)this.Parent).Parent).Parent).Parent).Parent).Parent).addToBlacklist(this.nameText.Text);
         }
 
