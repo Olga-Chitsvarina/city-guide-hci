@@ -2565,7 +2565,7 @@
 
         </Canvas>
 
-        <Canvas x:Name="HomePage" Height="698.8" Width="1121.6">
+        <Canvas x:Name="HomePage" Height="698.8" Width="1121.6" d:IsHidden="True">
             <Button x:Name="AttractionsButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyle1}" Canvas.Top="123.8" Width="255"/>
             <Button x:Name="EventsButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyleEvents}" Canvas.Top="232.6" Width="255"/>
             <Button x:Name="RestaurantsButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyleRestaurants}" Canvas.Top="341.4" Width="255                     "/>
@@ -2794,9 +2794,9 @@
                 </DockPanel>
             </ScrollViewer-->
         </Canvas>
-        <Canvas x:Name="NickProfileCanvas" Height="568" Canvas.Left="11.6" Canvas.Top="141.267" Width="1110" d:IsHidden="True">
+        <Canvas x:Name="NickProfileCanvas" Height="568" Canvas.Left="11.6" Canvas.Top="141.267" Width="1110">
             <Grid x:Name="NickProfileGrid" Height="568" Width="1110" >
-                <ProfileV2:ProfileOther HorizontalAlignment="Center"/>
+                <ProfileV2:ProfileOther Margin="0,-10,503.4,10"/>
             </Grid>
 
         </Canvas>
