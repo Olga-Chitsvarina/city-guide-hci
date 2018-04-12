@@ -643,6 +643,7 @@ namespace CityAttractionsAndEvents
             {
                 CalendarCell calendarCell = new CalendarCell(daysOfApril[i], i) { };
                 calendarCell.RaiseCalendarEvent += CalendarCell_RaiseCalendarEvent;
+                arrayOfCalendarCells[i] = calendarCell;
                 CalendarUniformGrid.Children.Add(calendarCell);
                 i++;
             }
@@ -663,6 +664,7 @@ namespace CityAttractionsAndEvents
 
         private void CalendarCell_RaiseCalendarEvent(object sender, CalendarEventArgs e)
         {
+            
             EventInformationTextBlock.Visibility = Visibility.Visible;
             
         }

@@ -23,7 +23,7 @@ namespace CityAttractionsAndEvents
 
         public string Name = "";
         public string ImagePath = "";
-        bool isSelected = false;
+        bool isSelected = false; 
 
         public WishEntry()
         {
