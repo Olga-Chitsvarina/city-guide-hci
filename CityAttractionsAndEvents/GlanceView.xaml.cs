@@ -51,6 +51,7 @@ namespace CityAttractionsAndEvents
         private void WishlistImage_MouseDown(object sender, MouseButtonEventArgs e)
         {
             ((MainWindow)((Canvas)((Canvas)((ScrollViewer)((DockPanel)((StackPanel)this.Parent).Parent).Parent).Parent).Parent).Parent).wishStack.Children.Add(new WishEntry(this.nameText.Text, this.imagepath));
+            
         }
 
         private void ExpandButton_Click(object sender, RoutedEventArgs e)

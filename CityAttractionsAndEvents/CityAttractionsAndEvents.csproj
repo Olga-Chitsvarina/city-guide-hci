@@ -74,6 +74,7 @@
     <Compile Include="CalendarCell.xaml.cs">
       <DependentUpon>CalendarCell.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CalendarEventArgs.cs" />
     <Compile Include="panelButton.xaml.cs">
       <DependentUpon>panelButton.xaml</DependentUpon>
     </Compile>

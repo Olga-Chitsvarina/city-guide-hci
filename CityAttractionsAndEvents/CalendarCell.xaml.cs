@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 
 namespace CityAttractionsAndEvents
@@ -21,13 +10,25 @@ namespace CityAttractionsAndEvents
     /// </summary>
     public partial class CalendarCell : UserControl
     {
-        public CalendarCell(string day)
+        public int IndexInArrayOfDays { get; set; } = 0;
+        public event EventHandler<CalendarEventArgs> RaiseCalendarEvent;
+
+
+        public CalendarCell(string day, int indexInArrayOfDays)
         {
             InitializeComponent();
-            //CalendarButton.
-            //DayTextBlock.Text = day;
+            
             TextDay.Text = day;
-            //this.OnMouseDown +=             
+
+            this.IndexInArrayOfDays = indexInArrayOfDays;
+
+            CalendarButton.Click += CalendarButton_Click;
+           
+    }
+
+        private void CalendarButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.RaiseCalendarEvent(this, new CalendarEventArgs() {ArgIndexInTheArrayOfDays = IndexInArrayOfDays });
         }
     }
 }

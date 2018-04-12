@@ -641,7 +641,9 @@ namespace CityAttractionsAndEvents
             int i = 0;
             while(i< daysOfApril.Length)
             {
-                CalendarUniformGrid.Children.Add(new CalendarCell(daysOfApril[i]));
+                CalendarCell calendarCell = new CalendarCell(daysOfApril[i], i) { };
+                calendarCell.RaiseCalendarEvent += CalendarCell_RaiseCalendarEvent;
+                CalendarUniformGrid.Children.Add(calendarCell);
                 i++;
             }
 
@@ -656,18 +658,15 @@ namespace CityAttractionsAndEvents
                 textBlock.Text = daysOfWeek[j];
                 j++;
             }
-
-
-
-
             //DayButton.Click += DayButton_Click;
         }
 
-
-        private void DayButton_Click(object sender, RoutedEventArgs e)
+        private void CalendarCell_RaiseCalendarEvent(object sender, CalendarEventArgs e)
         {
             EventInformationTextBlock.Visibility = Visibility.Visible;
+            
         }
+
 
         //===========================================================================================
         // NOTIFICATIONS
