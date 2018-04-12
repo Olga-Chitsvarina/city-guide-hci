@@ -5,7 +5,6 @@ Implement personal profile
 
 If events on same place, implement arrows to view next
 Implement "view all reflections"
-Implement sliders for search
 Implement visited for completion bar
 Implement completion bar
 "Create reflections" view
@@ -19,8 +18,6 @@ Persona profiles
 Notifications: remove red and number once viewed.
 Notifications: Add link to Nick's profile.
 Notifications: Add an "attraction" notification.
-
-Blacklist: confirmation.
 
 Calendar: dynamic day selection
 Calendar: "Add to current day" button
@@ -36,15 +33,9 @@ Profile: logout button
 
 Profile: User search?
 
-Registration: "Cancel" button
-
 Map: Change .gif file background colour
 
 Borders in: Notifications?, 
-
-Search: "Advance" looks like button
-
-Map: Remove ellipse borders
 
 Navigation Bar: Decrease text size
 
@@ -109,7 +100,11 @@ Blacklist: "Clear blacklist" button
 Search: Reset button
 Sliders: bounds
 Sliders: non-numerical
-
+Implement sliders for search
+Blacklist: confirmation.
+Registration: "Cancel" button
+Search: "Advance" looks like button
+Map: Remove ellipse borders
 
 == Resolved (David) ==
 Highlight current page on the top panel
