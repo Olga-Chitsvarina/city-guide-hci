@@ -2767,7 +2767,7 @@
             <Rectangle x:Name="vertBar" Fill="Black" HorizontalAlignment="Left" Height="2" Margin="0,166,0,0" Stroke="Black" VerticalAlignment="Top" Width="1120"/>
             <TextBox x:Name="searchBar" TextAlignment="Right"  HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Search..." VerticalAlignment="Top" Width="527" FontSize="16" Canvas.Left="254" Canvas.Top="129"/>
             <Button x:Name="searchButton" Content="Search" HorizontalAlignment="Left" Height="23" Margin="794,129,0,0" VerticalAlignment="Top" Width="112"/>
-            <TextBlock HorizontalAlignment="Left" TextAlignment ="Center" Height="42" Margin="920,125.367,0,0" TextWrapping="Wrap" Text="ADVANCED" VerticalAlignment="Top" Width="192" FontWeight="Bold" FontSize="24"/>
+            <TextBlock HorizontalAlignment="Left" TextAlignment ="Center" Height="42" Margin="920,125.367,0,0" TextWrapping="Wrap" Text="ADVANCED:" VerticalAlignment="Top" Width="192" FontWeight="Bold" FontSize="24"/>
             <CheckBox x:Name="attCheck" Content="Attractions" HorizontalAlignment="Left" Height="18" Margin="932,537,0,0" VerticalAlignment="Top" Width="167" IsChecked="True"/>
             <CheckBox x:Name="eveCheck" Content="Events" HorizontalAlignment="Left" Height="18" Margin="932,560,0,0" VerticalAlignment="Top" Width="167" IsChecked="True"/>
             <CheckBox x:Name="restCheck" Content="Restaurants" HorizontalAlignment="Left" Height="18" Margin="932,583,0,0" VerticalAlignment="Top" Width="167" IsChecked="True"/>
