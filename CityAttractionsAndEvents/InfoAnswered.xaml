@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="CityAttractionsAndEvents.InfoAnswered"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CityAttractionsAndEvents"
+             mc:Ignorable="d" 
+             d:DesignHeight="21.616" d:DesignWidth="871">
+    <Grid>
+        <TextBlock x:Name="questionText" TextWrapping="Wrap" Margin="0,0,-871,-42"><Run FontWeight="Bold" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit?"/></TextBlock>
+        <TextBlock x:Name="answerText" HorizontalAlignment="Left" Height="20.565" Margin="-0.667,22.667,-0.333,-21.616" TextWrapping="Wrap" VerticalAlignment="Top" Width="872"><Run Text="&#x9;Nullam porta purus et blandit volutpat."/><LineBreak/><Run/></TextBlock>
+        <TextBlock x:Name="authorText" HorizontalAlignment="Left" Height="20.565" Margin="-0.667,43.232,-0.333,-42.181" TextWrapping="Wrap" VerticalAlignment="Top" Width="872"><Run Text="&#x9;&#x9;"/><Run FontSize="8" Text="Answered by Person the Title"/><LineBreak/><Run FontSize="8"/></TextBlock>
+
+    </Grid>
+</UserControl>
