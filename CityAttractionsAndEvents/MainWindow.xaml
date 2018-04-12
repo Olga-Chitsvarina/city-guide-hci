@@ -2655,7 +2655,7 @@
             <TextBlock Height="312.52" TextWrapping="Wrap" Canvas.Top="249.2" Width="1008.6" FontSize="18"><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text="-----------------------------------------------------------------------------------------------------------------------------------------"/><LineBreak/><Run Foreground="#FF4F4F4F" FontWeight="Bold"/><LineBreak/><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text="GENERAL INFORMATION:"/><LineBreak/><Run Foreground="#FF238CB4" FontWeight="Bold"/><LineBreak/><Run Foreground="#FF238CB4" FontWeight="Bold" Text="We intend our app to be useful to anyone who wants to discover/research new attractions or events"/><Run Foreground="#FF238CB4" FontWeight="Bold" Text=" in the city."/><LineBreak/><Run Foreground="#FF238CB4" FontWeight="Bold"/><LineBreak/><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text="-----------------------------------------------------------------------------------------------------------------------------------------"/><LineBreak/><Run Foreground="#FF4F4F4F" FontWeight="Bold"/><LineBreak/><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text="M"/><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text="ISSION STATEMENT"/><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text=":"/><LineBreak/><Run Foreground="#FF4F4F4F" FontWeight="Bold"/><LineBreak/><Run Foreground="#FF238CB4" FontWeight="Bold" Text="Encourage people to explore cities' attractions and events and help them to find enjoyable experiences."/><LineBreak/><Run Foreground="#FF238CB4" FontWeight="Bold"/><LineBreak/><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text="-----------------------"/><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text="-------------------------------------------------------------------------------------------------------------------"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
 
         </Canvas>
-        <Canvas x:Name="CalendarPage" Height="580.467" Canvas.Left="10" Canvas.Top="128.8" Width="1101.6">
+        <Canvas x:Name="CalendarPage" Height="580.467" Canvas.Left="10" Canvas.Top="128.8" Width="1101.6" Visibility="Hidden">
             <TextBlock Height="25.6" Canvas.Left="300.6" TextWrapping="Wrap" Canvas.Top="32.6" Width="81" FontSize="18" FontWeight="Bold" Visibility="Hidden"><Run Text="SU"/><Run Text="N"/></TextBlock>
             <TextBlock Height="25.6" Canvas.Left="386.6" TextWrapping="Wrap" Canvas.Top="32.6" Width="81" FontSize="18" FontWeight="Bold" Visibility="Hidden"><Run Text="MO"/><Run Text="N"/></TextBlock>
             <TextBlock Height="25.6" Canvas.Left="458.533" TextWrapping="Wrap" Text="TUE" Canvas.Top="32.6" Width="81" FontSize="18" FontWeight="Bold" Visibility="Hidden"/>
@@ -2704,7 +2704,7 @@
 
         </Canvas>
 
-        <Canvas x:Name="CompassCanvas" Height="570" Width="1100" Canvas.Left="10" Canvas.Top="129">
+        <Canvas x:Name="CompassCanvas" Height="570" Width="1100" Canvas.Left="10" Canvas.Top="129" Visibility="Hidden">
             <Canvas x:Name="JustMapCanvas" Height="563.2" Canvas.Top="-3.2" Width="1100">
 
                 <Rectangle x:Name="Map" Height="563.2" Stroke="Black" Width="1100">

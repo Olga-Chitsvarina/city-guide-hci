@@ -10,7 +10,7 @@
         <Rectangle x:Name="backdropRect" Fill="#FFF4F4F5" HorizontalAlignment="Left" Stroke="Black" Width="225.4" Height="94"/>
         <Image x:Name="image" HorizontalAlignment="Left" Height="84" Margin="139.554,5.266,0,0" VerticalAlignment="Top" Width="78.481"/>
         <TextBlock x:Name="text" HorizontalAlignment="Left" TextAlignment="Center" Height="17.905" Margin="2.635,37.917,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="131.919"/>
-        <Button x:Name="addToCalendarButton" Content="add to calendar" HorizontalAlignment="Left" Height="23.673" Margin="6.555,5.266,0,0" VerticalAlignment="Top" Width="90.932"/>
+        <Button x:Name="addToCalendarButton" Content="Add To Calendar" HorizontalAlignment="Left" Height="24" Margin="10,5,0,0" VerticalAlignment="Top" Width="96"/>
 
     </Grid>
 </UserControl>
