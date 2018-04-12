@@ -90,6 +90,7 @@
     <Compile Include="WishEntry.xaml.cs">
       <DependentUpon>WishEntry.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WishEntryEventsArgs.cs" />
     <Page Include="AnswerQuestion.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
