@@ -118,6 +118,27 @@ namespace CityAttractionsAndEvents
             this.sportCheck.Unchecked += Check_Unchecked;
             this.shopCheck.Checked += Check_Checked;
             this.shopCheck.Unchecked += Check_Unchecked;
+            this.resetSearchButt.Click += ResetSearch;
+            this.clearBlackButt.Click += ClearBlacklist;
+        }
+
+        private void ClearBlacklist(object sender, RoutedEventArgs e)
+        {
+            blacklist.Clear();
+            startSearch();
+            
+        }
+
+        private void ResetSearch(object sender, RoutedEventArgs e)
+        {
+            this.searchBar.Text = "Search...";
+            this.searchClicked = false;
+            this.attCheck.IsChecked = true;
+            this.eveCheck.IsChecked = true;
+            this.restCheck.IsChecked = true;
+            this.sportCheck.IsChecked = true;
+            this.shopCheck.IsChecked = true;
+            this.prioSlider.resetPriceSlider();
         }
 
         private void setCompassCanvas()
@@ -845,8 +866,7 @@ namespace CityAttractionsAndEvents
                     ellipseName = ellipseName.Replace("'", "");
                     ellipseName = ellipseName.Replace(":", "");
                     ellipse.Name = ellipseName;
-                    ellipse.Fill = Brushes.White;
-                    ellipse.Stroke = Brushes.Black;
+                    ellipse.Stroke = null;
                     Canvas.SetLeft(ellipse, p.posLeft);
                     Canvas.SetTop(ellipse, p.posTop);
                     ellipse = generateColourSize(ellipse, p);
@@ -1332,9 +1352,14 @@ namespace CityAttractionsAndEvents
 
         public void updatePriceRange(double min, double max)
         {
-            this.priceMin = min;
-            this.priceMax = max;
-            startSearch();
+            int oldPriceMin = (int)this.priceMin;
+            int oldPriceMax = (int)this.priceMax;
+            this.priceMin = (((int)min)/5)*5;
+            this.priceMax = (((int)max)/5)*5;
+            if(oldPriceMax != this.priceMax || oldPriceMin != this.priceMin)
+                startSearch();
+            //this.DebugOut.Text = ("min: " + this.priceMin);
+
         }
     }
 }

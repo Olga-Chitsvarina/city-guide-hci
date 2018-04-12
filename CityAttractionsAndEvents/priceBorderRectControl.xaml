@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="CityAttractionsAndEvents.priceBorderRectControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CityAttractionsAndEvents"
+             mc:Ignorable="d" 
+             d:DesignHeight="69.333" d:DesignWidth="48">
+    <Canvas Height="70" Margin="0,0,-48.313,-0.667">
+        <Rectangle x:Name="priceLinkRect" Fill="White" HorizontalAlignment="Left" Height="31.333" Stroke="Black" VerticalAlignment="Top" Width="1" Canvas.Left="47.274" Canvas.Top="7"/>
+        <Rectangle x:Name="priceBorderRect" Fill="White" HorizontalAlignment="Left" Height="31" Stroke="Black" VerticalAlignment="Top" Width="95.372" Cursor="Hand" Canvas.Top="38.333"/>
+        <TextBlock x:Name="priceBoxText" HorizontalAlignment="Left" TextAlignment ="Center" Height="26" TextWrapping="Wrap" Text="Price" VerticalAlignment="Top" Width="95.372" Canvas.Top="43.333" Cursor="Hand"/>
+        <Ellipse x:Name="priceEllipse" Fill="White" HorizontalAlignment="Left" Height="13" Stroke="Black" VerticalAlignment="Top" Width="12" Cursor="Hand" Canvas.Left="41.902"/>
+
+    </Canvas>
+</UserControl>

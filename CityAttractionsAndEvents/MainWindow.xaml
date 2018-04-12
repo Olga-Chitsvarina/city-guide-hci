@@ -239,7 +239,9 @@
                                     <VisualState x:Name="Disabled"/>
                                 </VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
-                            <Rectangle x:Name="rectangle" Fill="White" Stroke="{x:Null}"/>
+                            <Border BorderBrush="Black" BorderThickness="0,0,0,2">
+                                <Rectangle x:Name="rectangle" Fill="White" Stroke="{x:Null}"/>
+                            </Border>
                             <ContentPresenter TextBlock.FontSize="20" TextBlock.FontWeight="Bold" TextBlock.Foreground="Black"  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="109.9,36.42,0,20" Content="RESTAURANTS" Height="52.38" Width="145.1"/>
                             <Image RenderOptions.BitmapScalingMode ="HighQuality" HorizontalAlignment="Left" Height="98.8" Margin="5.6,10,0,0" VerticalAlignment="Top" Width="99.6" Source="restaurantsBlack2.png"/>
                         </Grid>
@@ -290,7 +292,9 @@
                                     <VisualState x:Name="Disabled"/>
                                 </VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
-                            <Rectangle x:Name="rectangle" Fill="White" Stroke="{x:Null}"/>
+                            <Border BorderBrush="Black" BorderThickness="0,0,0,2">
+                                <Rectangle x:Name="rectangle" Fill="White" Stroke="{x:Null}"/>
+                            </Border>
                             <ContentPresenter TextBlock.FontSize="25" TextBlock.FontWeight="Bold" TextBlock.Foreground="Black"  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="124.9,41,15.2,15.42" Content="SPORT" Height="52.38" Width="114.9" RenderTransformOrigin="1.218,0.549"/>
                             <Image RenderOptions.BitmapScalingMode ="HighQuality" HorizontalAlignment="Left" Height="85.126" Margin="10,13.674,0,0" VerticalAlignment="Top" Width="110.6" Source="Sport.png"/>
                         </Grid>
@@ -341,7 +345,9 @@
                                     <VisualState x:Name="Disabled"/>
                                 </VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
-                            <Rectangle x:Name="rectangle" Fill="White" Stroke="{x:Null}"/>
+                            <Border BorderBrush="Black" BorderThickness="0,0,0,2">
+                                <Rectangle x:Name="rectangle" Fill="White" Stroke="{x:Null}"/>
+                            </Border>
                             <ContentPresenter TextBlock.FontSize="25" TextBlock.FontWeight="Bold" TextBlock.Foreground="Black"  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="109.9,37.42,15.2,19" Content="SHOPPING" Height="52.38" Width="129.9" RenderTransformOrigin="1.308,0.717"/>
                             <Image RenderOptions.BitmapScalingMode ="HighQuality" HorizontalAlignment="Left" Height="71.58" Margin="10,27.22,0,0" VerticalAlignment="Top" Width="84.8" Source="shoppingBlack.png"/>
                         </Grid>
@@ -2611,6 +2617,13 @@
 
         </Canvas>
         <Canvas x:Name="CalendarPage" Height="580.467" Canvas.Left="10" Canvas.Top="128.8" Width="1101.6">
+            <TextBlock Height="25.6" Canvas.Left="300.6" TextWrapping="Wrap" Canvas.Top="32.6" Width="81" FontSize="18" FontWeight="Bold" Visibility="Hidden"><Run Text="SU"/><Run Text="N"/></TextBlock>
+            <TextBlock Height="25.6" Canvas.Left="386.6" TextWrapping="Wrap" Canvas.Top="32.6" Width="81" FontSize="18" FontWeight="Bold" Visibility="Hidden"><Run Text="MO"/><Run Text="N"/></TextBlock>
+            <TextBlock Height="25.6" Canvas.Left="458.533" TextWrapping="Wrap" Text="TUE" Canvas.Top="32.6" Width="81" FontSize="18" FontWeight="Bold" Visibility="Hidden"/>
+            <TextBlock Height="25.6" Canvas.Left="539.533" TextWrapping="Wrap" Text="WED" Canvas.Top="32.6" Width="47.4" FontSize="18" FontWeight="Bold" Visibility="Hidden"/>
+            <TextBlock Height="25.6" Canvas.Left="622.2" TextWrapping="Wrap" Text="THU" Canvas.Top="32.6" Width="47.4" FontSize="18" FontWeight="Bold" RenderTransformOrigin="-0.095,0.34" Visibility="Hidden"/>
+            <TextBlock Height="25.6" Canvas.Left="711" TextWrapping="Wrap" Text="FRI" Canvas.Top="32.6" Width="30.6" FontSize="18" FontWeight="Bold" Visibility="Hidden"/>
+            <TextBlock Height="25.6" Canvas.Left="793.8" TextWrapping="Wrap" Text="SAT" Canvas.Top="32.6" Width="37.8" FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.81,0.336" Visibility="Hidden"/>
             <TextBlock Height="22.533" Canvas.Left="31.6" TextWrapping="Wrap" Canvas.Top="6.914" Width="187" FontWeight="Bold" Foreground="#FF238CB4" FontSize="18"><Run Text="DAY INFORMATION"/><Run Text=":"/></TextBlock>
             <TextBlock x:Name="EventInformationTextBlock" Height="449.577" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="73.546" Width="208.6"><Run FontWeight="Bold" FontSize="18" Text="Event"/><Run FontWeight="Bold" FontSize="18" Text=": "/><Run FontSize="18" Text="Symphony "/><Run FontSize="18" Text="Concert"/><LineBreak/><Run FontWeight="Bold" FontSize="18" Text="Place"/><Run FontSize="18" Text=": Jubilee Auditorium"/><LineBreak/><Run FontWeight="Bold" FontSize="18" Text="Address:"/><Run FontWeight="Bold" FontSize="18" Text=" "/><Run FontSize="18" Text="1415 14 Ave NW, Calgary, AB T2N 1M4"/><LineBreak/><Run FontWeight="Bold" FontSize="18" Text="Time: "/><Run FontSize="18" Text="18:00 pm"/><LineBreak/><Run FontWeight="Bold" FontSize="18" Text="Friend 1: "/><Run FontSize="18" Text="Bob"/><LineBreak/><Run FontWeight="Bold" FontSize="18" Text="Friend 2: "/><Run FontSize="18" Text="Alice"/><LineBreak/><Run FontSize="18"/><LineBreak/><Run FontSize="18" Text="-----------------------------------"/><LineBreak/><Run FontWeight="Bold" FontSize="18" Text="Attraction"/><Run FontWeight="Bold" FontSize="18" Text=": "/><Run FontSize="18" Text="Calgary Tower"/><LineBreak/><Run FontWeight="Bold" FontSize="18" Text="Address: "/><Run FontSize="18" Text="101 9 Ave SW, Calgary, AB T2P 1J9"/><LineBreak/><Run FontWeight="Bold" FontSize="18" Text="Time: "/><Run FontSize="18" Text="12:00 pm"/><LineBreak/><Run FontWeight="Bold" FontSize="18" Text="Friend 1: "/><Run FontSize="18" Text="Bob"/><LineBreak/><LineBreak/><Run FontSize="18"/><LineBreak/><Run FontWeight="Bold" FontSize="18" Text=""/><LineBreak/><Run/><LineBreak/></TextBlock>
             <TextBlock Height="22.533" Canvas.Left="924.533" TextWrapping="Wrap" Canvas.Top="6.914" Width="105.4" FontWeight="Bold" Foreground="#FF238CB4" FontSize="18"><Run Text="WISH LIST"/><Run Text=":"/></TextBlock>
@@ -2744,7 +2757,7 @@
 
         </Canvas>
         <Canvas x:Name="SearchSortCanvas" Height="697" Width="1120" Visibility="Hidden">
-            <local:prioSlider Height="341" Canvas.Left="914" Canvas.Top="161" Width="207"/>
+            <local:prioSlider x:Name="prioSlider" Height="341" Canvas.Left="914" Canvas.Top="161" Width="207"/>
             <ScrollViewer x:Name="glanceScroller" CanContentScroll="True" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Left" Height="531" VerticalAlignment="Top" Width="921" Canvas.Top="167" Canvas.Left="-8">
                 <DockPanel x:Name="DockForSmoothScroll1">
                     <StackPanel x:Name="glanceStack" Width="911"/>
@@ -2752,7 +2765,7 @@
             </ScrollViewer>
             <Rectangle x:Name="horizBar" Fill="Black" HorizontalAlignment="Left" Height="49" Margin="911,119,0,0" Stroke="Black" VerticalAlignment="Top" Width="2"/>
             <Rectangle x:Name="vertBar" Fill="Black" HorizontalAlignment="Left" Height="2" Margin="0,166,0,0" Stroke="Black" VerticalAlignment="Top" Width="1120"/>
-            <TextBox x:Name="searchBar" TextAlignment="Right"  HorizontalAlignment="Left" Height="23" Margin="10,129,0,0" TextWrapping="Wrap" Text="Search..." VerticalAlignment="Top" Width="779" FontSize="16"/>
+            <TextBox x:Name="searchBar" TextAlignment="Right"  HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Search..." VerticalAlignment="Top" Width="527" FontSize="16" Canvas.Left="254" Canvas.Top="129"/>
             <Button x:Name="searchButton" Content="Search" HorizontalAlignment="Left" Height="23" Margin="794,129,0,0" VerticalAlignment="Top" Width="112"/>
             <TextBlock HorizontalAlignment="Left" TextAlignment ="Center" Height="42" Margin="920,125.367,0,0" TextWrapping="Wrap" Text="ADVANCED" VerticalAlignment="Top" Width="192" FontWeight="Bold" FontSize="24"/>
             <CheckBox x:Name="attCheck" Content="Attractions" HorizontalAlignment="Left" Height="18" Margin="932,537,0,0" VerticalAlignment="Top" Width="167" IsChecked="True"/>
@@ -2764,9 +2777,12 @@
             <Rectangle Fill="Black" HorizontalAlignment="Left" Height="2" Margin="1058,510,0,0" Stroke="Black" VerticalAlignment="Top" Width="62"/>
             <TextBlock HorizontalAlignment="Left" TextAlignment ="Center" Height="18" Margin="963,501,0,0" TextWrapping="Wrap" Text="Categories" VerticalAlignment="Top" Width="107"/>
             <MapView:LoadProgress x:Name="loadProgress" Margin="368,359,591,178.4" Visibility="Hidden"/>
+            <Button x:Name="clearBlackButt" Content="Clear Blacklist" HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="96" Canvas.Left="134" Canvas.Top="129" RenderTransformOrigin="0.433,0.609"/>
+            <Button x:Name="resetSearchButt" Content="Reset Search" HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="90" Canvas.Left="23" Canvas.Top="129"/>
+            <TextBlock x:Name="DebugOut" Height="36" Canvas.Left="946" TextWrapping="Wrap" Text="TextBlock" Canvas.Top="651" Width="124" d:IsHidden="True" Visibility="Hidden"/>
 
         </Canvas>
-        <Canvas x:Name="ProfilePageCanvas" Height="563.6" Canvas.Left="10" Canvas.Top="123.8" Width="1100" Visibility="Hidden">
+        <Canvas x:Name="ProfilePageCanvas" Height="563.6" Canvas.Left="10" Canvas.Top="123.8" Width="1100" Visibility="Hidden" d:IsHidden="True">
             <ScrollViewer x:Name="profileScroller" CanContentScroll="True" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Center" Height="550" Width="1100" VerticalAlignment="Top">
                 <DockPanel x:Name="DockForSmoothScroll2">
                     <StackPanel x:Name="profileStack" Width="1074.732"/>

@@ -87,6 +87,13 @@ namespace CityAttractionsAndEvents
 
         }
 
+        public void resetPriceSlider()
+        {
+            this.currentMin = 0;
+            this.currentMax = 300.00;
+            UpdateMaxMinFromValues();
+        }
+
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
             Window.GetWindow(this).MouseMove += OnWindowMouseMove;
@@ -103,18 +110,51 @@ namespace CityAttractionsAndEvents
             this.upperBoundTextBox.KeyUp += OnTextBoxEnterReleased;
 
             UpdateMaxMinFromValues();
+
+            priceBorderRectControl priceRectControl = new priceBorderRectControl(35, "Price");
+            Canvas.SetTop(priceRectControl, 6);
+            Canvas.SetLeft(priceRectControl, 30);
+            Canvas.SetZIndex(priceRectControl, 2);
+            this.impCanvas.Children.Add(priceRectControl);
+            priceBorderRectControl obscRectControl = new priceBorderRectControl(70, "Obscurity Rating");
+            Canvas.SetTop(obscRectControl, 6);
+            Canvas.SetLeft(obscRectControl, 25);
+            Canvas.SetZIndex(obscRectControl, 1);
+            this.impCanvas.Children.Add(obscRectControl);
+            priceBorderRectControl starRectControl = new priceBorderRectControl(105, "Star Rating");
+            Canvas.SetTop(starRectControl, 6);
+            Canvas.SetLeft(starRectControl, 40);
+            Canvas.SetZIndex(starRectControl, 0);
+            this.impCanvas.Children.Add(starRectControl);
+
         }
 
         private void UpdateMaxMinFromValues()
         {
             double minPosition = Utils.Map(this.currentMin, this.minimum, this.maximum, 0, this.priceSliderRect.Width);
             Canvas.SetLeft(this.priceMinEllipse, minPosition);
-
             double maxPosition = Utils.Map(this.currentMax, this.minimum, this.maximum, 0, this.priceSliderRect.Width);
             Canvas.SetLeft(this.priceMaxEllipse, maxPosition);
-
-            this.priceMinText.Text = String.Format("{0:0.##}", this.currentMin);
-            this.priceMaxText.Text = String.Format("{0:0.##}", this.currentMax);
+            if (this.currentMax > 300)
+            {
+                this.currentMax = 300;
+                maxPosition = Utils.Map(this.currentMax, this.minimum, this.maximum, 0, this.priceSliderRect.Width);
+                Canvas.SetLeft(this.priceMaxEllipse, maxPosition);
+            }
+            if (this.currentMin < 0)
+            {
+                this.currentMin = 0;
+                minPosition = Utils.Map(this.currentMin, this.minimum, this.maximum, 0, this.priceSliderRect.Width);
+                Canvas.SetLeft(this.priceMinEllipse, minPosition);
+            }
+            if (this.currentMin > this.currentMax)
+            {
+                this.currentMin = this.currentMax - 1;
+                minPosition = Utils.Map(this.currentMin, this.minimum, this.maximum, 0, this.priceSliderRect.Width);
+                Canvas.SetLeft(this.priceMinEllipse, minPosition);
+            }
+            this.priceMinText.Text = String.Format("{0:0.##}", ((int)this.currentMin/5)*5);
+            this.priceMaxText.Text = String.Format("{0:0.##}", ((int)this.currentMax/5)*5);
 
             MoveRangeRectangle();
 
@@ -124,13 +164,14 @@ namespace CityAttractionsAndEvents
 
         private void MoveRangeRectangle()
         {
-            double startX = Canvas.GetLeft(this.priceMinEllipse);
-            double endX = Canvas.GetLeft(this.priceMaxEllipse);
-            Canvas.SetLeft(this.rangeRect, startX);
-            if (endX - startX > 0)
-            {
-                this.rangeRect.Width = endX - startX;
-            }
+                double startX = Canvas.GetLeft(this.priceMinEllipse);
+                double endX = Canvas.GetLeft(this.priceMaxEllipse);
+                Canvas.SetLeft(this.rangeRect, startX);
+                if (endX - startX > 0)
+                {
+                    this.rangeRect.Width = endX - startX;
+                }
+          
         }
 
         private void OnTextBoxEnterReleased(object sender, KeyEventArgs e)
@@ -144,15 +185,17 @@ namespace CityAttractionsAndEvents
 
                 if (Double.TryParse(castSender.Text, out newValue))
                 {
-                    if (castSender == this.lowerBoundTextBox)
-                    {
-                        this.currentMin = newValue;
-                    }
-                    else
-                    {
-                        this.currentMax = newValue;
-                    }
-                    UpdateMaxMinFromValues();
+                    if (newValue >= 0 && newValue <= 300) { 
+                        if (castSender == this.lowerBoundTextBox)
+                        {
+                            this.currentMin = newValue;
+                        }
+                        else
+                        {
+                          this.currentMax = newValue;
+                        }
+                        UpdateMaxMinFromValues();
+                    }   
                 }
                 castSender.Visibility = Visibility.Hidden;
             }
@@ -189,18 +232,47 @@ namespace CityAttractionsAndEvents
         private void OnBoundClickReleased(object sender, MouseButtonEventArgs e)
         {
             this.selection = null;
+            if (this.currentMax > 300)
+            {
+                this.currentMax = 300.00;
+                UpdateMaxMinFromValues();
+                MoveRangeRectangle();
+            } 
+            if (this.currentMax < 0)
+            {
+                this.currentMin = 0.0;
+                UpdateMaxMinFromValues();
+                MoveRangeRectangle();
+            }
         }
 
         private void UpdateMaxMin()
         {
             double minPosition = Canvas.GetLeft(this.priceMinEllipse);
             this.currentMin = Utils.Map(minPosition, 0, this.priceSliderRect.Width, this.minimum, this.maximum);
-
             double maxPosition = Canvas.GetLeft(this.priceMaxEllipse);
             this.currentMax = Utils.Map(maxPosition, 0, this.priceSliderRect.Width, this.minimum, this.maximum);
+            if (this.currentMax > 300)
+            {
+                this.currentMax = 300;
+                maxPosition = Utils.Map(this.currentMax, this.minimum, this.maximum, 0, this.priceSliderRect.Width);
+                Canvas.SetLeft(this.priceMaxEllipse, maxPosition);
+            }
+            if (this.currentMin < 0)
+            {
+                this.currentMin = 0;
+                minPosition = Utils.Map(this.currentMin, this.minimum, this.maximum, 0, this.priceSliderRect.Width);
+                Canvas.SetLeft(this.priceMinEllipse, minPosition);
+            }
+            if (this.currentMin > this.currentMax)
+            {
+                this.currentMin = this.currentMax - 1;
+                minPosition = Utils.Map(this.currentMin, this.minimum, this.maximum, 0, this.priceSliderRect.Width);
+                Canvas.SetLeft(this.priceMinEllipse, minPosition);
+            }
+            this.priceMinText.Text = String.Format("{0:0.##}", ((int)this.currentMin / 5) * 5);
+            this.priceMaxText.Text = String.Format("{0:0.##}", ((int)this.currentMax / 5) * 5);
 
-            this.priceMinText.Text = String.Format("{0:0.##}", this.currentMin);
-            this.priceMaxText.Text = String.Format("{0:0.##}", this.currentMax);
 
             RaiseChanged(new RangeSliderChangedEventArgs(this.currentMin, this.currentMax));
             updatePriceRange();
@@ -210,18 +282,25 @@ namespace CityAttractionsAndEvents
         {
             if (selection != null)
             {
-                Canvas.SetLeft(selection, e.GetPosition(this.priceContainer).X);
-                if (this.selection != rangeRect)
+                double minPosition = Canvas.GetLeft(this.priceMinEllipse);
+                this.currentMin = Utils.Map(minPosition, 0, this.priceSliderRect.Width, this.minimum, this.maximum);
+                double maxPosition = Canvas.GetLeft(this.priceMaxEllipse);
+                this.currentMax = Utils.Map(maxPosition, 0, this.priceSliderRect.Width, this.minimum, this.maximum);
+                if (this.currentMax <= 300 && this.currentMin >= 0 && this.currentMin <= this.currentMax)
                 {
-                    MoveRangeRectangle();
+                    Canvas.SetLeft(selection, e.GetPosition(this.priceContainer).X);
+                    if (this.selection != rangeRect)
+                    {
+                        MoveRangeRectangle();
+                    }
+                    else
+                    {
+                        Canvas.SetLeft(this.priceMinEllipse, e.GetPosition(this.priceContainer).X - this.rangeClickOffset);
+                        Canvas.SetLeft(this.priceMaxEllipse, e.GetPosition(this.priceContainer).X + this.rangeRect.Width - this.rangeClickOffset);
+                        Canvas.SetLeft(this.rangeRect, e.GetPosition(this.priceContainer).X - this.rangeClickOffset);
+                    }
                 }
-                else
-                {
-                    Canvas.SetLeft(this.priceMinEllipse, e.GetPosition(this.priceContainer).X - this.rangeClickOffset);
-                    Canvas.SetLeft(this.priceMaxEllipse, e.GetPosition(this.priceContainer).X + this.rangeRect.Width - this.rangeClickOffset);
-                    Canvas.SetLeft(this.rangeRect, e.GetPosition(this.priceContainer).X - this.rangeClickOffset);
-                }
-                UpdateMaxMin();
+                    UpdateMaxMin();
             }
         }
 
