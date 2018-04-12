@@ -1187,6 +1187,7 @@ namespace CityAttractionsAndEvents
                 sunmoon.ImageSource = new BitmapImage(new Uri(@"pack://application:,,,/images/Sun.png"));
                 this.SunMoonSphere.Fill = sunmoon;
                 this.NightShader.Opacity = 0;
+                this.dangerCircle.Opacity = 0;
                 double minutesInDay = sunsetTime - sunriseTime;
                 double minutesIntoDay = sunsetTime - curTime;
                 double percentageIntoDay = minutesIntoDay / minutesInDay;
@@ -1206,6 +1207,7 @@ namespace CityAttractionsAndEvents
                 Canvas.SetLeft(this.SunMoonSphere, position);
                 double shaderPercentage = 0.4 * percentageIntoNight;
                 this.NightShader.Opacity = 0.4 - shaderPercentage;
+                this.dangerCircle.Opacity = 0.5 - shaderPercentage;
             }
             else                                                                                            //after sunset
             {
@@ -1220,6 +1222,7 @@ namespace CityAttractionsAndEvents
                 Canvas.SetLeft(this.SunMoonSphere, position);
                 double shaderPercentage = 0.4 * percentageIntoNight;
                 this.NightShader.Opacity = 0.4 - shaderPercentage;
+                this.dangerCircle.Opacity = 0.5 - shaderPercentage;
             }
         }
 

@@ -2479,7 +2479,7 @@
                         <Grid>
                             <Path x:Name="PART_Path" Fill="{TemplateBinding Fill}" HorizontalAlignment="Stretch" StrokeStartLineCap="{TemplateBinding StrokeStartLineCap}" StrokeDashOffset="{TemplateBinding StrokeDashOffset}" Stretch="Fill" StrokeEndLineCap="{TemplateBinding StrokeEndLineCap}" StrokeDashCap="{TemplateBinding StrokeDashCap}" Stroke="{TemplateBinding Stroke}" StrokeThickness="{TemplateBinding StrokeThickness}" StrokeMiterLimit="{TemplateBinding StrokeMiterLimit}" StrokeLineJoin="{TemplateBinding StrokeLineJoin}" StrokeDashArray="{TemplateBinding StrokeDashArray}" UseLayoutRounding="False" VerticalAlignment="Stretch"/>
                             <ContentPresenter Content="{TemplateBinding InternalContent}" HorizontalAlignment="Center" Margin="{TemplateBinding Padding}" VerticalAlignment="Center"/>
-                            <TextBlock x:Name="textBlock" Margin="7.028,10,10,10" TextWrapping="Wrap"><Run Text="This map lets you know what's nearby!"/><LineBreak/><Run/><LineBreak/><Run Text="Check the boxes above to choose categories. Choose from the dropdown to pick a priority."/><LineBreak/><Run/><LineBreak/><Run Text="Dots are larger if they better match your priority."/></TextBlock>
+                            <TextBlock x:Name="textBlock" Margin="7.028,10,10,10" TextWrapping="Wrap" Height="237"><Run Text="This map lets you know what's nearby!"/><LineBreak/><Run/><LineBreak/><Run Text="Check the boxes above to choose categories. Choose from the dropdown to pick a priority."/><LineBreak/><Run/><LineBreak/><Run Text="Dots are larger if they better match your priority."/><LineBreak/><Run/><LineBreak/><Run Text="Red circles indicate unsafe areas at those specific times of day."/></TextBlock>
                         </Grid>
                     </ControlTemplate>
                 </Setter.Value>
@@ -2703,7 +2703,7 @@
 
         </Canvas>
 
-        <Canvas x:Name="CompassCanvas" Height="570" Width="1100" Canvas.Left="10" Canvas.Top="129" Visibility="Hidden">
+        <Canvas x:Name="CompassCanvas" Height="570" Width="1100" Canvas.Left="10" Canvas.Top="129">
             <Canvas x:Name="JustMapCanvas" Height="563.2" Canvas.Top="-3.2" Width="1100">
 
                 <Rectangle x:Name="Map" Height="563.2" Stroke="Black" Width="1100">
@@ -2712,6 +2712,7 @@
                     </Rectangle.Fill>
                 </Rectangle>
                 <Rectangle x:Name="NightShader" Fill="Black" Height="570" Stroke="Black" Width="1100" Opacity="0" Canvas.Top="-10"/>
+                <Ellipse x:Name="dangerCircle" Fill="Red" Height="298" Canvas.Left="731.4" Canvas.Top="179" Width="342.2" Opacity="0.32"/>
             </Canvas>
             <Rectangle Fill="#A54F4F4F" Height="49.2" Stroke="Black" Width="1100" Canvas.Top="-3.2"/>
 
@@ -2757,7 +2758,7 @@
                 <TextBlock x:Name="textBlock2" Height="74.233" TextWrapping="Wrap" Text="?" TextAlignment="Center" Canvas.Top="2.267" Width="77.817" Foreground="White" FontWeight="Bold" FontSize="48"/>
 
             </Canvas>
-            <ed:Callout x:Name="MapHelpBox" AnchorPoint="0.101,1.23" CalloutStyle="Rectangle" Content="" Foreground="White" Fill="#E54F4F4F" FontSize="{DynamicResource SizeDouble-Sketch}" FontFamily="{DynamicResource FontFamily-Sketch}" Height="170.8" Canvas.Left="48.6" Stroke="Black" Canvas.Top="289.2" Width="200" Style="{DynamicResource CalloutLeftAlign}" Visibility="Hidden"/>
+            <ed:Callout x:Name="MapHelpBox" AnchorPoint="0.101,1.23" CalloutStyle="Rectangle" Content="" Foreground="White" Fill="#E54F4F4F" FontSize="{DynamicResource SizeDouble-Sketch}" FontFamily="{DynamicResource FontFamily-Sketch}" Height="230" Canvas.Left="48.6" Stroke="Black" Canvas.Top="219.2" Width="200" Style="{DynamicResource CalloutLeftAlign}" Visibility="Hidden"/>
             <Button x:Name="PrintButton" Cursor="Hand" ToolTip="Print" Content="Button" Height="43.333" Canvas.Left="1038" Style="{DynamicResource PrintButtonStyle}" Width="52"/>
             <Canvas x:Name="PrintNotification" Height="217.6" Canvas.Left="411.2" Canvas.Top="99" Width="315.2" RenderTransformOrigin="0.5,0.5">
                 <Canvas.RenderTransform>
