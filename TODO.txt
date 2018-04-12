@@ -2,12 +2,9 @@
 == To Do ==
 
 Implement personal profile
-
 If events on same place, implement arrows to view next
-Implement "view all reflections"
 Implement visited for completion bar
 Implement completion bar
-"Create reflections" view
 User search
 Fake social media sharing
 	"The app will allow users to share their Completion Bar, an Attraction/Event Page, their profile or a reflection to Twitter/Facebook/Instagram."
@@ -19,8 +16,6 @@ Notifications: remove red and number once viewed.
 Notifications: Add link to Nick's profile.
 Notifications: Add an "attraction" notification.
 
-Calendar: dynamic day selection
-Calendar: "Add to current day" button
 Calendar: shading for current day, border for selected
 Calendar: Grey out or darken days not in current month.
 Calendar: Remove item from day, putting it back into wishlist
@@ -33,11 +28,7 @@ Profile: logout button
 
 Profile: User search?
 
-Map: Change .gif file background colour
-
-Borders in: Notifications?, 
-
-Navigation Bar: Decrease text size
+Borders in: Notifications?,
 
 Remove items from wishlist.
 
@@ -105,6 +96,12 @@ Blacklist: confirmation.
 Registration: "Cancel" button
 Search: "Advance" looks like button
 Map: Remove ellipse borders
+Implement "view all reflections"
+"Create reflections" view
+Navigation Bar: Decrease text size
+Map: Change .gif file background colour
+Calendar: dynamic day selection
+Calendar: "Add to current day" button
 
 == Resolved (David) ==
 Highlight current page on the top panel

@@ -486,7 +486,7 @@
                             </VisualStateManager.VisualStateGroups>
                             <Rectangle x:Name="rectangle" Fill="#FF4F4F4F" Stroke="#FF200C0C"/>
                             <ContentPresenter TextBlock.FontFamily="Constantia" TextBlock.FontSize="65" TextBlock.Foreground="White"  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="69.375,0,60.575,29.62" Content="i" Height="77.58" Width="27.2"/>
-                            <TextBlock HorizontalAlignment="Stretch" Height="29.62" Margin="56.3,73.9,26.275,0" TextWrapping="Wrap" Text="INFO" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Foreground="White"/>
+                            <TextBlock HorizontalAlignment="Stretch" Height="29.62" Margin="56.3,73.9,26.275,0" TextWrapping="Wrap" Text="INFO" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" Foreground="White"/>
                         </Grid>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsFocused" Value="True"/>
@@ -635,7 +635,7 @@
                             </VisualStateManager.VisualStateGroups>
                             <Rectangle x:Name="rectangle" Fill="#FF4F4F4F" Stroke="#FF200C0C"/>
                             <Image RenderOptions.BitmapScalingMode ="HighQuality" HorizontalAlignment="Left" Height="59.6" Margin="60.533,10,0,0" VerticalAlignment="Top" Width="39.467" Source="map1.png" RenderTransformOrigin="0.965,0.51"/>
-                            <TextBlock HorizontalAlignment="Left" Height="22.6" Margin="54.533,72.6,0,0" TextWrapping="Wrap" Text="MAP" VerticalAlignment="Top" Width="47.1" FontWeight="Bold" FontSize="20" Foreground="White"/>
+                            <TextBlock HorizontalAlignment="Left" Height="22.6" Margin="57.533,72.6,0,0" TextWrapping="Wrap" Text="MAP" VerticalAlignment="Top" Width="47.1" FontWeight="Bold" FontSize="18" Foreground="White"/>
                         </Grid>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsFocused" Value="True"/>
@@ -802,7 +802,7 @@
                             </VisualStateManager.VisualStateGroups>
                             <Rectangle x:Name="rectangle" Fill="#FF4F4F4F" Stroke="#FF200C0C"/>
                             <Image RenderOptions.BitmapScalingMode ="HighQuality" HorizontalAlignment="Left" Height="54.533" Margin="51.867,10,0,0" VerticalAlignment="Top" Width="57.467" Source="magnifyingGlass1.png" RenderTransformOrigin="0.965,0.51"/>
-                            <TextBlock HorizontalAlignment="Left" Height="23.934" Margin="38.051,72.283,0,0" TextWrapping="Wrap" Text="SEARCH" VerticalAlignment="Top" Width="78.75" FontWeight="Bold" FontSize="20" Foreground="White"/>
+                            <TextBlock HorizontalAlignment="Left" Height="23.934" Margin="44.051,72.266,0,0" TextWrapping="Wrap" Text="SEARCH" VerticalAlignment="Top" Width="78.75" FontWeight="Bold" FontSize="18" Foreground="White"/>
                         </Grid>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsFocused" Value="True"/>
@@ -882,7 +882,7 @@
                             </VisualStateManager.VisualStateGroups>
                             <Rectangle x:Name="rectangle" Fill="#FF4F4F4F" Stroke="#FF200C0C"/>
                             <Image RenderOptions.BitmapScalingMode ="HighQuality" HorizontalAlignment="Left" Height="58" Margin="48.2,10,0,0" VerticalAlignment="Top" Width="57.467" Source="Calendar1.png" RenderTransformOrigin="0.965,0.51"/>
-                            <TextBlock HorizontalAlignment="Left" Height="30.3" Margin="23.2,73,0,0" TextWrapping="Wrap" Text="CALENDAR" VerticalAlignment="Top" Width="109.95" FontSize="20" FontWeight="Bold" Foreground="White"/>
+                            <TextBlock HorizontalAlignment="Left" Height="30.3" Margin="28.2,73,0,0" TextWrapping="Wrap" Text="CALENDAR" VerticalAlignment="Top" Width="109.95" FontSize="18" FontWeight="Bold" Foreground="White"/>
                         </Grid>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsFocused" Value="True"/>
@@ -962,7 +962,7 @@
                             </VisualStateManager.VisualStateGroups>
                             <Rectangle x:Name="rectangle" Fill="#FF4F4F4F" Stroke="#FF200C0C"/>
                             <Image RenderOptions.BitmapScalingMode ="HighQuality"  HorizontalAlignment="Left" Height="57.134" Margin="57.825,8.933,0,0" VerticalAlignment="Top" Width="44.4" Source="bell1.png" RenderTransformOrigin="0.965,0.51"/>
-                            <TextBlock HorizontalAlignment="Left" Height="21.533" Margin="3.068,75.001,0,0" TextWrapping="Wrap" Text="NOTIFICATIONS" VerticalAlignment="Top" Width="153.416" FontSize="20" FontWeight="Bold" Foreground="White"/>
+                            <TextBlock HorizontalAlignment="Left" Height="21.533" Margin="10,74.667,-6.266,0" TextWrapping="Wrap" Text="NOTIFICATIONS" VerticalAlignment="Top" Width="153.416" FontSize="18" FontWeight="Bold" Foreground="White"/>
                         </Grid>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsFocused" Value="True"/>
@@ -1855,7 +1855,7 @@
                             </VisualStateManager.VisualStateGroups>
                             <Rectangle x:Name="rectangle" Fill="#FF4F4F4F" Stroke="#FF200C0C"/>
                             <Image RenderOptions.BitmapScalingMode ="HighQuality" HorizontalAlignment="Left" Height="54.201" Margin="62.084,15.133,0,0" VerticalAlignment="Top" Width="43.733" Source="MyProfile3.png"/>
-                            <TextBlock HorizontalAlignment="Left" Height="22.866" Margin="16.933,74.334,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124.083" FontSize="20" Foreground="White"><Run FontWeight="Bold" Text="MY"/><Run Text=" "/><Run FontWeight="Bold" Text="PROFILE"/></TextBlock>
+                            <TextBlock HorizontalAlignment="Left" Height="22.866" Margin="28.067,74.334,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110.083" FontSize="18" Foreground="White"><Run FontWeight="Bold" Text="MY"/><Run Text=" "/><Run FontWeight="Bold" Text="PROFILE"/></TextBlock>
                         </Grid>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsFocused" Value="True"/>
@@ -1934,7 +1934,7 @@
                             </VisualStateManager.VisualStateGroups>
                             <Rectangle x:Name="rectangle" Fill="#FF4F4F4F" Stroke="#FF200C0C"/>
                             <Image RenderOptions.BitmapScalingMode ="HighQuality" HorizontalAlignment="Left" Height="57.134" Margin="57.825,8.933,0,0" VerticalAlignment="Top" Width="44.4" Source="bell2.png" RenderTransformOrigin="0.965,0.51"/>
-                            <TextBlock HorizontalAlignment="Left" Height="21.533" Margin="3.068,75.001,0,0" TextWrapping="Wrap" Text="NOTIFICATIONS" VerticalAlignment="Top" Width="153.416" FontSize="20" FontWeight="Bold" Foreground="White"/>
+                            <TextBlock HorizontalAlignment="Left" Height="21.533" Margin="10,75.001,-6.266,0" TextWrapping="Wrap" Text="NOTIFICATIONS" VerticalAlignment="Top" Width="153.416" FontSize="18" FontWeight="Bold" Foreground="White"/>
                             <Ellipse Fill="#FFBD1A1A" HorizontalAlignment="Left" Height="27.2" Margin="86.225,42.801,0,0" Stroke="{x:Null}" VerticalAlignment="Top" Width="26.675"/>
                         </Grid>
                         <ControlTemplate.Triggers>
@@ -2600,7 +2600,7 @@
             <Button x:Name="NotificationsButton" Height="107.2" Canvas.Left="787.3" Style="{DynamicResource ButtonStyleNotifications}" Width="157.15" Canvas.Top="0.466"/>
             <Button x:Name="HomeButton" Content="Button" Height="107" Style="{DynamicResource ButtonStyleHomePage}" Width="157.15" Canvas.Top="1.2" Canvas.Left="1.55"/>
             <Button x:Name="MyProfileButton" Content="Button" Height="107.2" Canvas.Left="944.45" Style="{DynamicResource ButtonStyleMyProfile1}" Width="157.15" Canvas.Top="0.466" BorderBrush="#FF4F4F4F"/>
-            <Button x:Name="NotificationsButtonWithRedEllipse" Height="107.2" Canvas.Left="787.3" Style="{DynamicResource ButtonStyleNotificationsButtonRedCircle}" Width="157.15" Canvas.Top="0.6"/>
+            <Button x:Name="NotificationsButtonWithRedEllipse" Height="107.2" Canvas.Left="787.3" Style="{DynamicResource ButtonStyleNotificationsButtonRedCircle}" Width="157.15" Canvas.Top="0.6" d:IsHidden="True"/>
 
         </Canvas>
 
