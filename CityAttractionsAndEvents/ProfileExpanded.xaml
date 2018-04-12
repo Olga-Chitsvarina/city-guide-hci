@@ -51,8 +51,8 @@
     </UserControl.Resources>
     <Canvas x:Name="ReflectionsCanvas" Margin="0,10,0,-10">
         <Rectangle Width="703.137" Height="285" Canvas.Top="-2.5" Canvas.Left="1.023"/>
-        <TextBlock Height="35" TextAlignment ="Center" TextWrapping="Wrap" Canvas.Top="10" Width="704.16" FontSize="24" FontWeight="Bold"><Run Text="Reflections"/></TextBlock>
-        <Rectangle Fill="Black" Height="1" Stroke="Black" Canvas.Top="45" Width="704.16"/>
+        <TextBlock Height="35" TextAlignment ="Center" TextWrapping="Wrap" Width="497.941" FontSize="24" FontWeight="Bold" Canvas.Left="10"><Run Text="Reflections"/></TextBlock>
+        <Rectangle Fill="Black" Height="1" Stroke="Black" Canvas.Top="45" Width="704.16" Visibility="Hidden"/>
         <Ellipse Height="68" Canvas.Left="10" Stroke="White" Canvas.Top="51" Width="68">
             <Ellipse.Fill>
                 <ImageBrush ImageSource="Images/585e4bf3cb11b227491c339a.png"/>
@@ -60,7 +60,7 @@
         </Ellipse>
         <TextBlock Height="36" Canvas.Left="116.785" TextWrapping="Wrap" Text="Person the Title" TextAlignment="Center" Canvas.Top="51" Width="274" FontSize="20"/>
         <TextBlock Height="145" Canvas.Left="79.888" TextWrapping="Wrap" Canvas.Top="130" Width="349.253" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut velit ultrices, bibendum sapien quis, fermentum odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam gravida sapien id sem fermentum, sed sagittis risus rhoncus. Vivamus consequat ex nec elit ultrices, tristique convallis sem ultricies. Vivamus luctus turpis odio, eu dignissim sapien malesuada lacinia. In "/>
-        <Rectangle Height="46" Canvas.Left="457.525" Stroke="White" Canvas.Top="73.776" Width="46">
+        <Rectangle Height="46" Canvas.Left="451.941" Stroke="White" Canvas.Top="91.325" Width="46">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -68,7 +68,7 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Height="46" Canvas.Left="457.525" Stroke="White" Canvas.Top="124.776" Width="46">
+        <Rectangle Height="46" Canvas.Left="451.941" Stroke="White" Canvas.Top="142.325" Width="46">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -76,7 +76,7 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Height="46" Canvas.Left="457.525" Stroke="White" Canvas.Top="175.776" Width="46">
+        <Rectangle Height="46" Canvas.Left="451.941" Stroke="White" Canvas.Top="193.325" Width="46">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -84,7 +84,7 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle Height="148" Canvas.Left="508.525" Stroke="White" Canvas.Top="73.776" Width="148">
+        <Rectangle Height="148" Canvas.Left="502.941" Stroke="White" Canvas.Top="91.325" Width="148">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -92,8 +92,8 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Button x:Name="reflectRightButton" Content="Button" Height="26" Canvas.Left="661.525" Style="{DynamicResource ButtonStyle1}" Canvas.Top="144.776" Width="26.5" Cursor="Hand"/>
-        <Button x:Name="reflectLightButton" Content="Button" Height="26" Canvas.Left="29.334" Style="{DynamicResource ButtonStyle1}" Canvas.Top="155" Width="26.5" RenderTransformOrigin="0.5,0.5" Cursor="Hand" Visibility="Hidden">
+        <Button x:Name="reflectRightButton" Content="Button" Height="26" Canvas.Left="659.132" Style="{DynamicResource ButtonStyle1}" Canvas.Top="149.562" Width="26.5" Cursor="Hand"/>
+        <Button x:Name="reflectLightButton" Content="Button" Height="26" Canvas.Left="23.191" Style="{DynamicResource ButtonStyle1}" Canvas.Top="150.214" Width="26.5" RenderTransformOrigin="0.5,0.5" Cursor="Hand" Visibility="Hidden">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -103,7 +103,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="imageDownButton" Content="Button" Height="26" Canvas.Left="466.857" Style="{DynamicResource ButtonStyle1}" Canvas.Top="224.108" Width="26.5" RenderTransformOrigin="0.5,0.5" Cursor="Hand">
+        <Button x:Name="imageDownButton" Content="Button" Height="26" Canvas.Left="461.806" Style="{DynamicResource ButtonStyle1}" Canvas.Top="244.324" Width="26.5" RenderTransformOrigin="0.5,0.5" Cursor="Hand">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -113,7 +113,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="imageUpButton" Content="Button" Height="26" Canvas.Left="671.332" Style="{DynamicResource ButtonStyle1}" Canvas.Top="55.665" Width="26.5" RenderTransformOrigin="0.5,0.5" Visibility="Hidden" Cursor="Hand">
+        <Button x:Name="imageUpButton" Content="Button" Height="26" Canvas.Left="461.533" Style="{DynamicResource ButtonStyle1}" Canvas.Top="59.13" Width="26.5" RenderTransformOrigin="0.5,0.5" Cursor="Hand" Visibility="Hidden">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -123,7 +123,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <local:ViewAllButton Canvas.Left="457.525" Canvas.Top="10" Width="90.577"/>
+        <local:ViewAllButton Canvas.Left="600.231" Canvas.Top="10" Width="90.577"/>
 
         <StackPanel Orientation="Horizontal" Width="170.132" Height="37.267" Canvas.Left="169.714" Canvas.Top="81.733">
 

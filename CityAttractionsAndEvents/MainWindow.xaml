@@ -2572,14 +2572,14 @@
             <Button x:Name="ShoppingButton" Content="Button" Height="108.8" Canvas.Left="10" Style="{DynamicResource ButtonStyleShopping}" Canvas.Top="450.2" Width="255"/>
             <Button x:Name="SportButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyleSport}" Canvas.Top="564" Width="255"/>
             <Image Height="245.2" Width="564.2" Source="Calgary1.jpg" Canvas.Left="284.8" Canvas.Top="130" Stretch="Fill"/>
-            <Image Height="255" Canvas.Left="284.8" Canvas.Top="383" Width="580.75" Source="Weather1.png" Stretch="UniformToFill"/>
+            <Image Height="256.266" Canvas.Left="284.8" Canvas.Top="383" Width="584.883" Source="Weather1.png"/>
             <Border Height="245.2" Canvas.Left="865.55" Canvas.Top="130" Width="246.05" BorderBrush="Black" BorderThickness="2" Background="White">
                 <Grid>
                     <TextBlock Height="73.8" TextBlock.TextAlignment="Center" TextWrapping="Wrap" FontSize="18" FontWeight="Bold" Foreground="Black" VerticalAlignment="Top" OpacityMask="Black" Margin="0,10,0,0"><Run FontStyle="Italic" Text="Current Weather"/><LineBreak/><Run FontStyle="Italic" Text="Conditions"/><Run FontStyle="Italic" Text=":"/></TextBlock>
                 </Grid>
             </Border>
             <Button x:Name="ContactUsButton" Content="TextBlock" Height="29.8" Canvas.Left="947.75" Style="{DynamicResource ButtonStyleContactUs2}" Canvas.Top="649.4" Width="149.05"/>
-            <Image Height="255" Canvas.Left="865.55" Canvas.Top="383" Width="231.25" Source="Weather1.png" Stretch="UniformToFill"/>
+            <Image Height="255" Canvas.Left="857.208" Canvas.Top="383.15" Width="246.05" Source="WeatherShort.png"/>
             <MediaElement x:Name="myGif" MediaEnded="myGif_MediaEnded" UnloadedBehavior="Manual" Height="175" Canvas.Left="895.502" Canvas.Top="200.2" Width="183.098" Source="output_pzoxmU.gif"/>
         </Canvas>
         <Canvas x:Name="LoginPage" Height="678.8" Canvas.Left="10" Canvas.Top="10" Width="1101.6" d:IsHidden="True">
@@ -2616,7 +2616,7 @@
             <TextBlock Height="312.52" TextWrapping="Wrap" Canvas.Top="249.2" Width="1008.6" FontSize="18"><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text="-----------------------------------------------------------------------------------------------------------------------------------------"/><LineBreak/><Run Foreground="#FF4F4F4F" FontWeight="Bold"/><LineBreak/><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text="GENERAL INFORMATION:"/><LineBreak/><Run Foreground="#FF238CB4" FontWeight="Bold"/><LineBreak/><Run Foreground="#FF238CB4" FontWeight="Bold" Text="We intend our app to be useful to anyone who wants to discover/research new attractions or events"/><Run Foreground="#FF238CB4" FontWeight="Bold" Text=" in the city."/><LineBreak/><Run Foreground="#FF238CB4" FontWeight="Bold"/><LineBreak/><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text="-----------------------------------------------------------------------------------------------------------------------------------------"/><LineBreak/><Run Foreground="#FF4F4F4F" FontWeight="Bold"/><LineBreak/><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text="M"/><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text="ISSION STATEMENT"/><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text=":"/><LineBreak/><Run Foreground="#FF4F4F4F" FontWeight="Bold"/><LineBreak/><Run Foreground="#FF238CB4" FontWeight="Bold" Text="Encourage people to explore cities' attractions and events and help them to find enjoyable experiences."/><LineBreak/><Run Foreground="#FF238CB4" FontWeight="Bold"/><LineBreak/><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text="-----------------------"/><Run Foreground="#FF4F4F4F" FontWeight="Bold" Text="-------------------------------------------------------------------------------------------------------------------"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
 
         </Canvas>
-        <Canvas x:Name="CalendarPage" Height="580.467" Canvas.Left="10" Canvas.Top="128.8" Width="1101.6">
+        <Canvas x:Name="CalendarPage" Height="580.467" Canvas.Left="10" Canvas.Top="128.8" Width="1101.6" d:IsHidden="True">
             <TextBlock Height="25.6" Canvas.Left="300.6" TextWrapping="Wrap" Canvas.Top="32.6" Width="81" FontSize="18" FontWeight="Bold" Visibility="Hidden"><Run Text="SU"/><Run Text="N"/></TextBlock>
             <TextBlock Height="25.6" Canvas.Left="386.6" TextWrapping="Wrap" Canvas.Top="32.6" Width="81" FontSize="18" FontWeight="Bold" Visibility="Hidden"><Run Text="MO"/><Run Text="N"/></TextBlock>
             <TextBlock Height="25.6" Canvas.Left="458.533" TextWrapping="Wrap" Text="TUE" Canvas.Top="32.6" Width="81" FontSize="18" FontWeight="Bold" Visibility="Hidden"/>
@@ -2794,9 +2794,9 @@
                 </DockPanel>
             </ScrollViewer-->
         </Canvas>
-        <Canvas x:Name="NickProfileCanvas" Height="568" Canvas.Left="11.6" Canvas.Top="141.267" Width="1110" d:IsHidden="True">
+        <Canvas x:Name="NickProfileCanvas" Height="568" Canvas.Left="11.6" Canvas.Top="141.267" Width="1110">
             <Grid x:Name="NickProfileGrid" Height="568" Width="1110" >
-                <ProfileV2:ProfileOther HorizontalAlignment="Center"/>
+                <ProfileV2:ProfileOther Margin="0,-10,503.4,10"/>
             </Grid>
 
         </Canvas>

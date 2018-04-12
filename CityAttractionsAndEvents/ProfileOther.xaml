@@ -1921,7 +1921,7 @@
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
 
-        <Canvas x:Name="Container" Margin="0,-128.8,-500.6,0" Background="White" Grid.ColumnSpan="2" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
+        <Canvas x:Name="Container" Margin="0,-128.8,-500.6,0" Background="White" Grid.ColumnSpan="2" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" HorizontalAlignment="Left" Width="1422.326" Visibility="Hidden">
             <Canvas x:Name="TopPanel" Height="108.8" Canvas.Left="10" Canvas.Top="10" Width="1101.6">
                 <Rectangle Fill="#FF4F4F4F" Height="108.8                        " Stroke="Black" Width="1101.6"/>
                 <TextBlock x:Name="LogoTextBlock" Height="97.666" Canvas.Left="23.15" TextWrapping="Wrap" Canvas.Top="10" Width="130.55" FontSize="18" Foreground="White" FontWeight="Bold"><Run Text="CITY"/><LineBreak/><Run Text="ATTRACTIONS"/><LineBreak/><Run Text="AND"/><LineBreak/><Run Text="EVENTS"/></TextBlock>
@@ -1939,10 +1939,10 @@
 
         </Canvas>
 
-        <Grid Margin="0,0,-1.6,0" Background="White" Grid.ColumnSpan="2" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
+        <Grid Margin="0,0,195.2,0" Background="White" d:LayoutOverrides="TopMargin, BottomMargin">
             <StackPanel Margin="10">
                 <Border BorderBrush ="Black" BorderThickness="2" Height="115.6">
-                    <Canvas>
+                    <Canvas Margin="0,0,-202.8,0">
                         <Border BorderBrush="Black" BorderThickness="1,1,1,1" Margin="5,5,5,5">
                             <Image x:Name="image" Height="80" Canvas.Left="10" Canvas.Top="10" Width="80.5" Source="avatar1-crop.jpg"/>
                         </Border>
@@ -1984,8 +1984,8 @@
                                 </ed:RegularPolygon.RenderTransform>
                             </ed:RegularPolygon>
 
-                            <Border BorderBrush="Black" BorderThickness="0" Width="538.3">
-                                <ScrollViewer DockPanel.Dock="Left" Cursor="ScrollWE" x:Name="profileInterests" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" CanContentScroll="True" Margin="1,1,1,1" >
+                            <Border BorderBrush="Black" BorderThickness="0" Width="659.1">
+                                <ScrollViewer DockPanel.Dock="Left" Cursor="ScrollWE" x:Name="profileInterests" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" CanContentScroll="True" Margin="1,1,0,1" HorizontalAlignment="Left" Width="536.3" >
                                     <DockPanel>
                                         <StackPanel x:Name ="InterestsSP" Orientation="Horizontal" Height="85.88" >
                                             <StackPanel.Resources>
@@ -2015,7 +2015,7 @@
                     </Grid>
                 </Border>
                 <CityAttractionsAndEvents:ProfileExpanded Height="100" Width="100" HorizontalAlignment="Left" d:LayoutOverrides="TopPosition, BottomPosition"/>
-                <Border x:Name="ReflectionsBox" BorderBrush="Black" BorderThickness="0,1" Height="240.64" d:IsHidden="True">
+                <Border x:Name="ReflectionsBox" BorderBrush="Black" BorderThickness="0,1" Height="240.64" d:IsHidden="True" Visibility="Hidden">
                     <Canvas Margin="0,10,0,50">
 
                         <TextBlock TextAlignment="Center" x:Name="Shared1" FontWeight="Bold" Height="26.36" Width="588.2"><Run Text="Recent Reflectio" TextDecorations="Underline"/><Run Text="ns" TextDecorations="Underline"/></TextBlock>

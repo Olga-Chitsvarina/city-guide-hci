@@ -230,7 +230,9 @@
     </UserControl.Triggers>
     <Canvas Margin="0,0,0,-26.404">
 
-        <Rectangle x:Name="backdropRect" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="284.904" Stroke="Black" VerticalAlignment="Top" Width="902.5"/>
+        <Border BorderBrush="Black" BorderThickness="0,2" Height="286" Width="902" Background="Black"/>
+
+        <Rectangle x:Name="backdropRect" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="284.904" VerticalAlignment="Top" Width="902.5"/>
         <TextBlock x:Name="nameText" Height="62" Canvas.Left="58" TextWrapping="Wrap" Text="TextBlock" TextAlignment="Center" Canvas.Top="10" Width="639" FontSize="22" FontWeight="Bold"/>
         <Image x:Name="placeImage" Height="155" Canvas.Left="723" Canvas.Top="10" Width="169.5"/>
         <TextBlock x:Name="detailsText" Height="65" Canvas.Left="10" TextWrapping="Wrap" Text="TextBlock" Canvas.Top="72" Width="687"/>
