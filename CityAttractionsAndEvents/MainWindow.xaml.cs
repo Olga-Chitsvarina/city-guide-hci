@@ -39,7 +39,7 @@ namespace CityAttractionsAndEvents
         private DispatcherTimer dispatchTimer;
 
         static GlanceView curGlanceView;
-        static ProfileExpanded curProfileExpanded;
+        static Grid curProfileExpanded;
         static InfoExpander curWTG;
         static InfoExpander curNTK;
 
@@ -1023,9 +1023,16 @@ namespace CityAttractionsAndEvents
             }
             ProfileExpanded reflections = new ProfileExpanded();
             reflections.Height = 285;
-            reflections.Width = 902.5;
-            curProfileExpanded = reflections;
-            profileStack.Children.Add(reflections);
+            //reflections.Width = 902.5;
+            reflections.HorizontalAlignment = HorizontalAlignment.Center;
+            Grid tempGrid = new Grid();
+            tempGrid.Width = 902.5;
+            tempGrid.Background = new SolidColorBrush(Color.FromRgb(244, 244, 244));
+            tempGrid.HorizontalAlignment = HorizontalAlignment.Center;
+            tempGrid.Children.Add(reflections);
+            profileStack.Children.Add(tempGrid);
+            curProfileExpanded = tempGrid;
+
             InfoExpander ntkInfo = new InfoExpander("Why Should I Visit?");
             ntkInfo.Width = (902.5);
             curNTK = ntkInfo;
@@ -1291,6 +1298,7 @@ namespace CityAttractionsAndEvents
         {
             Button button = (Button)sender;
             setPlaceProfile(((GlanceView)((Canvas)button.Parent).Parent).nameText.Text);
+            renderPlaceProfile();
             UpdateCurrentAndPreviousPages(ProfilePageCanvas);
         }
 

@@ -46,6 +46,7 @@ namespace CityAttractionsAndEvents
             if (expanded)
             {
                 backdropRect.Height = 56;
+                backdropRectBorder.Height = backdropRect.Height;
                 this.Height = 56;
                 //this.ExpanderCanvasInternal.Height = 56;
                 expandInfoButton.Content = "+";
@@ -54,8 +55,10 @@ namespace CityAttractionsAndEvents
             } else
             {
                 backdropRect.Height = 56 + (70*expandedCanvas.Children.Count);
+                backdropRectBorder.Height = backdropRect.Height;
+
                 //this.ExpanderCanvasInternal.Height = 56 + (50 * expandedCanvas.Children.Count);
-                this.Height = 56 + (50 * expandedCanvas.Children.Count);
+                this.Height = 56 + (50 * (expandedCanvas.Children.Count+1));
                 expandedCanvas.Visibility = Visibility.Visible;
                 expandInfoButton.Content = "-";
                 expanded = true;

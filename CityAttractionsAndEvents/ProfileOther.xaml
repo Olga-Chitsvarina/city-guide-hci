@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:ProfileV2"
              xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" xmlns:CityAttractionsAndEvents="clr-namespace:CityAttractionsAndEvents" xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2" xmlns:MapView="clr-namespace:MapView" x:Class="ProfileV2.ProfileOther"
              mc:Ignorable="d" 
-             d:DesignHeight="570" d:DesignWidth="517">
+             d:DesignHeight="570" Width="606.6">
     <UserControl.Resources>
         <LinearGradientBrush x:Key="ProgressBarBackground" EndPoint="1,0" StartPoint="0,0">
             <GradientStop Color="#BABABA" Offset="0"/>
@@ -1915,9 +1915,13 @@
             </Setter>
         </Style>
     </UserControl.Resources>
-    <Grid>
+    <Grid HorizontalAlignment="Left" Width="921.726" Margin="0,0,-315.126,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
 
-        <Canvas x:Name="Container" Margin="-301.2,-128.8,-303.4,0" Background="White">
+        <Canvas x:Name="Container" Margin="0,-128.8,-500.6,0" Background="White" Grid.ColumnSpan="2" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
             <Canvas x:Name="TopPanel" Height="108.8" Canvas.Left="10" Canvas.Top="10" Width="1101.6">
                 <Rectangle Fill="#FF4F4F4F" Height="108.8                        " Stroke="Black" Width="1101.6"/>
                 <TextBlock x:Name="LogoTextBlock" Height="97.666" Canvas.Left="23.15" TextWrapping="Wrap" Canvas.Top="10" Width="130.55" FontSize="18" Foreground="White" FontWeight="Bold"><Run Text="CITY"/><LineBreak/><Run Text="ATTRACTIONS"/><LineBreak/><Run Text="AND"/><LineBreak/><Run Text="EVENTS"/></TextBlock>
@@ -1935,9 +1939,9 @@
 
         </Canvas>
 
-        <Grid HorizontalAlignment="Right" Height="570" Margin="0,0,0,0" VerticalAlignment="Bottom" Width="517" Background="White">
+        <Grid Margin="0,0,-1.6,0" Background="White" Grid.ColumnSpan="2" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
             <StackPanel Margin="10">
-                <Border BorderBrush ="Black" BorderThickness="2" Height="100">
+                <Border BorderBrush ="Black" BorderThickness="2" Height="115.6">
                     <Canvas>
                         <Border BorderBrush="Black" BorderThickness="1,1,1,1" Margin="5,5,5,5">
                             <Image x:Name="image" Height="80" Canvas.Left="10" Canvas.Top="10" Width="80.5" Source="avatar1-crop.jpg"/>
@@ -1969,7 +1973,7 @@
                         <TextBlock TextAlignment="Center" x:Name="Shared" FontWeight="Bold" Height="26.36" VerticalAlignment="Top"><Run Foreground="Black" Text="Interests " TextDecorations="Underline"/><Run Foreground="Green" Text="(1 Shared)" TextDecorations="Underline"/></TextBlock>
 
                         <StackPanel Orientation="Horizontal" Margin="0,26.36,0,0">
-                            <ed:RegularPolygon Height="12.4" InnerRadius="1" PointCount="3" Stretch="Fill" Width="25.6" RenderTransformOrigin="0.5,0.5" Fill="#FF238CB4">
+                            <ed:RegularPolygon Height="12.4" InnerRadius="1" PointCount="3" Stretch="Fill" Width="25.6" RenderTransformOrigin="0.5,0.5" Fill="Black">
                                 <ed:RegularPolygon.RenderTransform>
                                     <TransformGroup>
                                         <ScaleTransform/>
@@ -1980,7 +1984,7 @@
                                 </ed:RegularPolygon.RenderTransform>
                             </ed:RegularPolygon>
 
-                            <Border BorderBrush="Black" BorderThickness="0" Width="442.3">
+                            <Border BorderBrush="Black" BorderThickness="0" Width="538.3">
                                 <ScrollViewer DockPanel.Dock="Left" Cursor="ScrollWE" x:Name="profileInterests" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" CanContentScroll="True" Margin="1,1,1,1" >
                                     <DockPanel>
                                         <StackPanel x:Name ="InterestsSP" Orientation="Horizontal" Height="85.88" >
@@ -1996,7 +2000,7 @@
                                     </DockPanel>
                                 </ScrollViewer>
                             </Border>
-                            <ed:RegularPolygon DockPanel.Dock="Right" Height="12.4" InnerRadius="1" PointCount="3" Stretch="Fill" Width="25.6" RenderTransformOrigin="0.5,0.5" Fill="#FF238CB4">
+                            <ed:RegularPolygon DockPanel.Dock="Right" Height="12.4" InnerRadius="1" PointCount="3" Stretch="Fill" Width="25.6" RenderTransformOrigin="0.5,0.5" Fill="Black">
                                 <ed:RegularPolygon.RenderTransform>
                                     <TransformGroup>
                                         <ScaleTransform/>
@@ -2010,12 +2014,13 @@
                         </StackPanel>
                     </Grid>
                 </Border>
-                <Border x:Name="ReflectionsBox" BorderBrush="Black" BorderThickness="0,1" Height="240.64">
+                <CityAttractionsAndEvents:ProfileExpanded Height="100" Width="100" HorizontalAlignment="Left" d:LayoutOverrides="TopPosition, BottomPosition"/>
+                <Border x:Name="ReflectionsBox" BorderBrush="Black" BorderThickness="0,1" Height="240.64" d:IsHidden="True">
                     <Canvas Margin="0,10,0,50">
 
-                        <TextBlock TextAlignment="Center" x:Name="Shared1" FontWeight="Bold" Height="21.36" Width="496.6"><Run Text="Recent Reflectio" TextDecorations="Underline"/><Run Text="ns" TextDecorations="Underline"/></TextBlock>
+                        <TextBlock TextAlignment="Center" x:Name="Shared1" FontWeight="Bold" Height="26.36" Width="588.2"><Run Text="Recent Reflectio" TextDecorations="Underline"/><Run Text="ns" TextDecorations="Underline"/></TextBlock>
 
-                        <StackPanel Orientation="Horizontal" Height="192.114" Canvas.Top="26.36" Width="496.6">
+                        <StackPanel Orientation="Horizontal" Height="192.114" Canvas.Top="26.36" Width="588.2">
                             <ed:RegularPolygon x:Name="TriButtonLeft" Height="12.4" InnerRadius="1" PointCount="3" Stretch="Fill" Width="25.6" RenderTransformOrigin="0.5,0.5" Fill="#FF238CB4">
                                 <ed:RegularPolygon.RenderTransform>
                                     <TransformGroup>
@@ -2027,8 +2032,8 @@
                                 </ed:RegularPolygon.RenderTransform>
                             </ed:RegularPolygon>
 
-                            <Border BorderBrush="Black" BorderThickness="0" Width="442.3">
-                                <StackPanel Margin="0,0,0,-17.6">
+                            <Border BorderBrush="Black" BorderThickness="0" Width="539.1">
+                                <StackPanel x:Name="ReflectionPreview1" Margin="0,0,0,-17.6">
                                     <Grid Height="48.267" HorizontalAlignment="Center">
                                         <StackPanel Orientation="Horizontal" Width="Auto">
 
@@ -2039,7 +2044,7 @@
                                         </StackPanel>
                                     </Grid>
                                     <TextBlock x:Name="AttName" TextAlignment="Center" TextWrapping="Wrap"><Run FontWeight="Bold" Text="Calgary Tower"/></TextBlock>
-                                    <TextBlock x:Name="Descrip" TextWrapping="Wrap" HorizontalAlignment="Right" Height="39.2" Margin="0,0,10,0"><Run Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel enim eu eros malesuada hendrerit. Phasellus sed arcu turpis"/><Run Text="..."/></TextBlock>
+                                    <TextBlock x:Name="Descrip" TextWrapping="Wrap" HorizontalAlignment="Right" Height="39.2" Margin="0,0,10,0" Width="519.1"><Run Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel enim eu eros malesuada "/><Run Text="te"/><Run Text="hendrerit. Phasellus sed arcu turpis"/><Run Text="..."/></TextBlock>
                                     <Grid Height="82.4" HorizontalAlignment="Center">
                                         <StackPanel Width="Auto" Orientation="Horizontal" >
                                             <Image x:Name="reflectionImage1" Width="84" Source="CT1.jpg" Stretch="UniformToFill" Margin="10,0"/>
