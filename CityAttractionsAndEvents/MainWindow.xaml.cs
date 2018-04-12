@@ -33,7 +33,7 @@ namespace CityAttractionsAndEvents
         private List<string> usernames;
         private List<string> passwords;
         private List<string> emails;
-        static List<WishEntry> wishlist = new List<WishEntry>();
+        public static List<WishEntry> wishlist { get; set; } = new List<WishEntry>();
         static List<string> blacklist = new List<string>();
 
         private DispatcherTimer dispatchTimer;
@@ -650,14 +650,42 @@ namespace CityAttractionsAndEvents
             PageIsNotVisible(CalendarPage);
             EventInformationTextBlock.Visibility = Visibility.Hidden;
 
-            DayButton.Click += DayButton_Click;
+            // Fill calendar day cells dynamically:
+            string [] daysOfApril = {"1", "2", "3", "4" , "5", "6", "7",
+                                     "8", "9", "10", "11", "12", "13", "14",
+                                     "15", "16", "17", "18", "19", "20", "21",
+                                     "22", "23", "24", "25", "26", "27", "28",
+                                     "29", "30", "1", "2", "3", "4", "5"};
+            CalendarCell[] arrayOfCalendarCells = new CalendarCell [35];
+            int i = 0;
+            while(i< daysOfApril.Length)
+            {
+                CalendarCell calendarCell = new CalendarCell(daysOfApril[i], i) { };
+                calendarCell.RaiseCalendarEvent += CalendarCell_RaiseCalendarEvent;
+                CalendarUniformGrid.Children.Add(calendarCell);
+                i++;
+            }
+
+            // Fill days of the week dynamically:
+            string[] daysOfWeek = { "SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT" };
+            string [] arrayOfDaysOfWeek = new string[7];
+            int j = 0;
+            while (j < arrayOfDaysOfWeek.Length)
+            {
+                TextBlock textBlock = new TextBlock();
+                CalendarDaysOfWeek.Children.Add(textBlock);
+                textBlock.Text = daysOfWeek[j];
+                j++;
+            }
+            //DayButton.Click += DayButton_Click;
         }
 
-
-        private void DayButton_Click(object sender, RoutedEventArgs e)
+        private void CalendarCell_RaiseCalendarEvent(object sender, CalendarEventArgs e)
         {
             EventInformationTextBlock.Visibility = Visibility.Visible;
+            
         }
+
 
         //===========================================================================================
         // NOTIFICATIONS
