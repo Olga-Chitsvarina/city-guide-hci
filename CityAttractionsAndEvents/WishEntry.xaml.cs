@@ -52,11 +52,5 @@ namespace CityAttractionsAndEvents
         {
             this.RaiseWishEntryEvent(this, new WishEntryEventsArgs() { Name = this.Name, ImagePath = this.ImagePath });
         }
-
-        private void CalendarButton_Click(object sender, RoutedEventArgs e)
-        {
-           
-        }
-
     }
 }

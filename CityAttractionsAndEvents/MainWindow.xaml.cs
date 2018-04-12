@@ -329,6 +329,7 @@ namespace CityAttractionsAndEvents
 
         private void W_RaiseWishEntryEvent(object sender, WishEntryEventsArgs e)
         {
+            SelectDayLabel.Visibility = Visibility.Visible;
             selected = new WishEntry(e.Name, e.ImagePath) { };
         }
 
@@ -741,7 +742,12 @@ namespace CityAttractionsAndEvents
                     calendarCell.SetImage(selected.ImagePath);
                     EventInformationTextBlock.Visibility = Visibility.Visible;
                     selected = null;
+                    SelectDayLabel.Visibility = Visibility.Hidden;
                 }
+            }
+            else
+            {
+                EventInformationTextBlock.Visibility = Visibility.Hidden;
             }
                
         }
@@ -837,6 +843,9 @@ namespace CityAttractionsAndEvents
 
         public void UpdateCurrentAndPreviousPages(Canvas newCurrent)
         {
+            SelectDayLabel.Visibility = Visibility.Hidden;
+            selected = null;
+
             InformationButton.IsEnabled = true;
             MapButton.IsEnabled = true;
             SearchButton.IsEnabled = true;

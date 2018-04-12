@@ -2637,6 +2637,7 @@
             </ScrollViewer>
             <UniformGrid x:Name="CalendarUniformGrid" Height="472.454" Canvas.Left="238.694" Canvas.Top="70.205" Width="601.3" Rows="5" Columns="7"/>
             <UniformGrid x:Name="CalendarDaysOfWeek" Height="23.899" Canvas.Left="282.973" Canvas.Top="47.271" Width="609.834" Rows="1" Columns="7"/>
+            <TextBlock x:Name="SelectDayLabel" Height="24.8" Canvas.Left="659.6" TextWrapping="Wrap" Canvas.Top="8.8" Width="209.6" FontWeight="Bold" Foreground="#FFBD1A1A"><Run Text="PLEASE SELECT A DAY"/><Run Text=":"/></TextBlock>
         </Canvas>
         <Canvas x:Name="NotificationsPage" Height="570" Canvas.Left="10" Canvas.Top="118.8" Width="1101.6" d:IsHidden="True">
 
