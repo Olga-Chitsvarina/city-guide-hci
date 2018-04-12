@@ -21,11 +21,6 @@ Notifications: Add link to Nick's profile.
 Notifications: Add an "attraction" notification.
 
 Blacklist: confirmation.
-Blacklist: "Clear blacklist" button
-Search: Reset button
-
-Sliders: bounds
-Sliders: non-numerical
 
 Calendar: dynamic day selection
 Calendar: "Add to current day" button
@@ -110,7 +105,10 @@ Get rid of arrows on sliders
 Shift up day information (Calendar)
 Use Olga's fix on Place Profile Page
 Place a print button, so that a user can print a map (edited)
-
+Blacklist: "Clear blacklist" button
+Search: Reset button
+Sliders: bounds
+Sliders: non-numerical
 
 
 == Resolved (David) ==

@@ -46,6 +46,8 @@ namespace CityAttractionsAndEvents
         double priceMin;
         double priceMax;
 
+        string newestBlacked;
+
         double impObsc = 50;
         double impStar = 50;
         double impPrice = 50;
@@ -124,6 +126,23 @@ namespace CityAttractionsAndEvents
             this.shopCheck.Unchecked += Check_Unchecked;
             this.resetSearchButt.Click += ResetSearch;
             this.clearBlackButt.Click += ClearBlacklist;
+            this.blacklistNoButt.Click += BlacklistNoButt_Click;
+            this.blacklistYesButt.Click += BlacklistYesButt_Click;
+        }
+
+        private void BlacklistYesButt_Click(object sender, RoutedEventArgs e)
+        {
+            blacklist.Add(newestBlacked);
+            List<Place> places = generatePlaces();
+            renderGlanceViews(places);
+            renderPlaces(places);
+            blacklistConfirmCanvas.Visibility = Visibility.Hidden;
+        }
+
+        private void BlacklistNoButt_Click(object sender, RoutedEventArgs e)
+        {
+            blacklistConfirmCanvas.Visibility = Visibility.Hidden;
+       
         }
 
         private void ClearBlacklist(object sender, RoutedEventArgs e)
@@ -235,10 +254,9 @@ namespace CityAttractionsAndEvents
 
         public void addToBlacklist(string name)
         {
-            blacklist.Add(name);
-            List<Place> places = generatePlaces();
-            renderGlanceViews(places);
-            renderPlaces(places);
+            newestBlacked = name;
+            blacklistText.Text = "Are you sure you'd like to remove " + name + " from your search results?";
+            blacklistConfirmCanvas.Visibility = Visibility.Visible;
         }
 
         private void MyProfileButton_Click(object sender, RoutedEventArgs e)

@@ -48,7 +48,7 @@ namespace CityAttractionsAndEvents
 
         public int CompareTo(object obj)
         {
-            double thisValue = this.starRating / 5 * impStar + this.obscurityRating / 100 * impObsc - this.price / 150 * impPrice;
+            double thisValue = this.starRating / 5 * impStar + this.obscurityRating / 100 * impObsc - this.price / 300 * impPrice;
             Place otherPlace = obj as Place;
             double otherValue = otherPlace.starRating / 5 * impStar + otherPlace.obscurityRating / 100 * impObsc - this.price / 300 * impPrice;
             if (thisValue < otherValue) return 1;

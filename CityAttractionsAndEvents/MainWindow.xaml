@@ -2779,7 +2779,13 @@
             <MapView:LoadProgress x:Name="loadProgress" Margin="368,359,591,178.4" Visibility="Hidden"/>
             <Button x:Name="clearBlackButt" Content="Clear Blacklist" HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="96" Canvas.Left="134" Canvas.Top="129" RenderTransformOrigin="0.433,0.609"/>
             <Button x:Name="resetSearchButt" Content="Reset Search" HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="90" Canvas.Left="23" Canvas.Top="129"/>
-            <TextBlock x:Name="DebugOut" Height="36" Canvas.Left="946" TextWrapping="Wrap" Text="TextBlock" Canvas.Top="651" Width="124" d:IsHidden="True" Visibility="Hidden"/>
+            <Canvas x:Name="blacklistConfirmCanvas" HorizontalAlignment="Left" Height="149.926" VerticalAlignment="Top" Width="397.639" Canvas.Left="209.613" Canvas.Top="231.074" Visibility="Hidden">
+                <Rectangle Fill="#FFF4F4F5" Height="147.538" Stroke="Black" Width="395.646" Canvas.Left="151.993" Canvas.Top="26"/>
+                <TextBlock x:Name="blacklistText" Height="44.542" TextAlignment="Center" Canvas.Left="163" TextWrapping="Wrap" Text="TextBlock" Canvas.Top="62.486" Width="372.076"/>
+                <Button x:Name="blacklistYesButt" Content="Yes" Height="32" Canvas.Left="219.987" Canvas.Top="130.926" Width="102"/>
+                <Button x:Name="blacklistNoButt" Content="No" Height="32" Canvas.Left="382.987" Canvas.Top="128.956" Width="102"/>
+            </Canvas>
+            <TextBlock x:Name="DebugOut" Height="36" Canvas.Left="946" TextWrapping="Wrap" Canvas.Top="651" Width="124" d:IsHidden="True" Visibility="Hidden"><Run Text="TextBlock"/></TextBlock>
 
         </Canvas>
         <Canvas x:Name="ProfilePageCanvas" Height="563.6" Canvas.Left="10" Canvas.Top="123.8" Width="1100" Visibility="Hidden" d:IsHidden="True">
@@ -2794,9 +2800,9 @@
                 </DockPanel>
             </ScrollViewer-->
         </Canvas>
-        <Canvas x:Name="NickProfileCanvas" Height="568" Canvas.Left="11.6" Canvas.Top="141.267" Width="1110">
-            <Grid x:Name="NickProfileGrid" Height="568" Width="1110" >
-                <ProfileV2:ProfileOther Margin="0,-10,503.4,10"/>
+        <Canvas x:Name="NickProfileCanvas" Height="568" Canvas.Left="11.6" Canvas.Top="141.267" Width="1110" d:IsHidden="True">
+            <Grid x:Name="NickProfileGrid" Height="568" Width="1110" d:IsHidden="True" >
+                <ProfileV2:ProfileOther Margin="0,-10,503.4,10" d:IsHidden="True"/>
             </Grid>
 
         </Canvas>
