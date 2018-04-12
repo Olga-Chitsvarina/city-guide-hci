@@ -478,5 +478,10 @@
   <ItemGroup>
     <Resource Include="WeatherShort.png" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Webp.net-gifmaker %2811%29.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

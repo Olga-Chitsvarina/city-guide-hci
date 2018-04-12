@@ -2565,7 +2565,7 @@
 
         </Canvas>
 
-        <Canvas x:Name="HomePage" Height="698.8" Width="1121.6" d:IsHidden="True">
+        <Canvas x:Name="HomePage" Height="698.8" Width="1121.6">
             <Button x:Name="AttractionsButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyle1}" Canvas.Top="123.8" Width="255"/>
             <Button x:Name="EventsButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyleEvents}" Canvas.Top="232.6" Width="255"/>
             <Button x:Name="RestaurantsButton" Content="Button" Height="108.8" Canvas.Left="10.2" Style="{DynamicResource ButtonStyleRestaurants}" Canvas.Top="341.4" Width="255                     "/>
@@ -2664,7 +2664,7 @@
 
         </Canvas>
 
-        <Canvas x:Name="CompassCanvas" Height="570" Width="1100" Canvas.Left="10" Canvas.Top="129" Visibility="Hidden" d:IsHidden="True">
+        <Canvas x:Name="CompassCanvas" Height="570" Width="1100" Canvas.Left="10" Canvas.Top="129" Visibility="Hidden">
             <Canvas x:Name="JustMapCanvas" Height="563.2" Canvas.Top="-3.2" Width="1100">
 
                 <Rectangle x:Name="Map" Height="563.2" Stroke="Black" Width="1100">
@@ -2747,7 +2747,7 @@
                     <Button x:Name="CancelButton" Content="Cancel" Style="{DynamicResource TransparentCancelStyle}" Foreground="White"/>
 
                 </Grid>
-                <MediaElement x:Name="printGif" MediaEnded="printGif_MediaEnded" UnloadedBehavior="Manual" Height="117.8" Canvas.Left="84.302" Canvas.Top="56.6" Width="146.298" Source="printGif.gif" Opacity="0.8" >
+                <MediaElement x:Name="printGif" MediaEnded="printGif_MediaEnded" UnloadedBehavior="Manual" Height="117.8" Canvas.Left="84.302" Canvas.Top="56.6" Width="146.298" Source="Webp.net-gifmaker (11).gif" Opacity="0.1" >
                     <!--<MediaElement.OpacityMask>
                         <ImageBrush ImageSource="printGif.gif"/>
                     </MediaElement.OpacityMask>-->
