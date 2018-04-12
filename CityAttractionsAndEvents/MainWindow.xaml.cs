@@ -43,6 +43,8 @@ namespace CityAttractionsAndEvents
         static InfoExpander curWTG;
         static InfoExpander curNTK;
 
+        public static WishEntry selected = null;
+
         double priceMin;
         double priceMax;
 
@@ -319,9 +321,15 @@ namespace CityAttractionsAndEvents
             foreach (WishEntry w in cloneList)
             {
                 wishStack.Children.Add(w);
+                w.RaiseWishEntryEvent += W_RaiseWishEntryEvent;
             }
             wishlist = cloneList;
             CalendarButton.IsEnabled = false;
+        }
+
+        private void W_RaiseWishEntryEvent(object sender, WishEntryEventsArgs e)
+        {
+            selected = new WishEntry(e.Name, e.ImagePath) { };
         }
 
         private void SearchButton_Click(object sender, RoutedEventArgs e)
@@ -725,8 +733,10 @@ namespace CityAttractionsAndEvents
 
         private void CalendarCell_RaiseCalendarEvent(object sender, CalendarEventArgs e)
         {
-            EventInformationTextBlock.Visibility = Visibility.Visible;
-            
+            if (selected != null)
+            {
+                EventInformationTextBlock.Visibility = Visibility.Visible;
+            }           
         }
 
 

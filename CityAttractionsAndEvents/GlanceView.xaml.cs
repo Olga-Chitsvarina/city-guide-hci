@@ -36,7 +36,7 @@ namespace CityAttractionsAndEvents
             this.wishlistImage.MouseDown += WishlistImage_MouseDown;
             this.blacklistImage.MouseDown += BlacklistImage_MouseDown;
             if (imagePath != "")
-            { 
+            {
                 List<String> imageFileNames = HelperMethods481.AssemblyManager.GetAllEmbeddedResourceFilesEndingWith(".png", ".jpg");
                 Image image = HelperMethods481.AssemblyManager.GetImageFromEmbeddedResources(imagePath);
                 this.placeImage.Source = image.Source;
@@ -51,13 +51,11 @@ namespace CityAttractionsAndEvents
         private void WishlistImage_MouseDown(object sender, MouseButtonEventArgs e)
         {
             WishEntry wishEntry = new WishEntry(this.nameText.Text, this.imagepath) { };
+
             ((MainWindow)((Canvas)((Canvas)((ScrollViewer)((DockPanel)((StackPanel)this.Parent).Parent).Parent).Parent).Parent).Parent).wishStack.Children.Add(wishEntry);
-            MainWindow.wishlist.Add(wishEntry);
+
         }
 
-        private void ExpandButton_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
     }
+    
 }

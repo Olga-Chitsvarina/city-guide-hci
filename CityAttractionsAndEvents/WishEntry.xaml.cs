@@ -21,9 +21,10 @@ namespace CityAttractionsAndEvents
     public partial class WishEntry : UserControl
     {
 
-        public string Name = "";
-        public string ImagePath = "";
+        public string Name { get; set; } = "";
+        public string ImagePath { get; set; } = "";
         bool isSelected = false;
+        public event EventHandler<WishEntryEventsArgs> RaiseWishEntryEvent;
 
         public WishEntry()
         {
@@ -34,6 +35,10 @@ namespace CityAttractionsAndEvents
             InitializeComponent();
             this.text.Text = name;
             this.Name = name;
+
+            addToCalendarButton.Click += AddToCalendarButton_Click;
+
+
             if (imagePath != "")
             {
                 ImagePath = imagePath;
@@ -42,5 +47,16 @@ namespace CityAttractionsAndEvents
                 this.image.Source = image.Source;
             }
         }
+
+        private void AddToCalendarButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.RaiseWishEntryEvent(this, new WishEntryEventsArgs() { Name = this.Name, ImagePath = this.ImagePath });
+        }
+
+        private void CalendarButton_Click(object sender, RoutedEventArgs e)
+        {
+           
+        }
+
     }
 }
