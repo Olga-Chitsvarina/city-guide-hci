@@ -347,7 +347,9 @@
     <Resource Include="Images\greenbus.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\heart.png" />
+    <EmbeddedResource Include="Images\heart.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\KM4Wa.png" />
@@ -485,9 +487,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\heart1.png">
+    <EmbeddedResource Include="Images\heart1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

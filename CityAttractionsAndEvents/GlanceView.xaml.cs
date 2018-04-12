@@ -47,9 +47,7 @@ namespace CityAttractionsAndEvents
 
         private void BlacklistImage_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Image image = HelperMethods481.AssemblyManager.GetImageFromEmbeddedResources("heart1.png");
-            this.blacklistImage.Source = image.Source;
-            System.Threading.Thread.Sleep(600);
+            
             //image = HelperMethods481.AssemblyManager.GetImageFromEmbeddedResources("heart.png");
             //this.blacklistImage.Source = image.Source;
             ((MainWindow)((Canvas)((Canvas)((ScrollViewer)((DockPanel)((StackPanel)this.Parent).Parent).Parent).Parent).Parent).Parent).addToBlacklist(this.nameText.Text);
@@ -57,9 +55,14 @@ namespace CityAttractionsAndEvents
 
         private void WishlistImage_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            Image image = HelperMethods481.AssemblyManager.GetImageFromEmbeddedResources("heart1.png");
+            this.wishlistImage.Source = image.Source;
             WishEntry wishEntry = new WishEntry(this.nameText.Text, this.imagepath) { };
 
             ((MainWindow)((Canvas)((Canvas)((ScrollViewer)((DockPanel)((StackPanel)this.Parent).Parent).Parent).Parent).Parent).Parent).wishStack.Children.Add(wishEntry);
+            //image = HelperMethods481.AssemblyManager.GetImageFromEmbeddedResources("heart.png");
+            //this.wishlistImage.Source = image.Source;
+           
 
         }
 
