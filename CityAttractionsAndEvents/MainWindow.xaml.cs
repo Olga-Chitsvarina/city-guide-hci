@@ -33,7 +33,7 @@ namespace CityAttractionsAndEvents
         private List<string> usernames;
         private List<string> passwords;
         private List<string> emails;
-        static List<WishEntry> wishlist = new List<WishEntry>();
+        public static List<WishEntry> wishlist { get; set; } = new List<WishEntry>();
         static List<string> blacklist = new List<string>();
 
         private DispatcherTimer dispatchTimer;

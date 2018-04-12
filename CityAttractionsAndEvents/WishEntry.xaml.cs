@@ -20,6 +20,11 @@ namespace CityAttractionsAndEvents
     /// </summary>
     public partial class WishEntry : UserControl
     {
+
+        public string Name = "";
+        public string ImagePath = "";
+        bool isSelected = false;
+
         public WishEntry()
         {
             InitializeComponent();
@@ -28,8 +33,10 @@ namespace CityAttractionsAndEvents
         {
             InitializeComponent();
             this.text.Text = name;
+            this.Name = name;
             if (imagePath != "")
             {
+                ImagePath = imagePath;
                 List<String> imageFileNames = HelperMethods481.AssemblyManager.GetAllEmbeddedResourceFilesEndingWith(".png", ".jpg");
                 Image image = HelperMethods481.AssemblyManager.GetImageFromEmbeddedResources(imagePath);
                 this.image.Source = image.Source;
