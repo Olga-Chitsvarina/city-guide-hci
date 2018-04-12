@@ -46,6 +46,10 @@ namespace CityAttractionsAndEvents
         double priceMin;
         double priceMax;
 
+        double impObsc = 50;
+        double impStar = 50;
+        double impPrice = 50;
+
         Boolean searchClicked = false;
         private bool isPrinting;
 
@@ -788,6 +792,14 @@ namespace CityAttractionsAndEvents
             page.Visibility = Visibility.Hidden;
         }
 
+        public void refreshPriorities(double obsc, double price, double star)
+        {
+            this.impObsc = obsc;
+            this.impPrice = price;
+            this.impStar = star;
+            startSearch();
+        }
+
         public void UpdateCurrentAndPreviousPages(Canvas newCurrent)
         {
             InformationButton.IsEnabled = true;
@@ -1268,7 +1280,10 @@ namespace CityAttractionsAndEvents
                 {
                     filteredPlaces.Remove(place);
                 }
+                place.setPriorities(impObsc, impPrice, impStar);
             }
+            filteredPlaces.Sort();
+            System.Console.Write(filteredPlaces.ToString());
             renderGlanceViews(filteredPlaces);
             loadProgress.Visibility = Visibility.Hidden;
         }

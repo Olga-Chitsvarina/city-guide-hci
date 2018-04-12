@@ -125,7 +125,7 @@ namespace CityAttractionsAndEvents
 
         private void updateWindowWithPositions()
         {
-
+            ((MainWindow)((Canvas)((Canvas)((prioSlider)((Canvas)this.Parent).Parent).Parent).Parent).Parent).refreshPriorities(this.currentObsc, this.currentPrice, this.currentStar);
         }
 
         private void updatePosition()
@@ -172,6 +172,7 @@ namespace CityAttractionsAndEvents
                 starPosition = Utils.Map(this.currentStar, this.minimum, this.maximum, 0, this.sliderRect.Width);
                 Canvas.SetLeft(this.starRectControl, starPosition - HALFRECT);
             }
+            updateWindowWithPositions();
         }
 
         public event EventHandler<RangeSliderChangedEventArgs> Changed;
