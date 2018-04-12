@@ -735,8 +735,15 @@ namespace CityAttractionsAndEvents
         {
             if (selected != null)
             {
-                EventInformationTextBlock.Visibility = Visibility.Visible;
-            }           
+                if (sender is CalendarCell)
+                {
+                    CalendarCell calendarCell = (CalendarCell)sender;
+                    calendarCell.SetImage(selected.ImagePath);
+                    EventInformationTextBlock.Visibility = Visibility.Visible;
+                    selected = null;
+                }
+            }
+               
         }
 
 
