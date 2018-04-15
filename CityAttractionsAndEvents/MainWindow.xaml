@@ -2574,6 +2574,26 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Storyboard x:Key="contactThanks">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ContactUsFeedback">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.6" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="ContactUsFeedback">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.6" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ContactUsFeedback">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.6" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
     </Window.Resources>
     <Window.Triggers>
         <EventTrigger RoutedEvent="RangeBase.ValueChanged" SourceName="TimeSlider">
@@ -2582,6 +2602,9 @@
         <EventTrigger RoutedEvent="FrameworkElement.Loaded">
             <BeginStoryboard Storyboard="{StaticResource InfoClick}"/>
             <BeginStoryboard x:Name="PrintEnd_BeginStoryboard1" Storyboard="{StaticResource PrintEnd}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="SubmitMessageButton">
+            <BeginStoryboard x:Name="contactThanks_BeginStoryboard" Storyboard="{StaticResource contactThanks}"/>
         </EventTrigger>
         <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="PrintButton"/>
         <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="CancelButton">
@@ -2640,13 +2663,22 @@
         </Canvas>
         <Canvas x:Name="ContactUsPage" Height="63.245" Canvas.Left="415.232" Canvas.Top="123.8" Width="298.524" d:IsHidden="True">
             <TextBlock Height="63.245" TextWrapping="Wrap" Text="CONTACT US" Width="298.524" FontWeight="Bold" Foreground="#FF238CB4" FontSize="48"/>
-            <TextBox Height="29.852" Canvas.Left="-24.297" TextWrapping="Wrap" Canvas.Top="110.893" Width="427.886" FontSize="18"/>
-            <TextBlock HorizontalAlignment="Left" Height="29.852" TextWrapping="Wrap" Text="Your Email:" VerticalAlignment="Top" Width="96.458" FontSize="18" Foreground="#FF238CB4" FontWeight="Bold" Canvas.Left="-150.292" Canvas.Top="110.893" RenderTransformOrigin="0.784,-0.684"/>
-            <TextBlock HorizontalAlignment="Left" Height="29.852" TextWrapping="Wrap" VerticalAlignment="Top" Width="96.458" FontSize="18" Foreground="#FF238CB4" FontWeight="Bold" Canvas.Left="-150.292" Canvas.Top="160.093" RenderTransformOrigin="0.784,-0.684"><Run Text="Subject"/><Run Text=":"/></TextBlock>
-            <TextBox Height="29.852" Canvas.Left="-24.297" TextWrapping="Wrap" Canvas.Top="160.093" Width="427.886" FontSize="18"/>
-            <TextBox Height="260.807" TextWrapping="Wrap" Width="427.2" FontSize="18" Canvas.Top="208.093" Canvas.Left="-24.297"/>
-            <TextBlock HorizontalAlignment="Left" Height="29.852" TextWrapping="Wrap" VerticalAlignment="Top" Width="96.458" FontSize="18" Foreground="#FF238CB4" FontWeight="Bold" Canvas.Left="-150.292" Canvas.Top="208.093" RenderTransformOrigin="0.784,-0.684"><Run Text="Body"/><Run Text=":"/></TextBlock>
-            <Button x:Name="SubmitMessageButton" Content="Button" Height="32.4" Canvas.Left="-24.297" Style="{DynamicResource ButtonStyleSubmit}" Canvas.Top="488.3" Width="427.2"/>
+            <TextBlock HorizontalAlignment="Left" Height="29.852" TextWrapping="Wrap" Text="Your Email:" VerticalAlignment="Top" Width="96.458" FontSize="18" Foreground="#FF238CB4" FontWeight="Bold" Canvas.Left="-149.292" Canvas.Top="107.693" RenderTransformOrigin="0.784,-0.684"/>
+            <TextBlock HorizontalAlignment="Left" Height="29.852" TextWrapping="Wrap" VerticalAlignment="Top" Width="96.458" FontSize="18" Foreground="#FF238CB4" FontWeight="Bold" Canvas.Left="-149.292" Canvas.Top="156.893" RenderTransformOrigin="0.784,-0.684"><Run Text="Subject"/><Run Text=":"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Height="29.852" TextWrapping="Wrap" VerticalAlignment="Top" Width="96.458" FontSize="18" Foreground="#FF238CB4" FontWeight="Bold" Canvas.Left="-149.292" Canvas.Top="204.893" RenderTransformOrigin="0.784,-0.684"><Run Text="Body"/><Run Text=":"/></TextBlock>
+            <TextBox x:Name="ContactUsEmail" Height="29.852" Canvas.Left="-23.297" TextWrapping="Wrap" Canvas.Top="107.693" Width="427.886" FontSize="18"/>
+            <TextBox x:Name="ContactUsSubject" Height="29.852" Canvas.Left="-23.297" TextWrapping="Wrap" Canvas.Top="156.893" Width="427.886" FontSize="18"/>
+            <TextBox x:Name="ContactUsBody" Height="235.207" TextWrapping="Wrap" Width="427.2" FontSize="18" Canvas.Top="204.893" Canvas.Left="-23.297"/>
+            <Button x:Name="SubmitMessageButton" Content="Button" Height="32.4" Canvas.Left="-23.297" Style="{DynamicResource ButtonStyleSubmit}" Canvas.Top="462.7" Width="427.2"/>
+            <TextBlock x:Name="ContactUsFeedback" Height="36.9" Canvas.Left="-19.053" TextWrapping="Wrap" Canvas.Top="500.1" Width="422.956" RenderTransformOrigin="0.5,0.5" FontSize="16">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform><Run FontStyle="Italic" Text="Message Sent. Thank You for Your Feedback!"/></TextBlock>
 
         </Canvas>
         <Canvas x:Name="InformationPage" Height="477.175" Canvas.Left="40.8" Canvas.Top="128.8" Width="1008.6" d:IsHidden="True">

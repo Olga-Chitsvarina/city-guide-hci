@@ -704,12 +704,17 @@ namespace CityAttractionsAndEvents
         {
             PageIsNotVisible(ContactUsPage);
 
+            ContactUsFeedback.Visibility = Visibility.Hidden;
+
             SubmitMessageButton.Click += SubmitMessageButton_Click;
         }
 
         private void SubmitMessageButton_Click(object sender, RoutedEventArgs e)
         {
-            //throw new NotImplementedException();
+            ContactUsFeedback.Visibility = Visibility.Visible;
+            ContactUsEmail.Text = "";
+            ContactUsSubject.Text = "";
+            ContactUsBody.Text = "";
         }
 
 
