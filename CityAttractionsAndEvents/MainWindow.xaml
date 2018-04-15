@@ -2730,7 +2730,6 @@
                         <Image x:Name="image" Source="avatar1-crop.jpg"/>
                     </Border>
                     <TextBlock x:Name="textBlock1" Height="123" Canvas.Left="150.6" TextWrapping="Wrap" Canvas.Top="10" Width="334"><Run FontWeight="Bold" FontSize="20.25" Text="You Made a Friend!"/><LineBreak/><Run FontWeight="Bold" FontSize="20.25"/><LineBreak/><Run FontWeight="Bold" FontSize="20.25"/><LineBreak/><Run FontSize="20.25" Text="Nick accepted your friend request!"/><LineBreak/><Run FontWeight="Bold" FontSize="20.25"/></TextBlock>
-                    <Image x:Name="image1" Height="36" Width="30.95" Canvas.Left="507.6" Canvas.Top="10" Source="blacklist.png" OpacityMask="Black"/>
                 </Canvas>
             </ScrollViewer>
 

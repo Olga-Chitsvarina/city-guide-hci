@@ -8,7 +8,7 @@
              d:DesignHeight="187.833" d:DesignWidth="165">
     <Canvas>
         <Canvas x:Name="impCanvas" Margin="0,0,-165,-187.833">
-            <Rectangle x:Name="sliderRect" Fill="Black" HorizontalAlignment="Left" Height="4" Stroke="White" VerticalAlignment="Top" Width="165" Canvas.Top="10"/>
+            <Rectangle x:Name="sliderRect" Fill="Black" HorizontalAlignment="Left" Height="4" Stroke="White" VerticalAlignment="Top" Width="105" Canvas.Top="10" Canvas.Left="24"/>
         </Canvas>
 
     </Canvas>

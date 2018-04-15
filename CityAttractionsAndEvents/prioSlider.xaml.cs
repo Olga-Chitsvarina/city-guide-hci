@@ -290,7 +290,7 @@ namespace CityAttractionsAndEvents
 
         private void updatePriceRange()
         {
-            ((MainWindow)((Canvas)((Canvas)this.Parent).Parent).Parent).updatePriceRange(currentMin, currentMax);
+            (Application.Current.MainWindow as MainWindow).updatePriceRange(currentMin, currentMax);
         }
     }
 }
