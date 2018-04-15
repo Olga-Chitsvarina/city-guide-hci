@@ -36,7 +36,8 @@ namespace CityAttractionsAndEvents
 
         private void OnViewAllButton(object sender, RoutedEventArgs e)
         {
-            ((MainWindow)((Canvas)((Canvas)((ScrollViewer)((DockPanel)((StackPanel)((Grid)this.Parent).Parent).Parent).Parent).Parent).Parent).Parent).openReflectionsPage();
+            (Application.Current.MainWindow as MainWindow).openReflectionsPage();
+            //((MainWindow)((Canvas)((Canvas)((ScrollViewer)((DockPanel)((StackPanel)((Grid)this.Parent).Parent).Parent).Parent).Parent).Parent).Parent).openReflectionsPage();
         }
 
         private void ImageUpButton_Click(object sender, RoutedEventArgs e)

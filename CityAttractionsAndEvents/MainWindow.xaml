@@ -2611,7 +2611,7 @@
             <BeginStoryboard x:Name="PrintEnd_BeginStoryboard" Storyboard="{StaticResource PrintEnd}"/>
         </EventTrigger>
     </Window.Triggers>
-    <Canvas x:Name="Container" Margin="-3.6,0,3.6,0">
+    <Canvas x:Name="MainWindowContainer" Margin="-3.6,0,3.6,0">
         <Canvas x:Name="TopPanel" Height="108.8" Canvas.Left="10" Canvas.Top="10" Width="1101.6">
             <Rectangle Fill="#FF4F4F4F" Height="108.8                        " Stroke="Black" Width="1101.6"/>
             <TextBlock x:Name="LogoTextBlock" Height="97.666" Canvas.Left="23.15" TextWrapping="Wrap" Canvas.Top="10" Width="130.55" FontSize="18" Foreground="White" FontWeight="Bold"><Run Text="CITY"/><LineBreak/><Run Text="ATTRACTIONS"/><LineBreak/><Run Text="AND"/><LineBreak/><Run Text="EVENTS"/></TextBlock>
@@ -2908,15 +2908,6 @@
                 </Grid>
             </StackPanel>
 
-        </Canvas>
-        <Canvas x:Name="ViewReflectionCanvas" Height="582" Canvas.Left="263.6" Canvas.Top="45" Width="574" Visibility="Hidden">
-            <Rectangle Fill="#FFF4F4F5" Height="582" Stroke="Black" Width="715" RadiusX="10" RadiusY="10" Canvas.Left="-52"/>
-            <Button x:Name="viewReflectionsCloseButt" Content="Button" Height="36" Canvas.Left="623" Style="{DynamicResource ButtonStyle27}" Width="36" Canvas.Top="3" Cursor="Hand"/>
-            <Rectangle Fill="Black" Height="5" Stroke="Black" Canvas.Top="40" Width="715" Canvas.Left="-52"/>
-            <TextBlock Height="34" TextAlignment ="Center" Canvas.Left="155" TextWrapping="Wrap" Text="REFLECTIONS" Canvas.Top="10" Width="278" FontSize="20" FontWeight="Bold"/>
-            <ScrollViewer x:Name="reflectionsScroll" Height="535" Canvas.Top="45" Width="708" Canvas.Left="-51" CanContentScroll="True" VerticalScrollBarVisibility="Visible">
-                <StackPanel x:Name="reflectionDock" Height="533" Width="689" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-            </ScrollViewer>
         </Canvas>
 
     </Canvas>

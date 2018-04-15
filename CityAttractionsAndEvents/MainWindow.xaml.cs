@@ -72,7 +72,7 @@ namespace CityAttractionsAndEvents
             SetNotificationsPage();
             setCompassCanvas();
             setSearchSortPage();
-            setReflectionsCanvas();
+            //setReflectionsCanvas();
         }
 
         private void InitializeUserLists()
@@ -166,32 +166,9 @@ namespace CityAttractionsAndEvents
             this.prioSlider.resetPriceSlider();
         }
 
-        private void setReflectionsCanvas()
-        {
-            for (int i = 0; i < 8; i++)
-            {
-                ProfileExpanded pe = new ProfileExpanded();
-                pe.reflectionsTitle.Visibility = Visibility.Hidden;
-                pe.viewAllButton.Visibility = Visibility.Hidden;
-                pe.reflectRightButton.Visibility = Visibility.Hidden;
-                pe.Height = 285;
-                pe.Width = 680;
-                pe.HorizontalAlignment = HorizontalAlignment.Center;
-                Grid tempGrid = new Grid();
-                tempGrid.Width = 710;
-                tempGrid.Background = new SolidColorBrush(Color.FromRgb(244, 244, 244));
-                tempGrid.HorizontalAlignment = HorizontalAlignment.Center;
-                tempGrid.VerticalAlignment = VerticalAlignment.Top;
-                tempGrid.Children.Add(pe);
-                reflectionDock.Children.Add(tempGrid);
-            }
-            this.viewReflectionsCloseButt.Click += ViewReflectionsCloseButt_Click;
-        }
 
-        private void ViewReflectionsCloseButt_Click(object sender, RoutedEventArgs e)
-        {
-            ViewReflectionCanvas.Visibility = Visibility.Hidden;
-        }
+
+        
 
         private void setCompassCanvas()
         {
@@ -1282,8 +1259,10 @@ namespace CityAttractionsAndEvents
 
         public void openReflectionsPage()
         {
-            this.reflectionsScroll.ScrollToTop();
-            this.ViewReflectionCanvas.Visibility = Visibility.Visible;
+            ViewReflectionCanvasControl viewAll = new ViewReflectionCanvasControl();
+            this.MainWindowContainer.Children.Add(viewAll);
+            //this.reflectionsScroll.ScrollToTop();
+            //this.ViewReflectionCanvas.Visibility = Visibility.Visible;
         }
 
         //turns value of text slider into time
