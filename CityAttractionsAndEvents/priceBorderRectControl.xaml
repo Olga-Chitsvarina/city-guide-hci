@@ -10,7 +10,10 @@
         <Rectangle x:Name="priceLinkRect" Fill="White" HorizontalAlignment="Left" Height="31.333" Stroke="Black" VerticalAlignment="Top" Width="1" Canvas.Left="47.274" Canvas.Top="7"/>
         <Rectangle x:Name="priceBorderRect" Fill="White" HorizontalAlignment="Left" Height="31" Stroke="Black" VerticalAlignment="Top" Width="95.372" Cursor="Hand" Canvas.Top="38.333"/>
         <TextBlock x:Name="priceBoxText" HorizontalAlignment="Left" TextAlignment ="Center" Height="26" TextWrapping="Wrap" Text="Price" VerticalAlignment="Top" Width="95.372" Canvas.Top="43.333" Cursor="Hand"/>
-        <Ellipse x:Name="priceEllipse" Fill="White" HorizontalAlignment="Left" Height="13" Stroke="Black" VerticalAlignment="Top" Width="12" Cursor="Hand" Canvas.Left="41.902"/>
+        <Grid Height="30" Width="96.313" Canvas.Top="-9.111">
+            <Ellipse x:Name="priceEllipse" Fill="White" HorizontalAlignment="Center" Stroke="Black" VerticalAlignment="Center" Width="12" Cursor="Hand" Height="12"/>
+
+        </Grid>
 
     </Canvas>
 </UserControl>

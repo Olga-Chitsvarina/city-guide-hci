@@ -54,16 +54,19 @@ namespace CityAttractionsAndEvents
             Canvas.SetTop(this.priceRectControl, 6);
             Canvas.SetLeft(this.priceRectControl, 30);
             Canvas.SetZIndex(this.priceRectControl, 2);
+            this.priceRectControl.mapEllipseSize(30, minLeft, maxLeft);
             this.impCanvas.Children.Add(this.priceRectControl);
             this.obscRectControl = new priceBorderRectControl(70, "Obscurity Rating");
             Canvas.SetTop(this.obscRectControl, 6);
             Canvas.SetLeft(this.obscRectControl, 25);
             Canvas.SetZIndex(this.obscRectControl, 1);
+            this.obscRectControl.mapEllipseSize(25, minLeft, maxLeft);
             this.impCanvas.Children.Add(obscRectControl);
             this.starRectControl = new priceBorderRectControl(105, "Star Rating");
             Canvas.SetTop(this.starRectControl, 6);
             Canvas.SetLeft(this.starRectControl, 40);
             Canvas.SetZIndex(this.starRectControl, 0);
+            this.starRectControl.mapEllipseSize(40, minLeft, maxLeft);
             this.impCanvas.Children.Add(this.starRectControl);
             this.priceRectControl.MouseDown += onClick;
             this.obscRectControl.MouseDown += onClick;
@@ -131,6 +134,8 @@ namespace CityAttractionsAndEvents
             if (selection != null)
             {
                 Canvas.SetLeft(selection, ClampLeft(e.GetPosition(this.impCanvas).X - HALFRECT));
+                selection.mapEllipseSize(ClampLeft(e.GetPosition(this.impCanvas).X - HALFRECT), minLeft, maxLeft);
+
                 double pricePosition = Canvas.GetLeft(this.priceRectControl);
                 this.currentPrice = Utils.Map(pricePosition, 0, this.sliderRect.Width, this.minimum, this.maximum);
                 double starPosition = Canvas.GetLeft(this.starRectControl);
@@ -166,36 +171,47 @@ namespace CityAttractionsAndEvents
                 this.currentPrice = 100.00;
                 pricePosition = Utils.Map(this.currentPrice, this.minimum, this.maximum, 0, this.sliderRect.Width);
                 Canvas.SetLeft(this.priceRectControl, ClampLeft(pricePosition - HALFRECT));
+                priceRectControl.mapEllipseSize(ClampLeft(pricePosition - HALFRECT), minLeft, maxLeft);
+
             }
             if (this.currentPrice < 0)
             {
                 this.currentPrice = 0.0;
                 pricePosition = Utils.Map(this.currentPrice, this.minimum, this.maximum, 0, this.sliderRect.Width);
                 Canvas.SetLeft(this.priceRectControl, ClampLeft(pricePosition - HALFRECT));
+                priceRectControl.mapEllipseSize(ClampLeft(pricePosition - HALFRECT), minLeft, maxLeft);
+
             }
             if (this.currentObsc > 100)
             {
                 this.currentObsc = 100.00;
                 obscPosition = Utils.Map(this.currentObsc, this.minimum, this.maximum, 0, this.sliderRect.Width);
                 Canvas.SetLeft(this.obscRectControl, ClampLeft(obscPosition-HALFRECT));
+                obscRectControl.mapEllipseSize(ClampLeft(obscPosition - HALFRECT), minLeft, maxLeft);
             }
             if (this.currentObsc < 0)
             {
                 this.currentObsc = 0.0;
                 obscPosition = Utils.Map(this.currentObsc, this.minimum, this.maximum, 0, this.sliderRect.Width);
                 Canvas.SetLeft(this.obscRectControl, ClampLeft(obscPosition - HALFRECT));
+                obscRectControl.mapEllipseSize(ClampLeft(obscPosition - HALFRECT), minLeft, maxLeft);
+
             }
             if (this.currentStar > 100)
             {
                 this.currentStar = 100.00;
                 starPosition = Utils.Map(this.currentStar, this.minimum, this.maximum, 0, this.sliderRect.Width);
                 Canvas.SetLeft(this.starRectControl, ClampLeft(starPosition - HALFRECT));
+                starRectControl.mapEllipseSize(ClampLeft(starPosition - HALFRECT), minLeft, maxLeft);
+
             }
             if (this.currentStar < 0)
             {
                 this.currentStar = 0.0;
                 starPosition = Utils.Map(this.currentStar, this.minimum, this.maximum, 0, this.sliderRect.Width);
                 Canvas.SetLeft(this.starRectControl, ClampLeft(starPosition - HALFRECT));
+                starRectControl.mapEllipseSize(ClampLeft(starPosition - HALFRECT), minLeft, maxLeft);
+
             }
             updateWindowWithPositions();
         }

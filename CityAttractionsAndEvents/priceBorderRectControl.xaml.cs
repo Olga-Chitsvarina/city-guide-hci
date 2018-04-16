@@ -33,5 +33,12 @@ namespace CityAttractionsAndEvents
             InitializeComponent();
             
         }
+
+        public void mapEllipseSize(double value, double min, double max) {
+            double factor = (value - min) / (max - min);
+            factor = 10 + factor * 15;
+            this.priceEllipse.Width = factor;
+            this.priceEllipse.Height = factor;
+        }
     }
 }
