@@ -283,6 +283,8 @@ namespace CityAttractionsAndEvents
             UpdateCurrentAndPreviousPages(NotificationsPage);
             NotificationsButton.IsEnabled = false;
             NotificationsButtonWithRedEllipse.IsEnabled = false;
+            NickNotification.Visibility = Visibility.Hidden;
+
         }
 
         private void NotificationsButtonWithRedEllipse_Click(object sender, RoutedEventArgs e)
@@ -290,6 +292,8 @@ namespace CityAttractionsAndEvents
             UpdateCurrentAndPreviousPages(NotificationsPage);
             NotificationsButton.IsEnabled = false;
             NotificationsButtonWithRedEllipse.IsEnabled = false;
+            NickNotification.Visibility = Visibility.Hidden;
+
         }
 
 
@@ -298,6 +302,8 @@ namespace CityAttractionsAndEvents
             NotificationsButton_Click(sender, e);
             NotificationsButton.IsEnabled = false;
             NotificationsButtonWithRedEllipse.IsEnabled = false;
+            NickNotification.Visibility = Visibility.Hidden;
+
         }
 
 
@@ -777,32 +783,81 @@ namespace CityAttractionsAndEvents
             RestaurantsNotificationButton.Click += RestaurantsNotificationButton_Click;
             ShoppingNotificationsButton.Click += ShoppingNotificationsButton_Click;
             SportNotificationsButton.Click += SportNotificationsButton_Click;
-            
+            FriendsNotificationsButton.Click += FriendsNotificationsButton_Click;
+
+
         }
 
         private void SportNotificationsButton_Click(object sender, RoutedEventArgs e)
         {
-            CateoryTextBox.Text = "SPORT";
+            CategoryTextBox.Text = "SPORT";
+            foreach (Button b in this.NotificationSideButtons.Children) {
+                b.IsEnabled = true;
+            }
+            SportNotificationsButton.IsEnabled = false;
+            NickNotification.Visibility = Visibility.Hidden;
         }
 
         private void ShoppingNotificationsButton_Click(object sender, RoutedEventArgs e)
         {
-            CateoryTextBox.Text = "SHOPPING";
+            CategoryTextBox.Text = "SHOPPING";
+            foreach (Button b in this.NotificationSideButtons.Children)
+            {
+                b.IsEnabled = true;
+            }
+            ShoppingNotificationsButton.IsEnabled = false;
+            NickNotification.Visibility = Visibility.Hidden;
+
         }
 
         private void RestaurantsNotificationButton_Click(object sender, RoutedEventArgs e)
         {
-            CateoryTextBox.Text = "RESTAURANTS";
+            CategoryTextBox.Text = "RESTAURANTS";
+            foreach (Button b in this.NotificationSideButtons.Children)
+            {
+                b.IsEnabled = true;
+            }
+            RestaurantsNotificationButton.IsEnabled = false;
+            NickNotification.Visibility = Visibility.Hidden;
+
         }
 
         private void EventsNotificationsButton_Click(object sender, RoutedEventArgs e)
         {
-            CateoryTextBox.Text = "EVENTS";
+            CategoryTextBox.Text = "EVENTS";
+            foreach (Button b in this.NotificationSideButtons.Children)
+            {
+                b.IsEnabled = true;
+            }
+            EventsNotificationsButton.IsEnabled = false;
+            NickNotification.Visibility = Visibility.Hidden;
+
         }
 
         private void AttractionsNotificationsButton_Click(object sender, RoutedEventArgs e)
         {
-            CateoryTextBox.Text = "ATTRACTIONS";
+            CategoryTextBox.Text = "ATTRACTIONS";
+            foreach (Button b in this.NotificationSideButtons.Children)
+            {
+                b.IsEnabled = true;
+            }
+            AttractionsNotificationsButton.IsEnabled = false;
+            NickNotification.Visibility = Visibility.Hidden;
+
+            ////NotificationsPresenter obj = new NotificationsPresenter();
+            //NotificationsPresenterCanvas.Children.Add(obj);
+        }
+
+        private void FriendsNotificationsButton_Click(object sender, RoutedEventArgs e)
+        {
+            CategoryTextBox.Text = "Friends";
+            foreach (Button b in this.NotificationSideButtons.Children)
+            {
+                b.IsEnabled = true;
+            }
+            FriendsNotificationsButton.IsEnabled = false;
+            NickNotification.Visibility = Visibility.Visible;
+
             ////NotificationsPresenter obj = new NotificationsPresenter();
             //NotificationsPresenterCanvas.Children.Add(obj);
         }

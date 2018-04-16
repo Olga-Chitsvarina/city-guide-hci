@@ -1583,7 +1583,20 @@
                                             </ObjectAnimationUsingKeyFrames>
                                         </Storyboard>
                                     </VisualState>
-                                    <VisualState x:Name="Disabled"/>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill)" Storyboard.TargetName="rectangle">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <SolidColorBrush Color="#FF658296"/>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+                                                <EasingColorKeyFrame KeyTime="0" Value="White"/>
+                                            </ColorAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
                                 </VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
                             <Rectangle x:Name="rectangle" Fill="#FF4F4F4F" Stroke="#FF200C0C"/>
@@ -1633,7 +1646,20 @@
                                             </ObjectAnimationUsingKeyFrames>
                                         </Storyboard>
                                     </VisualState>
-                                    <VisualState x:Name="Disabled"/>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill)" Storyboard.TargetName="rectangle">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <SolidColorBrush Color="#FF658296"/>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+                                                <EasingColorKeyFrame KeyTime="0" Value="White"/>
+                                            </ColorAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
                                 </VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
                             <Rectangle x:Name="rectangle" Fill="#FF4F4F4F" Stroke="#FF200C0C"/>
@@ -1683,7 +1709,20 @@
                                             </ObjectAnimationUsingKeyFrames>
                                         </Storyboard>
                                     </VisualState>
-                                    <VisualState x:Name="Disabled"/>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill)" Storyboard.TargetName="rectangle">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <SolidColorBrush Color="#FF658296"/>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+                                                <EasingColorKeyFrame KeyTime="0" Value="White"/>
+                                            </ColorAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
                                 </VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
                             <Rectangle x:Name="rectangle" Fill="#FF4F4F4F" Stroke="#FF200C0C"/>
@@ -1733,7 +1772,17 @@
                                             </ObjectAnimationUsingKeyFrames>
                                         </Storyboard>
                                     </VisualState>
-                                    <VisualState x:Name="Disabled"/>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill)" Storyboard.TargetName="rectangle">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <SolidColorBrush Color="#FF658296"/>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
                                 </VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
                             <Rectangle x:Name="rectangle" Fill="#FF4F4F4F" Stroke="#FF200C0C"/>
@@ -1783,7 +1832,17 @@
                                             </ObjectAnimationUsingKeyFrames>
                                         </Storyboard>
                                     </VisualState>
-                                    <VisualState x:Name="Disabled"/>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill)" Storyboard.TargetName="rectangle">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <SolidColorBrush Color="#FF658296"/>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
                                 </VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
                             <Rectangle x:Name="rectangle" Fill="#FF4F4F4F" Stroke="#FF200C0C"/>
@@ -1999,7 +2058,17 @@
                                             </ObjectAnimationUsingKeyFrames>
                                         </Storyboard>
                                     </VisualState>
-                                    <VisualState x:Name="Disabled"/>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill)" Storyboard.TargetName="rectangle">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <SolidColorBrush Color="#FF658296"/>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
                                 </VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
                             <Rectangle x:Name="rectangle" Fill="#FF4F4F4F" Stroke="#FF200C0C"/>
@@ -2710,27 +2779,33 @@
             <UniformGrid x:Name="CalendarDaysOfWeek" Height="23.899" Canvas.Left="282.973" Canvas.Top="47.271" Width="609.834" Rows="1" Columns="7"/>
             <TextBlock x:Name="SelectDayLabel" Height="24.8" Canvas.Left="659.6" TextWrapping="Wrap" Canvas.Top="8.8" Width="209.6" FontWeight="Bold" Foreground="#FFBD1A1A"><Run Text="PLEASE SELECT A DAY"/><Run Text=":"/></TextBlock>
         </Canvas>
-        <Canvas x:Name="NotificationsPage" Height="570" Canvas.Left="10" Canvas.Top="118.8" Width="1101.6" d:IsHidden="True">
+        <Canvas x:Name="NotificationsPage" Height="570" Canvas.Left="10" Canvas.Top="118.8" Width="1101.6">
 
             <CheckBox x:Name="CheckBoxNotificationTest" Content="CheckBox For Test&#xA;" Height="23.319" Width="175.916" FontSize="18" Canvas.Left="915.684" Canvas.Top="10"/>
-            <Button x:Name="AttractionsNotificationsButton" Content="Button" Height="51.6" Canvas.Left="877.5" Style="{DynamicResource ButtonStyleAttractionsNotifications}" Canvas.Top="38.319" Width="214.1"/>
-            <Button x:Name="EventsNotificationsButton" Content="Button" Height="51.6" Canvas.Left="877.5" Style="{DynamicResource ButtonStyleEventsNotifications}" Canvas.Top="104.719" Width="214.1"/>
-            <Button x:Name="RestaurantsNotificationButton" Content="Button" Height="51.6" Canvas.Left="877.5" Style="{DynamicResource ButtonStyleRestaurantsNotifications}" Canvas.Top="170.319" Width="214.1"/>
-            <Button x:Name="ShoppingNotificationsButton" Content="Button" Height="51.6" Canvas.Left="877.5" Style="{DynamicResource ButtonStyleShoppingNotifications}" Canvas.Top="237.519" Width="214.1"/>
-            <Button x:Name="SportNotificationsButton" Content="Button" Height="51.6" Canvas.Left="877.5" Style="{DynamicResource ButtonStyleSportNotifications}" Canvas.Top="303.119" Width="214.1"/>
-            <TextBlock x:Name="CateoryTextBox" Height="25.881" Canvas.Left="372.4" TextWrapping="Wrap" Canvas.Top="38.319" Width="201.6" FontSize="20" Foreground="#FF238CAE" FontWeight="Bold" Text="ATTRACTIONS"/>
-            <Button x:Name="FriendsNotificationsButton" Content="Friends" Height="51.6" Canvas.Left="877.5" Style="{DynamicResource ButtonStyleFriendsNotifications}" Canvas.Top="368.386" Width="214.1"/>
+            <TextBlock x:Name="CategoryTextBox" Height="25.881" Canvas.Left="372.4" TextWrapping="Wrap" Canvas.Top="38.319" Width="201.6" FontSize="20" Foreground="#FF238CAE" FontWeight="Bold" Text="ATTRACTIONS"/>
+            <Canvas x:Name="NotificationSideButtons" Height="381.667" Canvas.Left="877.5" Canvas.Top="38.319" Width="214.1">
+                <Button x:Name="AttractionsNotificationsButton" Content="Button" Height="51.6" Style="{DynamicResource ButtonStyleAttractionsNotifications}" Width="214.1"/>
+                <Button x:Name="EventsNotificationsButton" Content="Button" Height="51.6" Style="{DynamicResource ButtonStyleEventsNotifications}" Canvas.Top="66.4" Width="214.1"/>
+                <Button x:Name="RestaurantsNotificationButton" Content="Button" Height="51.6" Style="{DynamicResource ButtonStyleRestaurantsNotifications}" Canvas.Top="132" Width="214.1"/>
+                <Button x:Name="ShoppingNotificationsButton" Content="Button" Height="51.6" Style="{DynamicResource ButtonStyleShoppingNotifications}" Canvas.Top="199.2" Width="214.1"/>
+                <Button x:Name="SportNotificationsButton" Content="Button" Height="51.6" Style="{DynamicResource ButtonStyleSportNotifications}" Canvas.Top="264.8" Width="214.1"/>
+                <Button x:Name="FriendsNotificationsButton" Content="Friends" Height="51.6" Style="{DynamicResource ButtonStyleFriendsNotifications}" Canvas.Top="330.067" Width="214.1"/>
+            </Canvas>
             <Ellipse Fill="#FFEE2626" HorizontalAlignment="Left" Height="27.2" Stroke="{x:Null}" VerticalAlignment="Top" Width="26.675" Canvas.Left="892.5" Canvas.Top="379.719"/>
             <Ellipse Fill="#FFEE2626" HorizontalAlignment="Left" Height="27.2" Stroke="{x:Null}" VerticalAlignment="Top" Width="26.675" Canvas.Left="892.5" Canvas.Top="117.719"/>
             <Ellipse Fill="#FFEE2626" HorizontalAlignment="Left" Height="27.2" Stroke="{x:Null}" VerticalAlignment="Top" Width="26.675" Canvas.Left="892.5" Canvas.Top="49.801"/>
             <ScrollViewer Height="434.081" Canvas.Left="198" Canvas.Top="104.719" Width="582.4">
-                <Canvas x:Name="NotificationsPresenterCanvas"  Width="566.55">
-                    <Rectangle Fill="#FFFBE6B6" Height="149" Stroke="Black" Width="556.55" RadiusX="1" RadiusY="1" StrokeThickness="2"/>
-                    <Border Height="123" Width="120" BorderBrush="Black" BorderThickness="2" Canvas.Left="10" Canvas.Top="10">
-                        <Image x:Name="image" Source="avatar1-crop.jpg"/>
-                    </Border>
-                    <TextBlock x:Name="textBlock1" Height="123" Canvas.Left="150.6" TextWrapping="Wrap" Canvas.Top="10" Width="334"><Run FontWeight="Bold" FontSize="20.25" Text="You Made a Friend!"/><LineBreak/><Run FontWeight="Bold" FontSize="20.25"/><LineBreak/><Run FontWeight="Bold" FontSize="20.25"/><LineBreak/><Run FontSize="20.25" Text="Nick accepted your friend request!"/><LineBreak/><Run FontWeight="Bold" FontSize="20.25"/></TextBlock>
-                </Canvas>
+                <Grid Width="566.55">
+                    <StackPanel Orientation="Vertical" d:LayoutOverrides="Height">
+                        <Canvas x:Name="NickNotification" Height="146.081" Visibility="Hidden">
+                            <Rectangle Fill="#FFFBE6B6" Height="149" Stroke="Black" Width="565" RadiusX="1" RadiusY="1" StrokeThickness="2"/>
+                            <Border Height="123" Width="120" BorderBrush="Black" BorderThickness="2" Canvas.Left="10" Canvas.Top="10">
+                                <Image x:Name="image" Source="avatar1-crop.jpg"/>
+                            </Border>
+                            <TextBlock x:Name="textBlock1" Height="123" Canvas.Left="150.6" TextWrapping="Wrap" Canvas.Top="10" Width="334"><Run FontWeight="Bold" FontSize="20.25" Text="You Made a Friend!"/><LineBreak/><Run FontWeight="Bold" FontSize="20.25"/><LineBreak/><Run FontWeight="Bold" FontSize="20.25"/><LineBreak/><Run FontSize="20.25" Text="Nick accepted your friend request!"/><LineBreak/><Run FontWeight="Bold" FontSize="20.25"/></TextBlock>
+                        </Canvas>
+                    </StackPanel>
+                </Grid>
             </ScrollViewer>
 
         </Canvas>
