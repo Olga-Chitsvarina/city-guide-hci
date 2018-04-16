@@ -850,7 +850,7 @@ namespace CityAttractionsAndEvents
 
         private void FriendsNotificationsButton_Click(object sender, RoutedEventArgs e)
         {
-            CategoryTextBox.Text = "Friends";
+            CategoryTextBox.Text = "FRIENDS";
             foreach (Button b in this.NotificationSideButtons.Children)
             {
                 b.IsEnabled = true;
